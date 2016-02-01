@@ -1,0 +1,39 @@
+{
+  "name": "Hanseatic",
+  "version": "0.1.0",
+  "description": "Game creation a play framework for the people of future",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/kecso/hanseatic.git"
+  },
+  "main": "/src/server/index.js",
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "bootstrap": "^3.3.6",
+    "bootstrap-webpack": "0.0.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jade": "^1.11.0",
+    "jquery": "^2.2.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "underscore": "^1.8.3",
+    "webgme": "^1.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.1.21",
+    "babel-loader": "^6.1.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "css-loader": "^0.22.0",
+    "ejs-loader": "^0.2.1",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.12"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
