@@ -43,6 +43,7 @@ module.exports = {
         ]
     },
     resolve: {
+        root:['./'],
         extensions: ['', '.js', '.jsx', '.scss'],
         alias: {
             underscore  : "lodash"

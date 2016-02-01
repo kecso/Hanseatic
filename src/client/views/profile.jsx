@@ -4,6 +4,8 @@
  */
 
 import React from 'react';
+var $ = require('jquery');
+
 export default class ProfileView extends React.Component {
     constructor(props) {
         var self;
@@ -14,6 +16,7 @@ export default class ProfileView extends React.Component {
         this.onCreate = this.onCreate.bind(this);
         this.onStart = this.onStart.bind(this);
         this.onSeedClick = this.onSeedClick.bind(this);
+
         this.state = {
             seeds: [],
             selectedSeed: null
@@ -23,11 +26,12 @@ export default class ProfileView extends React.Component {
             url: '/api/seeds',
             type: 'GET',
             success: function (data) {
-                console.log('data', data);
-                self.state.seeds = data;
-                self.state.selectedSeed = 0;
+                var state = {
+                    seeds: data,
+                    selectedSeed: 0
+                };
 
-                self.setState(self.state);
+                self.setState(state);
             },
             error: function (error) {
                 console.log('fuck', error);
@@ -73,6 +77,7 @@ export default class ProfileView extends React.Component {
         </div>;
     }
 }
+
 ProfileView.propTypes = {
     id: React.PropTypes.string.isRequired,
     router: React.PropTypes.object.isRequired,
