@@ -1,0 +1,517 @@
+{
+    "root": {
+        "path": "",
+        "guid": "03d36072-9e09-7866-cb4e-d0a36ff825f6"
+    },
+    "containment": {
+        "1261c8e8-a687-0b67-7c21-395eb2148660": {
+            "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60": {},
+            "7e08bbe7-abd4-99e1-958c-85fa50418134": {},
+            "bde95021-518c-094e-6aa3-36509ad7d48b": {},
+            "c0896683-62ac-11e6-8bc5-004e927170ee": {},
+            "e236923b-3b26-602c-4121-fab53b2dc9f9": {}
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {}
+    },
+    "bases": {},
+    "nodes": {
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": {
+            "attributes": {
+                "name": "ROOT"
+            },
+            "base": null,
+            "meta": {
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": null,
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "MetaSheets": [
+                    {
+                        "SetID": "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d",
+                        "order": 0,
+                        "title": "META"
+                    },
+                    {
+                        "SetID": "MetaAspectSet_10c3929e-3880-6f56-6a7f-9b33bf3617e6",
+                        "order": 1,
+                        "title": "HanseaticBasic"
+                    }
+                ],
+                "ProjectRegistry": {
+                    "FCO_ID": "/1"
+                },
+                "usedAddOns": "",
+                "validDecorators": "ModelDecorator CircleDecorator MetaDecorator SVGDecorator UMLStateMachineDecorator DefaultDecorator",
+                "validPlugins": "",
+                "validVisualizers": "ModelEditor METAAspect"
+            },
+            "sets": {
+                "MetaAspectSet": [
+                    {
+                        "attributes": {},
+                        "guid": "1261c8e8-a687-0b67-7c21-395eb2148660",
+                        "registry": {
+                            "position": {
+                                "x": 80,
+                                "y": 274
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60",
+                        "registry": {
+                            "position": {
+                                "x": 500,
+                                "y": 302
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "7e08bbe7-abd4-99e1-958c-85fa50418134",
+                        "registry": {
+                            "position": {
+                                "x": 382,
+                                "y": 440
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "bde95021-518c-094e-6aa3-36509ad7d48b",
+                        "registry": {
+                            "position": {
+                                "x": 352,
+                                "y": 311
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "c0896683-62ac-11e6-8bc5-004e927170ee",
+                        "registry": {
+                            "position": {
+                                "x": 443,
+                                "y": 158
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 100,
+                                "y": 100
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "e236923b-3b26-602c-4121-fab53b2dc9f9",
+                        "registry": {
+                            "position": {
+                                "x": 264,
+                                "y": 122
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_10c3929e-3880-6f56-6a7f-9b33bf3617e6": [
+                    {
+                        "attributes": {},
+                        "guid": "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60",
+                        "registry": {
+                            "position": {
+                                "x": 485,
+                                "y": 186
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "7e08bbe7-abd4-99e1-958c-85fa50418134",
+                        "registry": {
+                            "position": {
+                                "x": 347,
+                                "y": 313
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "bde95021-518c-094e-6aa3-36509ad7d48b",
+                        "registry": {
+                            "position": {
+                                "x": 164,
+                                "y": 278
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "c0896683-62ac-11e6-8bc5-004e927170ee",
+                        "registry": {
+                            "position": {
+                                "x": 138,
+                                "y": 167
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "e236923b-3b26-602c-4121-fab53b2dc9f9",
+                        "registry": {
+                            "position": {
+                                "x": 282,
+                                "y": 43
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d": [
+                    {
+                        "attributes": {},
+                        "guid": "1261c8e8-a687-0b67-7c21-395eb2148660",
+                        "registry": {
+                            "position": {
+                                "x": 80,
+                                "y": 274
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 100,
+                                "y": 100
+                            }
+                        }
+                    }
+                ]
+            },
+            "constraints": {}
+        },
+        "1261c8e8-a687-0b67-7c21-395eb2148660": {
+            "attributes": {
+                "name": "Language"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 21,
+                    "y": 94
+                }
+            },
+            "sets": {},
+            "constraints": {}
+        },
+        "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60": {
+            "attributes": {
+                "name": "Piece"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "pointers": {
+                    "on": {
+                        "items": [
+                            "7e08bbe7-abd4-99e1-958c-85fa50418134"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                }
+            },
+            "parent": "1261c8e8-a687-0b67-7c21-395eb2148660",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "on": null
+            },
+            "registry": {
+                "position": {
+                    "x": 22,
+                    "y": 56
+                }
+            },
+            "sets": {},
+            "constraints": {}
+        },
+        "7e08bbe7-abd4-99e1-958c-85fa50418134": {
+            "attributes": {
+                "name": "Tile",
+                "position": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "position": {
+                        "type": "string"
+                    }
+                },
+                "pointers": {
+                    "piecesOnMe": {
+                        "items": [
+                            "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            -1
+                        ]
+                    }
+                }
+            },
+            "parent": "1261c8e8-a687-0b67-7c21-395eb2148660",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 42,
+                    "y": 76
+                }
+            },
+            "sets": {
+                "piecesOnMe": []
+            },
+            "constraints": {}
+        },
+        "bde95021-518c-094e-6aa3-36509ad7d48b": {
+            "attributes": {
+                "name": "Board"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "7e08bbe7-abd4-99e1-958c-85fa50418134"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "1261c8e8-a687-0b67-7c21-395eb2148660",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 102,
+                    "y": 136
+                }
+            },
+            "sets": {},
+            "constraints": {}
+        },
+        "c0896683-62ac-11e6-8bc5-004e927170ee": {
+            "attributes": {
+                "id": "",
+                "name": "Player"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "pointers": {
+                    "myPieces": {
+                        "items": [
+                            "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            -1
+                        ]
+                    }
+                }
+            },
+            "parent": "1261c8e8-a687-0b67-7c21-395eb2148660",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 62,
+                    "y": 96
+                }
+            },
+            "sets": {
+                "myPieces": []
+            },
+            "constraints": {}
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {
+            "attributes": {
+                "name": "FCO"
+            },
+            "base": null,
+            "meta": {
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "children": {
+                    "items": [],
+                    "minItems": [],
+                    "maxItems": []
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "DisplayFormat": "$name",
+                "PortSVGIcon": "",
+                "SVGIcon": "",
+                "decorator": "",
+                "isAbstract": false,
+                "isPort": false,
+                "position": {
+                    "x": 18,
+                    "y": 55
+                },
+                "validVisualizers": "ModelEditor METAAspect SetEditor Crosscut GraphViz"
+            },
+            "sets": {},
+            "constraints": {}
+        },
+        "e236923b-3b26-602c-4121-fab53b2dc9f9": {
+            "attributes": {
+                "maxPlayer": 2,
+                "minPlayer": 1,
+                "name": "Game",
+                "numOfPlayers": 0
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "maxPlayer": {
+                        "type": "integer",
+                        "min": 1,
+                        "max": 100
+                    },
+                    "minPlayer": {
+                        "type": "integer",
+                        "min": 1,
+                        "max": 100
+                    },
+                    "numOfPlayers": {
+                        "type": "integer",
+                        "max": 100
+                    }
+                },
+                "children": {
+                    "items": [
+                        "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60",
+                        "bde95021-518c-094e-6aa3-36509ad7d48b",
+                        "c0896683-62ac-11e6-8bc5-004e927170ee"
+                    ],
+                    "minItems": [
+                        1,
+                        -1,
+                        -1
+                    ],
+                    "maxItems": [
+                        1,
+                        -1,
+                        -1
+                    ]
+                },
+                "pointers": {
+                    "activePlayer": {
+                        "items": [
+                            "c0896683-62ac-11e6-8bc5-004e927170ee"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                }
+            },
+            "parent": "1261c8e8-a687-0b67-7c21-395eb2148660",
+            "pointers": {
+                "activePlayer": null,
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 82,
+                    "y": 116
+                }
+            },
+            "sets": {},
+            "constraints": {}
+        }
+    },
+    "relids": {
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": null,
+        "1261c8e8-a687-0b67-7c21-395eb2148660": "I",
+        "2cc1bf34-2fd2-25d3-a409-18d4f0b3dc60": "5",
+        "7e08bbe7-abd4-99e1-958c-85fa50418134": "B",
+        "bde95021-518c-094e-6aa3-36509ad7d48b": "k",
+        "c0896683-62ac-11e6-8bc5-004e927170ee": "y",
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": "1",
+        "e236923b-3b26-602c-4121-fab53b2dc9f9": "h"
+    },
+    "metaSheets": {}
+}

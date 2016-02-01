@@ -3,10 +3,11 @@ A game marketplace, creation, and play environment.
 You can find the classic games here, or you can create your own, and let your friends play with it!
 
 ## setup
-To be able to run your server on your machine you need to have, nodejs, npm, mongoDB.
+To be able to run your server on your machine you need to have, nodejs, npm, mongoDB, and webpack.
 * download the repo
 * in the main directory run npm install
 * from the main directory execute 'node utils/initHanseatic.js' to make necessary configurations
+* run the webpack to make your client code bundled
 * start your server with 'node src/server/index.js'
 * go to http://localhost:9091 and start discovering the world of HANSEATIC
 
