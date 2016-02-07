@@ -57,7 +57,13 @@ function initialize(middlewareOpts) {
                 if (err) {
                     res.sendStatus(401);
                 } else {
-                    res.sendStatus(200);
+                    req.session.save(function(){
+                        res.clearCookie('webgme');
+                        res.cookie('webgme', req.session.udmId);
+                        //res.cookie('anotherwebgme', req.session.udmId);
+                        console.log('authenticated',req.session.udmId);
+                        res.sendStatus(200);
+                    });
                 }
             }
         );

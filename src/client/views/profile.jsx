@@ -45,7 +45,9 @@ export default class ProfileView extends React.Component {
 
     onStart(/*ev*/) {
         //this.props.router.navigate('/register', {trigger: true});
-        console.log('almost', this.state.seeds[this.state.selectedSeed]);
+        //console.log('almost', this.state.seeds[this.state.selectedSeed]);
+        this.props.router.navigate('/rest/external/hanseatic/initiating/' +
+            this.state.seeds[this.state.selectedSeed], {trigger: true});
     }
 
     onSeedClick(ev) {

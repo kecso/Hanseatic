@@ -9,7 +9,7 @@ config.server.port = 9091;
 
 config.mongo.uri = 'mongodb://127.0.0.1:27017/hanseatic';
 
-config.authentication.enable = false;
+config.authentication.enable = true;
 config.client.appDir = './public';
 
 config.authentication.allowGuests = false;

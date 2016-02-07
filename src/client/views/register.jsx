@@ -6,6 +6,8 @@
 
 import React from 'react';
 
+var Q = require('q');
+
 export default class RegisterView extends React.Component {
     constructor(props) {
         super(props);
@@ -23,45 +25,61 @@ export default class RegisterView extends React.Component {
     }
 
     registerNewUser(/*ev*/) {
-        var self = this;
-        //router.put('/users/:username', function (req, res, next) {
-        //    var receivedData = {
-        //        userId: req.params.username,
-        //        email: req.body.email,
-        //        password: req.body.password,
-        //        canCreate: req.body.canCreate || false,
-        //        data: req.body.data || {}
-        //    };
-        //
-        //    putUser(receivedData, req, res, next);
-        //});
-        $.ajax({
-            url: '/api/users/'+self.state.username,
-            data: {
-                email: self.state.email,
-                password: self.state.password,
-                canCreate: true,
-                data: {}
+        var self = this,
+            createUser = function(){
+                var deferred = Q.defer();
+                $.ajax({
+                    url: '/api/users/'+self.state.username,
+                    data: {
+                        email: self.state.email,
+                        password: self.state.password,
+                        canCreate: true,
+                        data: {}
+                    },
+                    type: 'PUT',
+                    dataType: 'json',
+                    statusCode: {
+                        200: function () {
+                            //self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
+                            deferred.resolve();
+                        },
+                        401: function () {
+                            deferred.reject(new Error('invalid credentials'));
+                        }
+                    }
+                });
+                return deferred.promise;
             },
-            type: 'PUT',
-            dataType: 'json',
-            //success: function () {
-            //    console.log('success');
-            //    //we are logged, we can go to the profile page
-            //    self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
-            //},
-            //error: function (error) {
-            //    console.log(error);
-            //    alert('invalid credentials, please try again!');
-            //}
-            statusCode: {
-                200: function () {
-                    self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
-                },
-                401: function () {
-                    alert('invalid credentials, please try again!');
-                }
-            }
+            addToOrganizaiton = function(){
+                var deferred = Q.defer();
+                //router.put('/orgs/:orgId/users/:username'
+                $.ajax({
+                    url: '/api/orgs/basicGamers/users/'+self.state.username,
+                    data: {},
+                    type: 'PUT',
+                    dataType: 'json',
+                    statusCode: {
+                        204: function () {
+                            //self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
+                            deferred.resolve();
+                        },
+                        404: function () {
+                            deferred.reject(new Error('cannot add to organization!!!'));
+                        }
+                    }
+                });
+                return deferred.promise;
+            };
+
+        createUser()
+        .then(function(){
+            return addToOrganizaiton();
+        })
+        .then(function(){
+            self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
+        })
+        .catch(function(error){
+           alert(error);
         });
     }
 
