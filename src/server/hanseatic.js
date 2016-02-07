@@ -45,6 +45,28 @@ function initialize(middlewareOpts) {
         });
     });
 
+    router.get('/gme',function(req,res){
+        console.log('here we goo');
+        var options = {
+            root: __dirname + '/../../node_modules/webgme/dist/',
+            dotfiles: 'deny',
+            headers: {
+                'x-timestamp': Date.now(),
+                'x-sent': true
+            }
+        };
+
+        var fileName = 'webgme.classes.build.js';
+        res.sendFile(fileName, options, function (err) {
+            if (err) {
+                console.log(err);
+                res.status(err.status).end();
+            }
+            else {
+                console.log('Sent:', fileName);
+            }
+        });
+    });
     router.post('/login', function (req, res) {
         middlewareOpts.gmeAuth.authenticateUserById(
             req.body.username,
@@ -70,7 +92,10 @@ function initialize(middlewareOpts) {
     });
 
     // all other endpoints require authentication
-    router.use('*', ensureAuthenticated);
+    //router.use('*', ensureAuthenticated);
+    router.use('*', function(req,res){
+        console.log('whaat',req);
+    });
 
     logger.debug('ready');
 }

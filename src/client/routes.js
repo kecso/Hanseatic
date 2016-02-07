@@ -21,6 +21,11 @@ module.exports = Backbone.Router.extend({
     initialize: function (options) {
         this.app = options.app;
         this.view = undefined;
+        //this.gme = new GME.classes.Client(GME.gmeConfig);
+        //
+        //this.gme.connectToDatabase(function(){
+        //   console.log('connected');
+        //});
     },
 
     _landing: function () {
@@ -45,8 +50,8 @@ module.exports = Backbone.Router.extend({
             document.getElementById('mainDiv'));
     },
     _initiating: function (gameType, gameId) {
-        ReactDOM.render(<InitiatingView id={gameId} seed={gameType} router={this} dispatcher={this.app}/>,
-            document.getElementById('mainDiv'));
+        ReactDOM.render(<InitiatingView id={gameId} seed={gameType} router={this}
+                                        dispatcher={this.app}/>, document.getElementById('mainDiv'));
     },
 
     _default: function () {

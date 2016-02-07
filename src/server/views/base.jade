@@ -5,16 +5,12 @@ head
     meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
 
     title!= title
-
-    script(type='text/javascript').
-        var myInit = function () {
-            console.log('myInit function was called');
-            // you can use GME.classes.Client from this point
-            console.log(GME);
-            // TODO: add some client examples
+    script( type='text/javascript').
+        function initGME() {
+            console.log('yeah');
         };
-    script(type='text/javascript', src='/extlib/node_modules/webgme/dist/webgme.classes.build.js')
-body(on-gme-init='myInit()')
+
+body(on-gme-init='initGME()')
     div.container-fluid
         div#mainDiv
     script(src='/js/main.js')
