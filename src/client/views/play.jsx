@@ -34,6 +34,8 @@ export default class PlayView extends React.Component {
         this.getPiecePosition = this.getPiecePosition.bind(this);
         this.step = this.step.bind(this);
         this.setBoard = this.setBoard.bind(this);
+        this.isTileFree = this.isTileFree.bind(this);
+        this.isTheGameOver = this.isTheGameOver.bind(this);
 
         this.state = {
             userId: gme.getUserId(),
@@ -120,37 +122,71 @@ export default class PlayView extends React.Component {
 
     step(position) {
         console.log('step', position);
-        if (this.isTileFree(position)) {
-            gme.startTransaction('making a move [' + this.state.userId + ']');
-            //creating a piece
-            var newPieceNodeId = gme.createChild({
-                parentId: this.state.gameNodeId,
-                baseId: this.getMetaNodeDictionary()['Piece']
-            });
-
-            //adding to myPieces set
-            gme.addMember(this.getMyPlayerNode().getId(), newPieceNodeId, 'myPieces');
-
-            //put on the tile
-            gme.addMember(this.state.tileIds[position], newPieceNodeId, 'piecesOnMe');
-            gme.makePointer(newPieceNodeId, 'on', this.state.tileIds[position]);
-
-            //changing active player
-            gme.makePointer(this.state.gameNodeId, 'activePlayer', this.getMyPlayerNode().getPointer('next').to);
-
-            //and done
-            gme.completeTransaction('making move ' + position, function () {
-                console.log('move stored to server');
-            });
-        } else {
-            console.log('bad move');
+        if (this.isTheGameOver()) {
+            console.log('the game is over!!!');
+            return;
         }
+        if (!this.isTileFree(position)) {
+            console.log('bad move, choose and empty space!!');
+            return;
+        }
+
+        gme.startTransaction('making a move [' + this.state.userId + ']');
+        //creating a piece
+        var newPieceNodeId = gme.createChild({
+            parentId: this.state.gameNodeId,
+            baseId: this.getMetaNodeDictionary()['Piece']
+        });
+
+        //adding to myPieces set
+        gme.addMember(this.getMyPlayerNode().getId(), newPieceNodeId, 'myPieces');
+
+        //put on the tile
+        gme.addMember(this.state.tileIds[position], newPieceNodeId, 'piecesOnMe');
+        gme.makePointer(newPieceNodeId, 'on', this.state.tileIds[position]);
+
+        //changing active player
+        gme.makePointer(this.state.gameNodeId, 'activePlayer', this.getMyPlayerNode().getPointer('next').to);
+
+        //and done
+        gme.completeTransaction('making move ' + position, function () {
+            console.log('move stored to server');
+        });
     }
 
     isTileFree(position) {
         var tileNode = gme.getNode(this.state.tileIds[Number(position)]);
 
         return tileNode.getMemberIds('piecesOnMe').length === 0;
+    }
+
+    isTheGameOver() {
+        //we just checks the board...
+        var i, weHaveFreeTile = false,
+            board = this.state.board;
+
+        for (i = 0; i < board.length; i += 1) {
+            if (board[i] != '_') {
+                weHaveFreeTile = true;
+            }
+        }
+
+        if (!weHaveFreeTile) {
+            return true;
+        }
+
+        if ((board[0] !== '_' && board[0] === board[1] && board[0] === board[2]) ||
+            (board[3] !== '_' && board[3] === board[4] && board[3] === board[5]) ||
+            (board[6] !== '_' && board[6] === board[7] && board[6] === board[8]) ||
+            (board[0] !== '_' && board[0] === board[3] && board[0] === board[6]) ||
+            (board[1] !== '_' && board[1] === board[4] && board[1] === board[6]) ||
+            (board[2] !== '_' && board[2] === board[5] && board[2] === board[7]) ||
+            (board[0] !== '_' && board[0] === board[4] && board[0] === board[8]) ||
+            (board[2] !== '_' && board[2] === board[4] && board[2] === board[6])) {
+            return true;
+        }
+
+        return false;
     }
 
     initialize() {
