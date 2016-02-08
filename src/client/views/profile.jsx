@@ -17,6 +17,7 @@ export default class ProfileView extends React.Component {
         this.onCreate = this.onCreate.bind(this);
         this.onStart = this.onStart.bind(this);
         this.onJoin = this.onJoin.bind(this);
+        this.onPlay = this.onPlay.bind(this);
         this.onSeedClick = this.onSeedClick.bind(this);
         this.onStartingClick = this.onStartingClick.bind(this);
         this.initSeeds = this.initSeeds.bind(this);
@@ -105,6 +106,11 @@ export default class ProfileView extends React.Component {
             this.state.startingGames[this.state.selectedStartingGame], {trigger: true});
     }
 
+    onPlay(/*ev*/) {
+        this.props.router.navigate('/rest/external/hanseatic/play/' +
+            this.state.startingGames[this.state.selectedStartingGame], {trigger: true});
+    }
+
     onSeedClick(ev) {
         this.setState({selectedSeed: this.state.seeds.indexOf(ev.currentTarget.getAttribute('name'))});
     }
@@ -154,6 +160,7 @@ export default class ProfileView extends React.Component {
                 <div className="col-xs-6">
                     <div className="pre-scrollable">{startings}</div>
                     <button className="btn btn-default btn-xs" onClick={this.onJoin}>Join a game</button>
+                    <button className="btn btn-default btn-xs" onClick={this.onPlay}>Play the game</button>
                 </div>
             </div>
             <button className="btn btn-default btn-lg" onClick={this.onCreate}>Create</button>
