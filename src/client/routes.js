@@ -7,6 +7,7 @@ import LoginView from './views/login.jsx';
 import RegisterView from './views/register.jsx';
 import ProfileView from './views/profile.jsx';
 import InitiatingView from './views/initiating.jsx';
+import PlayView from './views/play.jsx';
 
 module.exports = Backbone.Router.extend({
     routes: {
@@ -16,6 +17,7 @@ module.exports = Backbone.Router.extend({
         'rest/external/hanseatic/profile/:profileId': '_profile',
         'rest/external/hanseatic/initiating/:gameType': '_initiatingNull',
         'rest/external/hanseatic/initiating/:gameType/:gameId': '_initiating',
+        'rest/external/hanseatic/play/:gameId': '_play',
         '*path': '_landing'
     },
     initialize: function (options) {
@@ -54,6 +56,10 @@ module.exports = Backbone.Router.extend({
                                         dispatcher={this.app}/>, document.getElementById('mainDiv'));
     },
 
+    _play: function (gameId) {
+        ReactDOM.render(<PlayView id={gameId} router={this}
+                                        dispatcher={this.app}/>, document.getElementById('mainDiv'));
+    },
     _default: function () {
         console.log('Default path taken!!!');
     }

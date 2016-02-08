@@ -72,35 +72,13 @@ export default class ProfileView extends React.Component {
     initStartings(state) {
         var deferred = Q.defer();
 
-        //$.ajax({
-        //    url: '/api/projects',
-        //    type: 'GET',
-        //    success: function (data) {
-        //        var i;
-        //        state.startingGames = [];
-        //        for(i=0;i<data.length;i+=1){
-        //            if(data[i].name.indexOf('I_') === 0){
-        //                state.startingGames.push(data[i].name);
-        //            }
-        //        }
-        //
-        //        state.selectedStartingGame = 0;
-        //
-        //        //self.setState(state);
-        //        deferred.resolve(state);
-        //    },
-        //    error: function (error) {
-        //        deferred.reject(error);
-        //    }
-        //});
-
         this.props.router.gme.getProjects({asObject: true}, function (err, projects) {
             if (err) {
                 deferred.reject(err);
             } else {
                 state.startingGames = [];
                 for (var i in projects) {
-                    if (i.indexOf('basicGamers+I_') === 0) {
+                    if (projects[i].owner === 'startingGames') {
                         state.startingGames.push(projects[i].name);
                     }
                 }
@@ -113,7 +91,6 @@ export default class ProfileView extends React.Component {
     }
 
     onCreate(/*ev*/) {
-        //this.props.router.navigate('/rest/external/hanseatic', {trigger: true});
         console.log('next time :)');
     }
 

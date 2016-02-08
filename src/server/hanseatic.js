@@ -6,7 +6,8 @@
 
 var express = require('express'),
     router = express.Router(),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    Q = require('q');
 
 function getUserId(req) {
     return req.session.udmId;
@@ -45,8 +46,7 @@ function initialize(middlewareOpts) {
         });
     });
 
-    router.get('/gme',function(req,res){
-        console.log('here we goo');
+    router.get('/gme', function (req, res) {
         var options = {
             root: __dirname + '/../../node_modules/webgme/dist/',
             dotfiles: 'deny',
@@ -79,11 +79,9 @@ function initialize(middlewareOpts) {
                 if (err) {
                     res.sendStatus(401);
                 } else {
-                    req.session.save(function(){
+                    req.session.save(function () {
                         res.clearCookie('webgme');
                         res.cookie('webgme', req.session.udmId);
-                        //res.cookie('anotherwebgme', req.session.udmId);
-                        console.log('authenticated',req.session.udmId);
                         res.sendStatus(200);
                     });
                 }
@@ -91,10 +89,33 @@ function initialize(middlewareOpts) {
         );
     });
 
+    router.post('/register', function (req, res) {
+        console.log('coming over',req.body);
+        Q.ninvoke(middlewareOpts.gmeAuth, 'addUser', req.body.username, req.body.email, req.body.password, true, {})
+            .then(function () {
+                return Q.ninvoke(middlewareOpts.gmeAuth, 'addUserToOrganization', req.body.username, 'startingGames');
+            })
+            .then(function () {
+                return Q.ninvoke(middlewareOpts.gmeAuth, 'addUserToOrganization', req.body.username, 'ongoingGames');
+            })
+            .then(function () {
+                return Q.ninvoke(middlewareOpts.gmeAuth, 'addUserToOrganization', req.body.username, 'archiveGames');
+            })
+            .then(function(){
+                res.sendStatus(200);
+            })
+            .catch(function (err) {
+                res.sendStatus(401);
+            })
+    });
+
     // all other endpoints require authentication
     //router.use('*', ensureAuthenticated);
-    router.use('*', function(req,res){
-        console.log('whaat',req);
+    router.use('*', ensureAuthenticated, function (req, res) {
+        console.log('user:', getUserId(req));
+        res.render('base', {
+            title: 'Hanseatic'
+        });
     });
 
     logger.debug('ready');

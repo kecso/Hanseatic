@@ -26,21 +26,19 @@ export default class RegisterView extends React.Component {
 
     registerNewUser(/*ev*/) {
         var self = this,
-            createUser = function(){
+            register = function(){
                 var deferred = Q.defer();
                 $.ajax({
-                    url: '/api/users/'+self.state.username,
+                    url: '/rest/external/hanseatic/register',
                     data: {
+                        username: self.state.username,
                         email: self.state.email,
                         password: self.state.password,
-                        canCreate: true,
-                        data: {}
                     },
-                    type: 'PUT',
+                    type: 'POST',
                     dataType: 'json',
                     statusCode: {
                         200: function () {
-                            //self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
                             deferred.resolve();
                         },
                         401: function () {
@@ -49,34 +47,11 @@ export default class RegisterView extends React.Component {
                     }
                 });
                 return deferred.promise;
-            },
-            addToOrganizaiton = function(){
-                var deferred = Q.defer();
-                //router.put('/orgs/:orgId/users/:username'
-                $.ajax({
-                    url: '/api/orgs/basicGamers/users/'+self.state.username,
-                    data: {},
-                    type: 'PUT',
-                    dataType: 'json',
-                    statusCode: {
-                        204: function () {
-                            //self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
-                            deferred.resolve();
-                        },
-                        404: function () {
-                            deferred.reject(new Error('cannot add to organization!!!'));
-                        }
-                    }
-                });
-                return deferred.promise;
             };
 
-        createUser()
+        register()
         .then(function(){
-            return addToOrganizaiton();
-        })
-        .then(function(){
-            self.props.router.navigate('/rest/external/hanseatic/profile/' + self.state.username, {trigger: true});
+            self.props.router.navigate('/rest/external/hanseatic/', {trigger: true});
         })
         .catch(function(error){
            alert(error);
