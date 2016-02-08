@@ -36,12 +36,14 @@ export default class PlayView extends React.Component {
         this.setBoard = this.setBoard.bind(this);
         this.isTileFree = this.isTileFree.bind(this);
         this.isTheGameOver = this.isTheGameOver.bind(this);
+        this.archiveStep = this.archiveStep.bind(this);
 
         this.state = {
             userId: gme.getUserId(),
             gameId: props.id,
             initialized: false,
             gameNodeId: '',
+            archiveContainerId: '',
             boardNodeId: '',
             playerIds: [],
             tileIds: [],
@@ -126,16 +128,23 @@ export default class PlayView extends React.Component {
             console.log('the game is over!!!');
             return;
         }
+        if (!this.amIActive()) {
+            console.log('hey, do not get greedy, it is not your turn!');
+            return;
+        }
         if (!this.isTileFree(position)) {
             console.log('bad move, choose and empty space!!');
             return;
         }
 
         gme.startTransaction('making a move [' + this.state.userId + ']');
+        //archiving
+        this.archiveStep();
+
         //creating a piece
         var newPieceNodeId = gme.createChild({
             parentId: this.state.gameNodeId,
-            baseId: this.getMetaNodeDictionary()['Piece']
+            baseId: this.getMetaNodeDictionary()['Piece'].getId()
         });
 
         //adding to myPieces set
@@ -160,13 +169,29 @@ export default class PlayView extends React.Component {
         return tileNode.getMemberIds('piecesOnMe').length === 0;
     }
 
+    archiveStep() {
+        //we should be in a transatcion!!!
+        var standingId = gme.createChild({
+                parentId: this.state.archiveContainerId,
+                baseId: this.getMetaNodeDictionary()['Standing'].getId()
+            }),
+            copyParams = {parentId: standingId};
+
+        copyParams[this.state.gameNodeId] = {};
+
+        gme.copyMoreNodes(copyParams);
+
+        //and that is how its done :)
+        //of course we should put it into a chain, so it can be played back easily
+    }
+
     isTheGameOver() {
         //we just checks the board...
         var i, weHaveFreeTile = false,
             board = this.state.board;
 
         for (i = 0; i < board.length; i += 1) {
-            if (board[i] != '_') {
+            if (board[i] === '_') {
                 weHaveFreeTile = true;
             }
         }
@@ -229,21 +254,33 @@ export default class PlayView extends React.Component {
         console.log('bumm001');
         var gameNode,
             i,
-            self = this;
+            self = this,
+            territory = {},
+            newState = {};
         if (!this.state.gameNodeId) {
             console.log('bumm002');
             for (i = 0; i < events.length; i += 1) {
                 if (events[i].etype = 'load') {
                     gameNode = gme.getNode(events[i].eid);
 
-                    if (gameNode && gameNode.getAttribute('name') === 'TicTacToeGame') {
-                        this.setState({gameNodeId: events[i].eid}, function () {
-                            //and now the registration
-                            console.log('bumm003');
-                            var territory = {};
-                            territory[self.state.gameNodeId] = {children: 2};
-                            gme.updateTerritory(UIname, territory);
-                        });
+                    if (gameNode && gameNode.getAttribute('name') === 'TicTacToeArchive') {
+                        newState.archiveContainerId = events[i].eid;
+                        territory[events[i].eid] = {children: 0};
+                        if (Object.keys(territory).length === 2) {
+                            this.setState(newState, function () {
+                                //and now the registration
+                                gme.updateTerritory(UIname, territory);
+                            });
+                        }
+                    } else if (gameNode && gameNode.getAttribute('name') === 'TicTacToeGame') {
+                        newState.gameNodeId = events[i].eid;
+                        territory[events[i].eid] = {children: 2};
+                        if (Object.keys(territory).length === 2) {
+                            this.setState(newState, function () {
+                                //and now the registration
+                                gme.updateTerritory(UIname, territory);
+                            });
+                        }
                     }
                 }
             }
