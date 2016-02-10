@@ -1,0 +1,11 @@
+<svg height="600" width="600">
+        <rect id="NW" height="200" width="200" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="N" height="200" width="200"  style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="NE" height="200" width="200" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="W" height="200" width="200"  style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="C" height="200" width="200"  style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="E" height="200" width="200"  style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="SW" height="200" width="200" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="S" height="200" width="200"  style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        <rect id="SE" height="200" width="200" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)"></rect>
+        </svg>
