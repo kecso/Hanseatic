@@ -7,11 +7,12 @@
  board:[''/'p1'/'p2'...]
  */
 import React from 'react';
+import StandardBoard from '../components/StandardBoard.jsx';
+
 var $ = require('jquery'),
     Q = require('q'),
     organizationId = 'startingGames',
     UIname = 'HanseaticYeahPlay',
-    GUID = require('webgme/src/common/util/guid'),
     gme;
 
 export default class PlayView extends React.Component {
@@ -22,7 +23,7 @@ export default class PlayView extends React.Component {
 
         self = this;
 
-        gme = self.props.router.gme;
+        gme = self.props.gme;
 
         //this.onCreate = this.onCreate.bind(this);
         this.projectChanged = this.projectChanged.bind(this);
@@ -38,23 +39,23 @@ export default class PlayView extends React.Component {
         this.isTheGameOver = this.isTheGameOver.bind(this);
         this.archiveStep = this.archiveStep.bind(this);
 
-        this.state = {
-            userId: gme.getUserId(),
-            gameId: props.id,
-            initialized: false,
-            gameNodeId: '',
-            archiveContainerId: '',
-            boardNodeId: '',
-            playerIds: [],
-            tileIds: [],
-            board: ['_', '_', '_', '_', '_', '_', '_', '_', '_']
-        };
-
-        gme.selectProject(organizationId + '+' + this.state.gameId, 'master', function (err) {
-            console.log('bumm000', err);
-            gme.addUI(self, self.projectChanged, UIname);
-            gme.updateTerritory(UIname, {'': {children: 1}});
-        });
+        //this.state = {
+        //    userId: gme.getUserId(),
+        //    gameId: props.id,
+        //    initialized: false,
+        //    gameNodeId: '',
+        //    archiveContainerId: '',
+        //    boardNodeId: '',
+        //    playerIds: [],
+        //    tileIds: [],
+        //    board: ['_', '_', '_', '_', '_', '_', '_', '_', '_']
+        //};
+        //
+        //gme.selectProject(organizationId + '+' + this.state.gameId, 'master', function (err) {
+        //    console.log('bumm000', err);
+        //    gme.addUI(self, self.projectChanged, UIname);
+        //    gme.updateTerritory(UIname, {'': {children: 1}});
+        //});
 
     }
 
@@ -295,38 +296,69 @@ export default class PlayView extends React.Component {
         }
     }
 
+    //render() {
+    //    var tiles = [],
+    //        active,
+    //        i;
+    //
+    //    if (!this.state.initialized) {
+    //        return <h3>waiting for game initialization</h3>;
+    //    }
+    //    if (this.amIActive()) {
+    //        active = <h3>it is your turn! ;)</h3>;
+    //    } else {
+    //        active = <h3>the other player makes the move! :)</h3>;
+    //    }
+    //
+    //    for (i = 0; i < this.state.board.length; i += 1) {
+    //        tiles.push(<div className="col-md-4">
+    //            <button className="btn btn-lg btn-default btn-block" onClick={this.tileClick} name={i}>
+    //                {this.state.board[i]}
+    //            </button>
+    //        </div>);
+    //    }
+    //    return <div>
+    //        {active}
+    //        <div className="col-md-6">
+    //            {tiles}
+    //        </div>
+    //    </div>
+    //}
+    //render(){
+    //    return <svg width="600" height="600">
+    //        <rect x="0" y="0" width="200" height="200" name="T0" onClick={this.tileClick}
+    //              style=fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="200" y="0" width="200" height="200" name="T1" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="400" y="0" width="200" height="200" name="T2" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="0" y="200" width="200" height="200" name="T3" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="200" y="200" width="200" height="200" name="T4" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="400" y="200" width="200" height="200" name="T5" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="0" y="400" width="200" height="200" name="T6" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="200" y="400" width="200" height="200" name="T7" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //        <rect x="400" y="400" width="200" height="200" name="T8" onClick={this.tileClick}
+    //              style="fill:none;stroke:pink;stroke-width:5" />
+    //    </svg>
+    //}
+
     render() {
-        var tiles = [],
-            active,
-            i;
-
-        if (!this.state.initialized) {
-            return <h3>waiting for game initialization</h3>;
-        }
-        if (this.amIActive()) {
-            active = <h3>it is your turn! ;)</h3>;
-        } else {
-            active = <h3>the other player makes the move! :)</h3>;
-        }
-
-        for (i = 0; i < this.state.board.length; i += 1) {
-            tiles.push(<div className="col-md-4">
-                <button className="btn btn-lg btn-default btn-block" onClick={this.tileClick} name={i}>
-                    {this.state.board[i]}
-                </button>
-            </div>);
-        }
-        return <div>
-            {active}
-            <div className="col-md-6">
-                {tiles}
-            </div>
-        </div>
+        return <StandardBoard userId={gme.getUserId()}
+                              boardNodeId={this.props.game.getBoardNodeId()} hGame={this.props.game}/>
     }
+
 }
 
 PlayView.propTypes = {
     id: React.PropTypes.string.isRequired,
     router: React.PropTypes.object.isRequired,
-    dispatcher: React.PropTypes.object.isRequired
+    dispatcher: React.PropTypes.object.isRequired,
+    gme: React.PropTypes.object.isRequired,
+    game: React.PropTypes.object.isRequired
+
 };

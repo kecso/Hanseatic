@@ -12,7 +12,7 @@ config.mongo.uri = 'mongodb://127.0.0.1:27017/hanseatic';
 config.authentication.enable = true;
 config.client.appDir = './public';
 
-config.authentication.allowGuests = false;
+config.authentication.allowGuests = true;
 
 config.authentication.logOutUrl = '/rest/external/hanseatic';
 
