@@ -677,17 +677,17 @@
             "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
             "meta": {
                 "attributes": {
-                    "highlighted": {
+                    "color": {
+                        "type": "string"
+                    },
+                    "selected": {
                         "type": "boolean"
                     },
                     "svg": {
                         "type": "asset"
                     },
-                    "selected": {
+                    "highlighted": {
                         "type": "boolean"
-                    },
-                    "color": {
-                        "type": "string"
                     }
                 },
                 "children": {
@@ -1030,13 +1030,13 @@
             "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
             "meta": {
                 "attributes": {
-                    "selected": {
+                    "highlighted": {
                         "type": "boolean"
                     },
                     "position": {
                         "type": "string"
                     },
-                    "highlighted": {
+                    "selected": {
                         "type": "boolean"
                     }
                 },
@@ -1067,7 +1067,7 @@
         },
         "81cf56cd-5fe0-0256-f841-c9b16b00e777": {
             "attributes": {
-                "script": "function (game) {     var stringBoard = game.getStringBoard(),         i;      if ((stringBoard[0] === 'X' && stringBoard[1] === 'X' && stringBoard[2] === 'X') ||         (stringBoard[3] === 'X' && stringBoard[4] === 'X' && stringBoard[5] === 'X') ||         (stringBoard[6] === 'X' && stringBoard[7] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[3] === 'X' && stringBoard[6] === 'X') ||         (stringBoard[1] === 'X' && stringBoard[4] === 'X' && stringBoard[7] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[5] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[4] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[4] === 'X' && stringBoard[6] === 'X')) {         game.getPlayerByName('P1').won();         return;     }      if ((stringBoard[0] === 'X' && stringBoard[1] === 'X' && stringBoard[2] === 'X') ||         (stringBoard[3] === 'X' && stringBoard[4] === 'X' && stringBoard[5] === 'X') ||         (stringBoard[6] === 'X' && stringBoard[7] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[3] === 'X' && stringBoard[6] === 'X') ||         (stringBoard[1] === 'X' && stringBoard[4] === 'X' && stringBoard[7] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[5] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[4] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[4] === 'X' && stringBoard[6] === 'X')) {         game.getPlayerByName('P2').won();         return;     }      for (i = 0; i < 9; i += 1) {         if (stringBoard[i] === '') {             return;         }     }     game.ended(); }"
+                "script": "function (game) {     var stringBoard = game.getStringBoard(),         i;      if ((stringBoard[0] === 'X' && stringBoard[1] === 'X' && stringBoard[2] === 'X') ||         (stringBoard[3] === 'X' && stringBoard[4] === 'X' && stringBoard[5] === 'X') ||         (stringBoard[6] === 'X' && stringBoard[7] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[3] === 'X' && stringBoard[6] === 'X') ||         (stringBoard[1] === 'X' && stringBoard[4] === 'X' && stringBoard[7] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[5] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[0] === 'X' && stringBoard[4] === 'X' && stringBoard[8] === 'X') ||         (stringBoard[2] === 'X' && stringBoard[4] === 'X' && stringBoard[6] === 'X')) {         game.getPlayerByName('P1').won();         return;     }      if ((stringBoard[0] === 'O' && stringBoard[1] === 'O' && stringBoard[2] === 'O') ||         (stringBoard[3] === 'O' && stringBoard[4] === 'O' && stringBoard[5] === 'O') ||         (stringBoard[6] === 'O' && stringBoard[7] === 'O' && stringBoard[8] === 'O') ||         (stringBoard[0] === 'O' && stringBoard[3] === 'O' && stringBoard[6] === 'O') ||         (stringBoard[1] === 'O' && stringBoard[4] === 'O' && stringBoard[7] === 'O') ||         (stringBoard[2] === 'O' && stringBoard[5] === 'O' && stringBoard[8] === 'O') ||         (stringBoard[0] === 'O' && stringBoard[4] === 'O' && stringBoard[8] === 'O') ||         (stringBoard[2] === 'O' && stringBoard[4] === 'O' && stringBoard[6] === 'O')) {         game.getPlayerByName('P2').won();         return;     }      for (i = 0; i < 9; i += 1) {         if (stringBoard[i] === '') {             return;         }     }     game.ended(); }"
             },
             "base": "dfad0604-18cd-8ecb-bd24-edc6a1c2736a",
             "meta": {},
@@ -1489,14 +1489,14 @@
             "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
             "meta": {
                 "attributes": {
-                    "winner": {
-                        "type": "boolean"
+                    "id": {
+                        "type": "string"
                     },
                     "color": {
                         "type": "string"
                     },
-                    "id": {
-                        "type": "string"
+                    "winner": {
+                        "type": "boolean"
                     }
                 },
                 "pointers": {
@@ -1739,12 +1739,12 @@
             "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
             "meta": {
                 "attributes": {
+                    "finished": {
+                        "type": "boolean"
+                    },
                     "numOfPlayers": {
                         "type": "integer",
                         "max": 100
-                    },
-                    "finished": {
-                        "type": "boolean"
                     }
                 },
                 "children": {
@@ -1806,12 +1806,12 @@
             "base": "bde95021-518c-094e-6aa3-36509ad7d48b",
             "meta": {
                 "attributes": {
-                    "y": {
+                    "x": {
                         "type": "integer",
                         "min": 1,
                         "max": 100
                     },
-                    "x": {
+                    "y": {
                         "type": "integer",
                         "min": 1,
                         "max": 100
