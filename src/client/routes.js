@@ -10,6 +10,7 @@ import InitiatingView from './views/initiating.jsx';
 import PlayView from './views/play.jsx';
 import StaticView from './views/static.jsx';
 import TicTacToeView from './views/tictactoe.jsx';
+import EditBoardView from './views/boardedit.jsx';
 
 var $ = require('jquery'),
     HanseaticGame = require('./HanseaticGame'),
@@ -26,6 +27,7 @@ module.exports = Backbone.Router.extend({
         'rest/external/hanseatic/play/:gameId': '_play',
         'rest/external/hanseatic/static': '_static',
         'rest/external/hanseatic/tictactoe': '_tictactoe',
+        'rest/external/hanseatic/editboard': '_editboard',
         '*path': '_landing'
     },
 
@@ -144,6 +146,9 @@ module.exports = Backbone.Router.extend({
         ReactDOM.render(<StaticView/>, document.getElementById('mainDiv'));
     },
 
+    _editboard: function () {
+        ReactDOM.render(<EditBoardView/>, document.getElementById('mainDiv'));
+    },
     _tictactoe: function () {
         var self = this;
 
