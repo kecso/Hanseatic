@@ -2,59 +2,22 @@
 /**
  * @author kecso / https://github.com/kecso
  */
-
-/*
- board:[''/'p1'/'p2'...]
- */
 import React from 'react';
 import EditTile from '../components/EditTile.jsx';
 
 export default class BoardEditView extends React.Component {
     constructor(props) {
-        var self;
-
         super(props);
 
         this.addTile = this.addTile.bind(this);
         this.tileUpdated = this.tileUpdated.bind(this);
         this.save = this.save.bind(this);
+        this.cancel = this.cancel.bind(this);
         this.setBack = this.setBack.bind(this);
 
-        self = this;
-
-        self.state = {
-            tiles: [
-                {
-                    id: 'testOne',
-                    x: 100,
-                    y: 100,
-                    position: 0,
-                    width: 100,
-                    height: 100,
-                    shape: 'rect',
-                    color: 'red'
-                },
-                {
-                    id: 'testTwo',
-                    x: 200,
-                    y: 100,
-                    position: 1,
-                    width: 100,
-                    height: 100,
-                    shape: 'rect',
-                    color: 'red'
-                },
-                {
-                    id: 'testThree',
-                    x: 300,
-                    y: 100,
-                    position: 2,
-                    width: 100,
-                    height: 100,
-                    shape: 'rect',
-                    color: 'red'
-                }
-            ]
+        this.state = {
+            tiles: this.props.tiles,
+            picture: this.props.picture
         }
     }
 
@@ -65,7 +28,18 @@ export default class BoardEditView extends React.Component {
     }
 
     save() {
-        console.log('we will save the model');
+        var state = this.state,
+            i;
+        for (i = 0; i < state.tiles.length; i += 1) {
+            if (!state.tiles[i].id) {
+                state.tiles[i].id = null;
+            }
+        }
+        this.props.update(state);
+    }
+
+    cancel() {
+        this.props.update(null);
     }
 
     setBack() {
@@ -76,14 +50,15 @@ export default class BoardEditView extends React.Component {
         var tiles = this.state.tiles;
 
         tiles.push({
-            id: 'testTile' + tiles.length,
+            id: null,
             x: 300,
             y: 300,
             position: tiles.length,
             width: 50,
             height: 50,
             shape: 'rect',
-            color: 'red'
+            color: 'red',
+            isVisible: true
         });
 
         this.setState({tiles: tiles});
@@ -96,21 +71,28 @@ export default class BoardEditView extends React.Component {
 
         for (i = 0; i < this.state.tiles.length; i += 1) {
             tile = this.state.tiles[i];
-            tiles.push(<EditTile id={tile.id} x={tile.x} y={tile.y} position={tile.position}
+            tiles.push(<EditTile id={tile.id || ""} key={tile.id || ""} x={tile.x} y={tile.y} position={tile.position}
                                  width={tile.width} height={tile.height} shape={tile.shape} color={tile.color}
-                                 update={this.tileUpdated}/>);
+                                 isVisible={tile.isVisible} update={this.tileUpdated}/>);
         }
         return <div>
             <div>
                 <button className="btn btn-default" onClick={this.addTile}>Add tile</button>
-                <button className="btn btn-default" onClick={this.setBack}>Set background</button>
-                <button className="btn btn-danger" onClick={this.save}>Save changes</button>
+                <button className="btn btn-default disabled" onClick={this.setBack}>Set background</button>
+                <button className="btn btn-warning" onClick={this.save}>Save changes</button>
+                <button className="btn btn-danger" onClick={this.cancel}>Cancel</button>
             </div>
             <svg width={600} height={600}>
-                <image height="600" xlinkHref="/boards/ludo_big.png" width="600" x="0" y="0"/>
+                <image height="600" xlinkHref={"/boards/"+this.state.picture} width="600" x="0" y="0"/>
                 {tiles}
             </svg>
         </div>
     }
 
 }
+
+BoardEditView.propTypes = {
+    tiles: React.PropTypes.array.isRequired,
+    picture: React.PropTypes.string.isRequired,
+    update: React.PropTypes.func.isRequired
+};

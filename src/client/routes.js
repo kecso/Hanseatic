@@ -10,7 +10,7 @@ import InitiatingView from './views/initiating.jsx';
 import PlayView from './views/play.jsx';
 import StaticView from './views/static.jsx';
 import TicTacToeView from './views/tictactoe.jsx';
-import EditBoardView from './views/boardedit.jsx';
+import CreatorView from './views/creator.jsx';
 
 var $ = require('jquery'),
     HanseaticGame = require('./HanseaticGame'),
@@ -27,7 +27,7 @@ module.exports = Backbone.Router.extend({
         'rest/external/hanseatic/play/:gameId': '_play',
         'rest/external/hanseatic/static': '_static',
         'rest/external/hanseatic/tictactoe': '_tictactoe',
-        'rest/external/hanseatic/editboard': '_editboard',
+        'rest/external/hanseatic/creator': '_creator',
         '*path': '_landing'
     },
 
@@ -70,7 +70,7 @@ module.exports = Backbone.Router.extend({
             if (self.initialized) {
                 clearInterval(timer);
                 gme = self.gme;
-                console.log('gme-user:' + gme.getUserId());
+                console.log('gme-user:' + 'dunno');
                 callback();
             }
         }, 100);
@@ -79,7 +79,7 @@ module.exports = Backbone.Router.extend({
     __openProject: function (projectId, callback) {
         var self = this;
 
-        self.gme.selectProject(self.gme.getUserId() + '+' + projectId, 'master', callback);
+        self.gme.selectProject('guest+' + projectId, 'master', callback);
 
     },
 
@@ -89,7 +89,7 @@ module.exports = Backbone.Router.extend({
             type: 'file',
             projectName: this.gameId,
             seedName: seedName,
-            ownerId: this.gme.getUserId()
+            ownerId: 'guest'
         }, callback);
     },
 
@@ -146,9 +146,24 @@ module.exports = Backbone.Router.extend({
         ReactDOM.render(<StaticView/>, document.getElementById('mainDiv'));
     },
 
-    _editboard: function () {
-        ReactDOM.render(<EditBoardView/>, document.getElementById('mainDiv'));
+    _creator: function () {
+        var self = this;
+        Q.nfcall(self.__waitForGme)
+            .then(function () {
+                return Q.nfcall(self.__createGameFromSeed, 'TicTacToe3');
+            })
+            .then(function () {
+                return Q.nfcall(self.__openProject, 'Demo3_001');
+            })
+            .then(function () {
+                ReactDOM.render(<CreatorView gmeClient={self.gme}/>,
+                    document.getElementById('mainDiv'));
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     },
+
     _tictactoe: function () {
         var self = this;
 

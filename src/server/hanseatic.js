@@ -40,7 +40,7 @@ function initialize(middlewareOpts) {
     });
 
     router.get('', function (req, res) {
-        console.log('user:', getUserId(req));
+        //console.log('user:', getUserId(req));
         res.render('base', {
             title: 'Hanseatic'
         });
@@ -112,7 +112,7 @@ function initialize(middlewareOpts) {
     // all other endpoints require authentication
     //router.use('*', ensureAuthenticated);
     router.use('*', ensureAuthenticated, function (req, res) {
-        console.log('user:', getUserId(req));
+        //console.log('user:', getUserId(req));
         res.render('base', {
             title: 'Hanseatic'
         });

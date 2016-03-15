@@ -23,7 +23,8 @@ export default class EditTile extends React.Component {
             resize: false,
             position: false,
             positionX: 0,
-            positionY: 0
+            positionY: 0,
+            isVisible: true
         };
     }
 
@@ -36,7 +37,6 @@ export default class EditTile extends React.Component {
     }
 
     onMouseUp(event) {
-        console.log('mU', this.props.id);
         if (this.state.position || this.state.resize) {
             this.props.update({
                 id: this.props.id,
@@ -46,7 +46,8 @@ export default class EditTile extends React.Component {
                 width: this.state.width,
                 height: this.state.height,
                 shape: this.props.shape,
-                color: this.props.color
+                color: this.props.color,
+                isVisible: this.state.isVisible
             });
         }
         this.setState({position: false, resize: false, positionX: 0, positionY: 0});
@@ -65,11 +66,9 @@ export default class EditTile extends React.Component {
             newHeight = this.state.height + (event.clientY - this.state.positionY);
             this.setState({width: newWidth, height: newHeight, positionX: event.clientX, positionY: event.clientY});
         }
-        console.log('mM', event.clientX, event.clientY);
     }
 
     onMouseLeave(event) {
-        console.log('cancel', this.props.id);
         this.setState({position: false, resize: false, positionX: 0, positionY: 0});
     }
 
@@ -104,5 +103,6 @@ EditTile.propTypes = {
     height: React.PropTypes.number.isRequired,
     shape: React.PropTypes.string.isRequired,
     color: React.PropTypes.string.isRequired,
-    update: React.PropTypes.func.isRequired
+    update: React.PropTypes.func.isRequired,
+    isVisible: React.PropTypes.bool.isRequired
 };

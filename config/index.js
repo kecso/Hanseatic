@@ -8,5 +8,7 @@ var env = process.env.NODE_ENV || 'default',
     config = require(configFilename),
     validateConfig = require('webgme/config/validator');
 
+console.log('validating config');
 validateConfig(configFilename);
+console.log('config validated');
 module.exports = config;

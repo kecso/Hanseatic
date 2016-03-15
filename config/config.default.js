@@ -17,9 +17,12 @@ config.authentication.allowGuests = true;
 config.authentication.logOutUrl = '/rest/external/hanseatic';
 
 config.rest.components = {
-    'hanseatic':'./../../../../src/server/hanseatic'
+    'hanseatic': './../../../../src/server/hanseatic'
 };
 
 config.seedProjects.basePaths = ['./seeds'];
+
+config.authentication.jwt.publicKey = require('path').join(__dirname, '../__keys__/EXAMPLE_PUBLIC_KEY');
+config.authentication.jwt.privateKey = require('path').join(__dirname, '../__keys__/EXAMPLE_PRIVATE_KEY');
 
 module.exports = config;
