@@ -64,6 +64,13 @@ export default class BoardEditView extends React.Component {
         this.setState({tiles: tiles});
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            tiles: nextProps.tiles,
+            picture: nextProps.picture
+        });
+    }
+
     render() {
         var tiles = [],
             i,
@@ -71,6 +78,7 @@ export default class BoardEditView extends React.Component {
 
         for (i = 0; i < this.state.tiles.length; i += 1) {
             tile = this.state.tiles[i];
+            console.log('tile', tile.x, tile.y);
             tiles.push(<EditTile id={tile.id || ""} key={tile.id || ""} x={tile.x} y={tile.y} position={tile.position}
                                  width={tile.width} height={tile.height} shape={tile.shape} color={tile.color}
                                  isVisible={tile.isVisible} update={this.tileUpdated}/>);

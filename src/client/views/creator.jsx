@@ -50,9 +50,6 @@ export default class CreatorView extends React.Component {
         //we are not interested in the events themselves - we assume that every major node is in place
         var state = this.state,
             node, i;
-        //if for some reason we were not in 'overview' phase we should switch back to that
-        state.phase = 'overview';
-        state.target = null;
 
         //build up our collections
         node = this.gme.getNode(state.taskContainer);
@@ -179,9 +176,8 @@ export default class CreatorView extends React.Component {
             }
 
             this.gme.completeTransaction('board updated');
-        } else {
-            this.setState({phase: 'overview'});
         }
+        this.setState({phase: 'overview'});
     }
 
     addCondition() {

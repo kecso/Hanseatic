@@ -24,7 +24,7 @@ export default class EditTile extends React.Component {
             position: false,
             positionX: 0,
             positionY: 0,
-            isVisible: true
+            isVisible: this.props.isVisible
         };
     }
 
@@ -70,6 +70,20 @@ export default class EditTile extends React.Component {
 
     onMouseLeave(event) {
         this.setState({position: false, resize: false, positionX: 0, positionY: 0});
+    }
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            x: nextProps.x,
+            y: nextProps.y,
+            width: nextProps.width,
+            height: nextProps.height,
+            resize: false,
+            position: false,
+            positionX: 0,
+            positionY: 0,
+            isVisible: nextProps.isVisible
+        });
     }
 
     render() {
