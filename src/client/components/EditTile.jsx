@@ -78,13 +78,14 @@ export default class EditTile extends React.Component {
                         onMouseUp={this.onMouseUp} onMouseLeave={this.onMouseLeave} onMouseMove={this.onMouseMove}>
                 <rect height={this.state.height} width={this.state.width} x="0" y="0" stroke={this.props.color}
                       fill="none"/>
-                <rect height="10" width="10" x="0" y="0" fill={this.props.color}/>
-                <rect height="10" width="10" x={this.state.width-10} y={this.state.height-10} fill={this.props.color}/>
-                <text x={this.state.width/2} y={this.state.height/2} textAnchor="middle">{this.props.position}</text>
-                <image height="10" xlinkHref="/icons/si-glyph-arrow-move.svg"
-                       width="10" x="0" y="0" onMouseDown={this.startMove}/>
-                <image height="10" xlinkHref="/icons/si-glyph-arrow-resize-2.svg" width="10" x={this.state.width-10}
-                       y={this.state.height-10} onMouseDown={this.startResize} fill={this.props.color}/>
+                <rect height="20" width="20" x="0" y="0" fill={this.props.color}/>
+                <rect height="20" width="20" x={this.state.width-20} y={this.state.height-20} fill={this.props.color}/>
+                <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
+                      textAnchor="middle">{this.props.position}</text>
+                <image height="20" xlinkHref="/icons/si-glyph-arrow-move.svg"
+                       width="20" x="0" y="0" onMouseDown={this.startMove}/>
+                <image height="20" xlinkHref="/icons/si-glyph-arrow-resize-2.svg" width="20" x={this.state.width-20}
+                       y={this.state.height-20} onMouseDown={this.startResize} fill={this.props.color}/>
             </svg>;
 
         } else {

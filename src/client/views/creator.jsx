@@ -3,9 +3,6 @@
  * @author kecso / https://github.com/kecso
  */
 
-/*
- board:[''/'p1'/'p2'...]
- */
 import React from 'react';
 import BoardEditView from './boardedit.jsx';
 import ScriptEditView from './scriptedit.jsx';
