@@ -4,8 +4,8 @@
  */
 
 import React from 'react';
-import BoardEditView from './boardedit.jsx';
-import ScriptEditView from './scriptedit.jsx';
+import BoardEditComponent from './../components/boardedit.jsx';
+import ScriptEditComponent from './../components/scriptedit.jsx';
 
 export default class CreatorView extends React.Component {
     constructor(props) {
@@ -17,11 +17,9 @@ export default class CreatorView extends React.Component {
         this.updateScript = this.updateScript.bind(this);
         this.editBoard = this.editBoard.bind(this);
         this.finishBoardEdit = this.finishBoardEdit.bind(this);
-        this.editTask = this.editTask.bind(this);
-        this.removeTask = this.removeTask.bind(this);
+        this.editScript = this.editScript.bind(this);
+        this.removeScript = this.removeScript.bind(this);
         this.addTask = this.addTask.bind(this);
-        this.editCondition = this.editCondition.bind(this);
-        this.removeCondition = this.removeCondition.bind(this);
         this.addCondition = this.addCondition.bind(this);
 
         this.projectUpdated = this.projectUpdated.bind(this);
@@ -130,9 +128,20 @@ export default class CreatorView extends React.Component {
         return tiles;
     }
 
+    editScript(event) {
+        this.setState({phase: 'editScript', target: event.currentTarget.getAttribute('id')});
+    }
+
+    removeScript(event) {
+        this.gme.delMoreNodes([event.currentTarget.getAttribute('id')], 'remove task');
+    }
+
     updateScript(updateObject) {
         if (updateObject) {
-
+            this.gme.startTransaction('update script holder object');
+            this.gme.setAttributes(updateObject.id, 'name', updateObject.name);
+            this.gme.setAttributes(updateObject.id, 'script', updateObject.code);
+            this.gme.completeTransaction('finished script update');
         }
 
         this.setState({phase: 'overview', target: null});
@@ -181,98 +190,43 @@ export default class CreatorView extends React.Component {
     }
 
     addCondition() {
-        var key = 'cond_' + Math.round(Math.random() * 100000), //this will be a result of node creation
-            state = this.state;
+        var baseId = this.getMetaId('Condition'),
+            params = {parentId: this.state.conditionContainer},
+            result;
 
-        state.conditions.push(key);
-        state.nodes[key] = {};
-        state.phase = 'editScript';
-        state.target = key;
-
-        this.setState(state);
-    }
-
-    editCondition(event) {
-        var key = event.currentTarget.getAttribute('id'),
-            state = this.state;
-
-        if (state.phase === 'overview') {
-            state.phase = 'editScript';
-            state.target = key;
-
-            this.setState(state);
-        }
-    }
-
-    removeCondition(event) {
-        var key = event.currentTarget.getAttribute('id'),
-            state = this.state;
-
-        if (this.state.phase === 'overview' && typeof key === 'string') {
-            if (state.nodes[key]) {
-                delete state.nodes[key];
-            }
-            if (state.conditions.indexOf[key] !== -1) {
-                state.conditions.splice(state.conditions.indexOf(key), 1);
-            }
-            this.setState(state);
+        params[baseId] = {};
+        result = this.gme.createChildren(params, 'adding new condition');
+        result = result[baseId];
+        if (result) {
+            this.setState({phase: 'editScript', target: result});
         }
     }
 
     addTask() {
-        var key = 'ketto_' + Math.round(Math.random() * 100000), //this will be a result of node creation
-            state = this.state;
+        var baseId = this.getMetaId('Task'),
+            params = {parentId: this.state.taskContainer},
+            result;
 
-        state.tasks.push(key);
-        state.nodes[key] = {};
-        state.phase = 'editScript';
-        state.target = key;
-
-        this.setState(state);
-    }
-
-    editTask(event) {
-        var key = event.currentTarget.getAttribute('id'),
-            state = this.state;
-
-        if (state.phase === 'overview') {
-            state.phase = 'editScript';
-            state.target = key;
-
-            this.setState(state);
+        params[baseId] = {};
+        result = this.gme.createChildren(params, 'adding new task');
+        result = result[baseId];
+        if (result) {
+            this.setState({phase: 'editScript', target: result});
         }
-    }
 
-    removeTask(event) {
-        var key = event.currentTarget.getAttribute('id'),
-            state = this.state;
-
-        if (this.state.phase === 'overview' && typeof key === 'string') {
-            console.log('we will remove from the model as well');
-            if (state.nodes[key]) {
-                delete state.nodes[key];
-            }
-            if (state.tasks.indexOf[key] !== -1) {
-                state.tasks.splice(state.tasks.indexOf(key), 1);
-            }
-            this.setState(state);
-        }
-    }
-
-    test(event) {
-        console.log('klikk', event);
     }
 
     render() {
         switch (this.state.phase) {
             case 'editScript':
-                return <ScriptEditView id={this.state.target}
-                                       name={this.props.core.getAttribute(this.state.nodes[this.state.target],'name')}
-                                       code={this.props.core.getAttribute(this.state.nodes[this.state.target],'script')}
-                                       update={this.updateScript}/>;
+                var node = this.gme.getNode(this.state.target);
+                return <ScriptEditComponent id={this.state.target}
+                                            name={node.getAttribute('name')}
+                                            code={node.getAttribute('script')}
+                                            update={this.updateScript}/>;
             case 'editBoard':
-                return <BoardEditView tiles={this.getTileInformation()}
-                                      picture={this.getBoardPicture()} update={this.finishBoardEdit}/>;
+                return <BoardEditComponent tiles={this.getTileInformation()}
+                                           picture={this.getBoardPicture()} update={this.finishBoardEdit}/>;
             default:
                 var tasksToEdit = [],
                     tasksToRemove = [],
@@ -281,15 +235,17 @@ export default class CreatorView extends React.Component {
                     conditionsToRemove = [],
                     conditionDropdowns = [],
                     i, btnClass,
-                    item;
+                    id, item;
+
                 //tasks
                 for (i = 0; i < this.state.tasks.length; i += 1) {
-                    item = this.state.tasks[i];
-                    tasksToEdit.push(<li key={item} id={item} onClick={this.editTask}>
-                        <a>{this.props.core.getAttribute(this.state.nodes[item], 'name')}</a>
+                    id = this.state.tasks[i];
+                    item = this.gme.getNode(id);
+                    tasksToEdit.push(<li key={id} id={id} onClick={this.editScript}>
+                        <a>{item.getAttribute('name')}</a>
                     </li>);
-                    tasksToRemove.push(<li key={item} id={item} onClick={this.removeTask}>
-                        <a>{this.props.core.getAttribute(this.state.nodes[item], 'name')}</a>
+                    tasksToRemove.push(<li key={id} id={id} onClick={this.removeScript}>
+                        <a>{item.getAttribute('name')}</a>
                     </li>);
                 }
                 for (i = 0; i < 2; i += 1) {
@@ -319,12 +275,13 @@ export default class CreatorView extends React.Component {
 
                 //conditions
                 for (i = 0; i < this.state.conditions.length; i += 1) {
-                    item = this.state.conditions[i];
-                    conditionsToEdit.push(<li key={item} id={item} onClick={this.editCondition}>
-                        <a>{this.props.core.getAttribute(this.state.nodes[item], 'name')}</a>
+                    id = this.state.conditions[i];
+                    item = this.gme.getNode(id);
+                    conditionsToEdit.push(<li key={id} id={id} onClick={this.editScript}>
+                        <a>{item.getAttribute('name')}</a>
                     </li>);
-                    conditionsToRemove.push(<li key={item} id={item} onClick={this.removeCondition}>
-                        <a>{this.props.core.getAttribute(this.state.nodes[item], 'name')}</a>
+                    conditionsToRemove.push(<li key={id} id={id} onClick={this.removeScript}>
+                        <a>{item.getAttribute('name')}</a>
                     </li>);
                 }
                 for (i = 0; i < 2; i += 1) {

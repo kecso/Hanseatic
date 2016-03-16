@@ -3,12 +3,9 @@
  * @author kecso / https://github.com/kecso
  */
 
-/*
- board:[''/'p1'/'p2'...]
- */
 import React from 'react';
 
-export default class ScriptEditView extends React.Component {
+export default class ScriptEditComponent extends React.Component {
     constructor(props) {
 
         super(props);
@@ -44,6 +41,13 @@ export default class ScriptEditView extends React.Component {
         this.setState({name: event.target.value});
     }
 
+    componentWillReceiveProps(nextProps) {
+        this.setState({
+            name: nextProps.name,
+            code: nextProps.code
+        });
+    }
+
     render() {
         var options = {
             mode: "javascript",
@@ -63,7 +67,7 @@ export default class ScriptEditView extends React.Component {
     }
 
 }
-ScriptEditView.propTypes = {
+ScriptEditComponent.propTypes = {
     id: React.PropTypes.string.isRequired,
     name: React.PropTypes.string.isRequired,
     code: React.PropTypes.string.isRequired,

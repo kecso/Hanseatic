@@ -3,9 +3,9 @@
  * @author kecso / https://github.com/kecso
  */
 import React from 'react';
-import EditTile from '../components/EditTile.jsx';
+import TileEditComponent from './tileedit.jsx';
 
-export default class BoardEditView extends React.Component {
+export default class BoardEditComponent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -22,8 +22,13 @@ export default class BoardEditView extends React.Component {
     }
 
     tileUpdated(tileNewProps) {
-        var tiles = this.state.tiles;
-        tiles[tileNewProps.position] = tileNewProps;
+        var tiles = this.state.tiles,
+            i;
+        for (i = 0; i < tiles.length; i += 1) {
+            if (tiles[i].position === tileNewProps.position) {
+                tiles[i] = tileNewProps;
+            }
+        }
         this.setState({tiles: tiles});
     }
 
@@ -79,9 +84,10 @@ export default class BoardEditView extends React.Component {
         for (i = 0; i < this.state.tiles.length; i += 1) {
             tile = this.state.tiles[i];
             console.log('tile', tile.x, tile.y);
-            tiles.push(<EditTile id={tile.id || ""} key={tile.id || ""} x={tile.x} y={tile.y} position={tile.position}
-                                 width={tile.width} height={tile.height} shape={tile.shape} color={tile.color}
-                                 isVisible={tile.isVisible} update={this.tileUpdated}/>);
+            tiles.push(<TileEditComponent id={tile.id || ""} key={tile.position} x={tile.x} y={tile.y}
+                                          position={tile.position} width={tile.width} height={tile.height}
+                                          shape={tile.shape} color={tile.color} isVisible={tile.isVisible}
+                                          update={this.tileUpdated}/>);
         }
         return <div>
             <div>
@@ -99,7 +105,7 @@ export default class BoardEditView extends React.Component {
 
 }
 
-BoardEditView.propTypes = {
+BoardEditComponent.propTypes = {
     tiles: React.PropTypes.array.isRequired,
     picture: React.PropTypes.string.isRequired,
     update: React.PropTypes.func.isRequired

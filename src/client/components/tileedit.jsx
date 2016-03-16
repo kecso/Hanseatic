@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-export default class EditTile extends React.Component {
+export default class TileEditComponent extends React.Component {
     constructor(props) {
         super(props);
 
@@ -109,7 +109,7 @@ export default class EditTile extends React.Component {
     }
 }
 
-EditTile.propTypes = {
+TileEditComponent.propTypes = {
     id: React.PropTypes.string.isRequired,
     x: React.PropTypes.number.isRequired,
     y: React.PropTypes.number.isRequired,
