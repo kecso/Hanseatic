@@ -26,6 +26,8 @@ export default class CreatorView extends React.Component {
         this.getMetaId = this.getMetaId.bind(this);
         this.getBoardPicture = this.getBoardPicture.bind(this);
         this.getTileInformation = this.getTileInformation.bind(this);
+        this.getNumOfPlayers = this.getNumOfPlayers.bind(this);
+        this.addPlayer = this.addPlayer.bind(this);
 
         this.state = {
             target: null,
@@ -128,6 +130,53 @@ export default class CreatorView extends React.Component {
         return tiles;
     }
 
+    addPlayer() {
+        var baseId = this.getMetaId('Player'),
+            params = {parentId: '/W'},
+            result,
+            currentActivePlayer,
+            gameNode = this.gme.getNode('/W'),
+            numSoFar = this.getNumOfPlayers();
+
+        params[baseId] = {};
+
+        this.gme.startTransaction('addingNewPlayer');
+        result = this.gme.createChildren(params);
+        result = result[baseId];
+        result = this.gme.getNode(result);
+        if (result) {
+            currentActivePlayer = this.gme.getNode(gameNode.getPointer('activePlayer').to);
+            if (currentActivePlayer) {
+                this.gme.makePointer(result.getId(), 'next', currentActivePlayer.getPointer('next').to);
+                this.gme.makePointer(currentActivePlayer.getId(), 'next', result.getId());
+            } else {
+                this.gme.makePointer(result.getId(), 'next', result.getId());
+            }
+            this.gme.makePointer('/W', 'activePlayer', result.getId());
+            this.gme.setAttributes(result.getId(), 'name', 'Player' + (numSoFar + 1));
+        }
+        this.gme.completeTransaction('addingNewPlayerFinished');
+    }
+
+    getNumOfPlayers() {
+        var playerIds = [],
+            gameNode = this.gme.getNode('/W'),
+            player = gameNode === null ? null : this.gme.getNode(gameNode.getPointer('activePlayer').to),
+            notFinished = true;
+
+        while (player && notFinished) {
+            if (playerIds.indexOf(player.getId()) === -1) {
+                playerIds.push(player.getId());
+                player = this.gme.getNode(player.getPointer('next').to);
+            } else {
+                notFinished = false;
+            }
+        }
+
+        return playerIds.length;
+    }
+
+    //script
     editScript(event) {
         this.setState({phase: 'editScript', target: event.currentTarget.getAttribute('id')});
     }
@@ -147,6 +196,7 @@ export default class CreatorView extends React.Component {
         this.setState({phase: 'overview', target: null});
     }
 
+    //board
     editBoard() {
         this.setState({phase: 'editBoard'});
     }
@@ -189,6 +239,7 @@ export default class CreatorView extends React.Component {
         this.setState({phase: 'overview'});
     }
 
+    //condition
     addCondition() {
         var baseId = this.getMetaId('Condition'),
             params = {parentId: this.state.conditionContainer},
@@ -202,6 +253,7 @@ export default class CreatorView extends React.Component {
         }
     }
 
+    //task
     addTask() {
         var baseId = this.getMetaId('Task'),
             params = {parentId: this.state.taskContainer},
@@ -226,7 +278,8 @@ export default class CreatorView extends React.Component {
                                             update={this.updateScript}/>;
             case 'editBoard':
                 return <BoardEditComponent tiles={this.getTileInformation()}
-                                           picture={this.getBoardPicture()} update={this.finishBoardEdit}/>;
+                                           picture={this.getBoardPicture()} update={this.finishBoardEdit}
+                                           gmeClient={this.gme}/>;
             default:
                 var tasksToEdit = [],
                     tasksToRemove = [],
@@ -311,6 +364,9 @@ export default class CreatorView extends React.Component {
 
                 return <div className="col-sm-6">
                     <button className="btn btn-default btn-lg" onClick={this.editBoard}>EditBoard</button>
+                    <button className="btn btn-default btn-lg" onClick={this.addPlayer}>
+                        AddPlayer <span className="badge">{this.getNumOfPlayers()}</span>
+                    </button>
                     <br/>
                     <div className="btn btn-group" role="group">
                         <button type="button" className="btn btn-default" onClick={this.addTask}>

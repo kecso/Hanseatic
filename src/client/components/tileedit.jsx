@@ -14,6 +14,8 @@ export default class TileEditComponent extends React.Component {
         this.onMouseUp = this.onMouseUp.bind(this);
         this.onMouseMove = this.onMouseMove.bind(this);
         this.onMouseLeave = this.onMouseLeave.bind(this);
+        this.startPieceMgmnt = this.startPieceMgmnt.bind(this);
+        this.changeVisibility = this.changeVisibility.bind(this);
 
         this.state = {
             x: this.props.x,
@@ -72,6 +74,24 @@ export default class TileEditComponent extends React.Component {
         this.setState({position: false, resize: false, positionX: 0, positionY: 0});
     }
 
+    startPieceMgmnt(/*event*/) {
+        this.props.pieceManagement(this.props.id);
+    }
+
+    changeVisibility() {
+        this.props.update({
+            id: this.props.id,
+            x: this.state.x,
+            y: this.state.y,
+            position: this.props.position,
+            width: this.state.width,
+            height: this.state.height,
+            shape: this.props.shape,
+            color: this.props.color,
+            isVisible: this.state.isVisible !== true
+        });
+    }
+
     componentWillReceiveProps(nextProps) {
         this.setState({
             x: nextProps.x,
@@ -93,11 +113,16 @@ export default class TileEditComponent extends React.Component {
                 <rect height={this.state.height} width={this.state.width} x="0" y="0" stroke={this.props.color}
                       fill="none"/>
                 <rect height="20" width="20" x="0" y="0" fill={this.props.color}/>
+                <rect height="20" width="20" x="40" y="0" fill={this.props.color}/>
                 <rect height="20" width="20" x={this.state.width-20} y={this.state.height-20} fill={this.props.color}/>
                 <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
                       textAnchor="middle">{this.props.position}</text>
                 <image height="20" xlinkHref="/icons/si-glyph-arrow-move.svg"
                        width="20" x="0" y="0" onMouseDown={this.startMove}/>
+                <image height="20" xlinkHref="/icons/si-glyph-android.svg"
+                       width="20" x="20" y="0" onMouseDown={this.startPieceMgmnt}/>
+                <image height="20" xlinkHref="/icons/si-glyph-feather.svg"
+                       width="20" x="40" y="0" onMouseDown={this.changeVisibility}/>
                 <image height="20" xlinkHref="/icons/si-glyph-arrow-resize-2.svg" width="20" x={this.state.width-20}
                        y={this.state.height-20} onMouseDown={this.startResize} fill={this.props.color}/>
             </svg>;
@@ -118,6 +143,7 @@ TileEditComponent.propTypes = {
     height: React.PropTypes.number.isRequired,
     shape: React.PropTypes.string.isRequired,
     color: React.PropTypes.string.isRequired,
+    isVisible: React.PropTypes.bool.isRequired,
     update: React.PropTypes.func.isRequired,
-    isVisible: React.PropTypes.bool.isRequired
+    pieceManagement: React.PropTypes.func.isRequired
 };

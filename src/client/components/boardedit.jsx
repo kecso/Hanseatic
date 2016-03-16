@@ -4,6 +4,7 @@
  */
 import React from 'react';
 import TileEditComponent from './tileedit.jsx';
+import PieceManagementComponent from './piecemanager.jsx';
 
 export default class BoardEditComponent extends React.Component {
     constructor(props) {
@@ -14,8 +15,12 @@ export default class BoardEditComponent extends React.Component {
         this.save = this.save.bind(this);
         this.cancel = this.cancel.bind(this);
         this.setBack = this.setBack.bind(this);
+        this.pieceMgmnt = this.pieceMgmnt.bind(this);
+        this.finishPieceManagement = this.finishPieceManagement.bind(this);
 
         this.state = {
+            phase: 'overview',
+            target: null,
             tiles: this.props.tiles,
             picture: this.props.picture
         }
@@ -40,6 +45,8 @@ export default class BoardEditComponent extends React.Component {
                 state.tiles[i].id = null;
             }
         }
+        delete state.phase;
+        delete state.target;
         this.props.update(state);
     }
 
@@ -69,6 +76,14 @@ export default class BoardEditComponent extends React.Component {
         this.setState({tiles: tiles});
     }
 
+    pieceMgmnt(tileId) {
+        this.setState({phase: 'pieceManagement', target: tileId});
+    }
+
+    finishPieceManagement() {
+        this.setState({phase: 'overview', target: null});
+    }
+
     componentWillReceiveProps(nextProps) {
         this.setState({
             tiles: nextProps.tiles,
@@ -81,13 +96,18 @@ export default class BoardEditComponent extends React.Component {
             i,
             tile;
 
+        if (this.state.phase === 'pieceManagement') {
+            return <PieceManagementComponent id={this.state.target} gmeClient={this.props.gmeClient}
+                                             onFinish={this.finishPieceManagement}/>;
+        }
+
         for (i = 0; i < this.state.tiles.length; i += 1) {
             tile = this.state.tiles[i];
             console.log('tile', tile.x, tile.y);
             tiles.push(<TileEditComponent id={tile.id || ""} key={tile.position} x={tile.x} y={tile.y}
                                           position={tile.position} width={tile.width} height={tile.height}
                                           shape={tile.shape} color={tile.color} isVisible={tile.isVisible}
-                                          update={this.tileUpdated}/>);
+                                          update={this.tileUpdated} pieceManagement={this.pieceMgmnt}/>);
         }
         return <div>
             <div>
@@ -108,5 +128,6 @@ export default class BoardEditComponent extends React.Component {
 BoardEditComponent.propTypes = {
     tiles: React.PropTypes.array.isRequired,
     picture: React.PropTypes.string.isRequired,
-    update: React.PropTypes.func.isRequired
+    update: React.PropTypes.func.isRequired,
+    gmeClient: React.PropTypes.object.isRequired
 };
