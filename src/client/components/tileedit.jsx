@@ -126,7 +126,7 @@ export default class TileEditComponent extends React.Component {
                 {text}
                 <image height="20" xlinkHref="/icons/si-glyph-arrow-move.svg"
                        width="20" x="0" y="0" onMouseDown={this.startMove}/>
-                <image height="20" xlinkHref="/icons/si-glyph-android.svg"
+                <image height="20" xlinkHref="/icons/tribal_bunny.svg"
                        width="20" x="20" y="0" onMouseDown={this.startPieceMgmnt}/>
                 <image height="20" xlinkHref="/icons/si-glyph-feather.svg"
                        width="20" x="40" y="0" onMouseDown={this.changeVisibility}/>

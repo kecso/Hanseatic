@@ -6,6 +6,7 @@
 
 var express = require('express'),
     router = express.Router(),
+    FS = require('fs'),
     bodyParser = require('body-parser'),
     Q = require('q');
 
@@ -67,6 +68,14 @@ function initialize(middlewareOpts) {
             }
         });
     });
+
+    router.get('/lists', function (req, res) {
+        var lists = {pieces: [], boards: []};
+        lists.boards = FS.readdirSync(__dirname + '/../../public/boards');
+        lists.pieces = FS.readdirSync(__dirname + '/../../public/pieces');
+        res.status(200).json(lists);
+    });
+
     router.post('/login', function (req, res) {
         middlewareOpts.gmeAuth.authenticateUserById(
             req.body.username,
@@ -90,7 +99,7 @@ function initialize(middlewareOpts) {
     });
 
     router.post('/register', function (req, res) {
-        console.log('coming over',req.body);
+        console.log('coming over', req.body);
         Q.ninvoke(middlewareOpts.gmeAuth, 'addUser', req.body.username, req.body.email, req.body.password, true, {})
             .then(function () {
                 return Q.ninvoke(middlewareOpts.gmeAuth, 'addUserToOrganization', req.body.username, 'startingGames');
@@ -101,7 +110,7 @@ function initialize(middlewareOpts) {
             .then(function () {
                 return Q.ninvoke(middlewareOpts.gmeAuth, 'addUserToOrganization', req.body.username, 'archiveGames');
             })
-            .then(function(){
+            .then(function () {
                 res.sendStatus(200);
             })
             .catch(function (err) {

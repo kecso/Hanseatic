@@ -128,6 +128,5 @@ export default class BoardEditComponent extends React.Component {
 BoardEditComponent.propTypes = {
     tiles: React.PropTypes.array.isRequired,
     picture: React.PropTypes.string.isRequired,
-    update: React.PropTypes.func.isRequired,
-    gmeClient: React.PropTypes.object.isRequired
+    update: React.PropTypes.func.isRequired
 };

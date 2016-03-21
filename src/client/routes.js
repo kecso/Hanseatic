@@ -101,6 +101,16 @@ module.exports = Backbone.Router.extend({
         self.game.initialize(callback);
     },
 
+    __collectsLists: function (callback) {
+        $.getJSON('/rest/external/hanseatic/lists', null, function (response, status) {
+            if (status === 'success') {
+                callback(null, response);
+            } else {
+                callback(new Error('cannot get lists:', status));
+            }
+        });
+    },
+
     _landing: function () {
         ReactDOM.render(<LandingView router={this} dispatcher={this.app}/>, document.getElementById('mainDiv'));
     },
@@ -158,7 +168,10 @@ module.exports = Backbone.Router.extend({
                 return Q.nfcall(self.__openProject, 'Demo3_001');
             })
             .then(function () {
-                ReactDOM.render(<CreatorView client={self.hanseaticClient}/>,
+                return Q.nfcall(self.__collectsLists);
+            })
+            .then(function (lists) {
+                ReactDOM.render(<CreatorView client={self.hanseaticClient} lists={lists}/>,
                     document.getElementById('mainDiv'));
             })
             .catch(function (err) {

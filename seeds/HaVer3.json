@@ -1,0 +1,1046 @@
+{
+    "_metadata": {
+        "type": "project",
+        "rootGuid": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+        "hasAssets": false
+    },
+    "root": {
+        "path": "",
+        "guid": "03d36072-9e09-7866-cb4e-d0a36ff825f6"
+    },
+    "containment": {
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": {
+            "9292f388-fa0c-16c7-9394-81fdb965f424": {}
+        },
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": {
+            "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": {},
+            "173eae9a-e8f7-a0cc-f886-156a1082db54": {},
+            "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": {},
+            "2ae59976-6f36-726a-c1e8-479e6b18f9b7": {},
+            "392b8725-5e78-6f25-2aad-80858525a3c0": {},
+            "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": {},
+            "645b54cb-cdfe-51b2-f332-aa60af5758d7": {
+                "23fc6de9-e67d-76ff-1866-5991caf3a57d": {},
+                "6061cd2b-5e73-09d6-e691-94ef3524638e": {},
+                "c383dd1d-500c-2819-5143-f41be7e14239": {}
+            },
+            "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": {},
+            "6e5fb3b4-fa42-8108-f141-6f11c9fab183": {},
+            "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": {},
+            "cc92a5a1-44e9-bd01-4b40-4e390a61f796": {},
+            "dfd037f0-09c7-7264-88de-521c01d5fb2a": {},
+            "fe3445de-6941-6faf-a7f6-39a357b58315": {}
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {}
+    },
+    "bases": {},
+    "nodes": {
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": {
+            "attributes": {
+                "name": "ROOT"
+            },
+            "base": null,
+            "meta": {
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": null,
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "MetaSheets": [
+                    {
+                        "SetID": "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d",
+                        "order": 0,
+                        "title": "META"
+                    },
+                    {
+                        "SetID": "MetaAspectSet_289ad86c-6666-aa8c-e386-334845ec5656",
+                        "order": 1,
+                        "title": "Basic"
+                    }
+                ],
+                "ProjectRegistry": {
+                    "FCO_ID": "/1"
+                },
+                "usedAddOns": "",
+                "validDecorators": "ModelDecorator CircleDecorator MetaDecorator SVGDecorator UMLStateMachineDecorator DefaultDecorator",
+                "validPlugins": "",
+                "validVisualizers": "ModelEditor METAAspect"
+            },
+            "sets": {
+                "MetaAspectSet": [
+                    {
+                        "attributes": {},
+                        "guid": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "registry": {
+                            "position": {
+                                "x": 567,
+                                "y": 82
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "registry": {
+                            "position": {
+                                "x": 814,
+                                "y": 117
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                        "registry": {
+                            "position": {
+                                "x": 614,
+                                "y": 180
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "2ae59976-6f36-726a-c1e8-479e6b18f9b7",
+                        "registry": {
+                            "position": {
+                                "x": 751,
+                                "y": 345
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "392b8725-5e78-6f25-2aad-80858525a3c0",
+                        "registry": {
+                            "position": {
+                                "x": 582,
+                                "y": 336
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd",
+                        "registry": {
+                            "position": {
+                                "x": 704,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+                        "registry": {
+                            "position": {
+                                "x": 210,
+                                "y": 69
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "registry": {
+                            "position": {
+                                "x": 404,
+                                "y": 205
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+                        "registry": {
+                            "position": {
+                                "x": 814,
+                                "y": 197
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+                        "registry": {
+                            "position": {
+                                "x": 401,
+                                "y": 316
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+                        "registry": {
+                            "position": {
+                                "x": 44,
+                                "y": 240
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "registry": {
+                            "position": {
+                                "x": 104,
+                                "y": 165
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 100,
+                                "y": 100
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                        "registry": {
+                            "position": {
+                                "x": 391,
+                                "y": 454
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "fe3445de-6941-6faf-a7f6-39a357b58315",
+                        "registry": {
+                            "position": {
+                                "x": 703,
+                                "y": 88
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_289ad86c-6666-aa8c-e386-334845ec5656": [
+                    {
+                        "attributes": {},
+                        "guid": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "registry": {
+                            "position": {
+                                "x": 576,
+                                "y": 88
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "registry": {
+                            "position": {
+                                "x": 809,
+                                "y": 93
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                        "registry": {
+                            "position": {
+                                "x": 576,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "2ae59976-6f36-726a-c1e8-479e6b18f9b7",
+                        "registry": {
+                            "position": {
+                                "x": 751,
+                                "y": 345
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "392b8725-5e78-6f25-2aad-80858525a3c0",
+                        "registry": {
+                            "position": {
+                                "x": 582,
+                                "y": 336
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd",
+                        "registry": {
+                            "position": {
+                                "x": 704,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+                        "registry": {
+                            "position": {
+                                "x": 279,
+                                "y": 69
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "registry": {
+                            "position": {
+                                "x": 404,
+                                "y": 205
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+                        "registry": {
+                            "position": {
+                                "x": 810,
+                                "y": 192
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+                        "registry": {
+                            "position": {
+                                "x": 401,
+                                "y": 316
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "registry": {
+                            "position": {
+                                "x": 279,
+                                "y": 192
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                        "registry": {
+                            "position": {
+                                "x": 391,
+                                "y": 454
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "fe3445de-6941-6faf-a7f6-39a357b58315",
+                        "registry": {
+                            "position": {
+                                "x": 703,
+                                "y": 88
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d": [
+                    {
+                        "attributes": {},
+                        "guid": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+                        "registry": {
+                            "position": {
+                                "x": 44,
+                                "y": 240
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 38,
+                                "y": 99
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": {
+            "attributes": {
+                "name": "Tasks"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 538,
+                    "y": 308
+                }
+            },
+            "sets": {}
+        },
+        "173eae9a-e8f7-a0cc-f886-156a1082db54": {
+            "attributes": {
+                "name": "Functions"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": {
+            "attributes": {
+                "name": "Task"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "pointers": {
+                    "premise": {
+                        "items": [
+                            "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "premise": null
+            },
+            "registry": {
+                "position": {
+                    "x": 321,
+                    "y": 375
+                }
+            },
+            "sets": {}
+        },
+        "23fc6de9-e67d-76ff-1866-5991caf3a57d": {
+            "attributes": {},
+            "base": "fe3445de-6941-6faf-a7f6-39a357b58315",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "fe3445de-6941-6faf-a7f6-39a357b58315"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 111
+                }
+            },
+            "sets": {}
+        },
+        "2ae59976-6f36-726a-c1e8-479e6b18f9b7": {
+            "attributes": {
+                "description": "",
+                "name": "Script",
+                "script": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "script": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "392b8725-5e78-6f25-2aad-80858525a3c0": {
+            "attributes": {
+                "name": "CanHaveTasks"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "pointers": {
+                    "possibleTasks": {
+                        "items": [
+                            "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            -1
+                        ]
+                    }
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 511,
+                    "y": 131
+                }
+            },
+            "sets": {
+                "possibleTasks": []
+            }
+        },
+        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": {
+            "attributes": {
+                "name": "Condition"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 391,
+                    "y": 118
+                }
+            },
+            "sets": {}
+        },
+        "6061cd2b-5e73-09d6-e691-94ef3524638e": {
+            "attributes": {},
+            "base": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 157
+                }
+            },
+            "sets": {}
+        },
+        "645b54cb-cdfe-51b2-f332-aa60af5758d7": {
+            "attributes": {
+                "isOver": false,
+                "name": "Game"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "fe3445de-6941-6faf-a7f6-39a357b58315"
+                    ],
+                    "minItems": [
+                        1,
+                        1,
+                        1,
+                        -1,
+                        1
+                    ],
+                    "maxItems": [
+                        1,
+                        1,
+                        1,
+                        -1,
+                        1
+                    ]
+                },
+                "attributes": {
+                    "isOver": {
+                        "type": "boolean"
+                    }
+                },
+                "pointers": {
+                    "activePlayer": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "activePlayer": null,
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 332,
+                    "y": 228
+                }
+            },
+            "sets": {}
+        },
+        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": {
+            "attributes": {
+                "name": "Board",
+                "picture": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 600,
+                    "y": 67
+                }
+            },
+            "sets": {}
+        },
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": {
+            "attributes": {
+                "name": "TheGame"
+            },
+            "base": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "meta": {},
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": "645b54cb-cdfe-51b2-f332-aa60af5758d7"
+            },
+            "registry": {
+                "position": {
+                    "x": 339,
+                    "y": 197
+                }
+            },
+            "sets": {}
+        },
+        "6e5fb3b4-fa42-8108-f141-6f11c9fab183": {
+            "attributes": {
+                "name": "Function"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "9292f388-fa0c-16c7-9394-81fdb965f424": {
+            "attributes": {},
+            "base": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "173eae9a-e8f7-a0cc-f886-156a1082db54"
+            },
+            "registry": {
+                "position": {
+                    "x": 89,
+                    "y": 206
+                }
+            },
+            "sets": {}
+        },
+        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": {
+            "attributes": {
+                "coordinate": 0,
+                "isVisible": true,
+                "name": "Tile"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "dfd037f0-09c7-7264-88de-521c01d5fb2a"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "isVisible": {
+                        "type": "boolean"
+                    },
+                    "coordinate": {
+                        "type": "integer"
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 620,
+                    "y": 350
+                }
+            },
+            "sets": {}
+        },
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": {
+            "attributes": {
+                "name": "Language"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 44,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "c383dd1d-500c-2819-5143-f41be7e14239": {
+            "attributes": {},
+            "base": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 62
+                }
+            },
+            "sets": {}
+        },
+        "cc92a5a1-44e9-bd01-4b40-4e390a61f796": {
+            "attributes": {
+                "id": "",
+                "isWinning": false,
+                "name": "Player"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "isWinning": {
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "pointers": {
+                    "next": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    },
+                    "possibleTasks": {
+                        "items": [],
+                        "minItems": [],
+                        "maxItems": []
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "next": null
+            },
+            "registry": {
+                "position": {
+                    "x": 713,
+                    "y": 201
+                }
+            },
+            "sets": {
+                "possibleTasks": []
+            }
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {
+            "attributes": {
+                "name": "FCO"
+            },
+            "base": null,
+            "meta": {
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "DisplayFormat": "$name",
+                "PortSVGIcon": "",
+                "SVGIcon": "",
+                "decorator": "",
+                "isAbstract": false,
+                "isPort": false,
+                "position": {
+                    "x": 100,
+                    "y": 100
+                },
+                "validVisualizers": "ModelEditor METAAspect SetEditor Crosscut GraphViz"
+            },
+            "sets": {}
+        },
+        "dfd037f0-09c7-7264-88de-521c01d5fb2a": {
+            "attributes": {
+                "name": "Piece",
+                "picture": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "pointers": {
+                    "owner": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "owner": null
+            },
+            "registry": {
+                "position": {
+                    "x": 681,
+                    "y": 164
+                }
+            },
+            "sets": {}
+        },
+        "fe3445de-6941-6faf-a7f6-39a357b58315": {
+            "attributes": {
+                "name": "Conditions"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 448,
+                    "y": 235
+                }
+            },
+            "sets": {}
+        }
+    },
+    "relids": {
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": null,
+        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": "C",
+        "173eae9a-e8f7-a0cc-f886-156a1082db54": "m",
+        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": "e",
+        "23fc6de9-e67d-76ff-1866-5991caf3a57d": "o",
+        "2ae59976-6f36-726a-c1e8-479e6b18f9b7": "5",
+        "392b8725-5e78-6f25-2aad-80858525a3c0": "I",
+        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": "r",
+        "6061cd2b-5e73-09d6-e691-94ef3524638e": "b",
+        "645b54cb-cdfe-51b2-f332-aa60af5758d7": "P",
+        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": "b",
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": "W",
+        "6e5fb3b4-fa42-8108-f141-6f11c9fab183": "c",
+        "9292f388-fa0c-16c7-9394-81fdb965f424": "p",
+        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": "i",
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": "n",
+        "c383dd1d-500c-2819-5143-f41be7e14239": "e",
+        "cc92a5a1-44e9-bd01-4b40-4e390a61f796": "g",
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": "1",
+        "dfd037f0-09c7-7264-88de-521c01d5fb2a": "J",
+        "fe3445de-6941-6faf-a7f6-39a357b58315": "z"
+    },
+    "metaSheets": {}
+}

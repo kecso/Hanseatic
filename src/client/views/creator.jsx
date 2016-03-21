@@ -383,5 +383,6 @@ export default class CreatorView extends React.Component {
 }
 
 CreatorView.propTypes = {
-    client: React.PropTypes.object.isRequired
+    client: React.PropTypes.object.isRequired,
+    lists: React.PropTypes.object.isRequired
 };
