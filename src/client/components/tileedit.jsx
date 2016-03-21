@@ -107,6 +107,14 @@ export default class TileEditComponent extends React.Component {
     }
 
     render() {
+        var text;
+        if (this.state.isVisible) {
+            text = <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
+                         textAnchor="middle">{this.props.position}</text>;
+        } else {
+            text = <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
+                         textAnchor="middle">{'(' + this.props.position + ')'}</text>;
+        }
         if (this.props.shape === 'rect') {
             return <svg height={this.state.height} width={this.state.width} x={this.state.x} y={this.state.y}
                         onMouseUp={this.onMouseUp} onMouseLeave={this.onMouseLeave} onMouseMove={this.onMouseMove}>
@@ -115,8 +123,7 @@ export default class TileEditComponent extends React.Component {
                 <rect height="20" width="20" x="0" y="0" fill={this.props.color}/>
                 <rect height="20" width="20" x="40" y="0" fill={this.props.color}/>
                 <rect height="20" width="20" x={this.state.width-20} y={this.state.height-20} fill={this.props.color}/>
-                <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
-                      textAnchor="middle">{this.props.position}</text>
+                {text}
                 <image height="20" xlinkHref="/icons/si-glyph-arrow-move.svg"
                        width="20" x="0" y="0" onMouseDown={this.startMove}/>
                 <image height="20" xlinkHref="/icons/si-glyph-android.svg"

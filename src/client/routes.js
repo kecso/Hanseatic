@@ -14,6 +14,7 @@ import CreatorView from './views/creator.jsx';
 
 var $ = require('jquery'),
     HanseaticGame = require('./HanseaticGame'),
+    HanseaticClient = require('./helper/hanseaticClient'),
     Q = require('q');
 
 module.exports = Backbone.Router.extend({
@@ -46,6 +47,7 @@ module.exports = Backbone.Router.extend({
         $.getScript('/rest/external/hanseatic/gme', function () {
             setTimeout(function () {
                 self.gme = new GME.classes.Client(GME.gmeConfig);
+                self.hanseaticClient = new HanseaticClient(self.gme);
                 self.gme.connectToDatabase(function () {
                     console.log('gme-connected');
                     self.initialized = true;
@@ -156,7 +158,7 @@ module.exports = Backbone.Router.extend({
                 return Q.nfcall(self.__openProject, 'Demo3_001');
             })
             .then(function () {
-                ReactDOM.render(<CreatorView gmeClient={self.gme}/>,
+                ReactDOM.render(<CreatorView client={self.hanseaticClient}/>,
                     document.getElementById('mainDiv'));
             })
             .catch(function (err) {

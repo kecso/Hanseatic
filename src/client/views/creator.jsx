@@ -6,13 +6,15 @@
 import React from 'react';
 import BoardEditComponent from './../components/boardedit.jsx';
 import ScriptEditComponent from './../components/scriptedit.jsx';
+import TaskAssignerComponent from './../components/taskassigner.jsx';
 
 export default class CreatorView extends React.Component {
     constructor(props) {
+        var UIPattern = {};
 
         super(props);
 
-        this.gme = this.props.gmeClient;
+        this.client = this.props.client;
 
         this.updateScript = this.updateScript.bind(this);
         this.editBoard = this.editBoard.bind(this);
@@ -23,26 +25,28 @@ export default class CreatorView extends React.Component {
         this.addCondition = this.addCondition.bind(this);
 
         this.projectUpdated = this.projectUpdated.bind(this);
-        this.getMetaId = this.getMetaId.bind(this);
         this.getBoardPicture = this.getBoardPicture.bind(this);
         this.getTileInformation = this.getTileInformation.bind(this);
-        this.getNumOfPlayers = this.getNumOfPlayers.bind(this);
         this.addPlayer = this.addPlayer.bind(this);
+        this.taskAssigner = this.taskAssigner.bind(this);
+        this.onFinishTaskAssigner = this.onFinishTaskAssigner.bind(this);
+
+        UIPattern[this.client.gameId] = {children: 3};
 
         this.state = {
             target: null,
             phase: 'overview',
-            board: '/W/e',
-            taskContainer: '/W/b',
+            board: this.client.boardId,
+            taskContainer: this.client.taskContainerId,
             tasks: [],
-            conditionContainer: '/W/o',
+            conditionContainer: this.client.conditionContainerId,
             conditions: [],
             tiles: [],
             pieces: []
         };
 
-        this.gme.addUI(this, this.projectUpdated, 'HanseaticCreator');
-        this.gme.updateTerritory('HanseaticCreator', {'/W': {children: 3}});
+        this.client.addUI(this, this.projectUpdated, 'HanseaticCreator');
+        this.client.updateTerritory('HanseaticCreator', UIPattern);
     }
 
     //gme related functions
@@ -52,21 +56,21 @@ export default class CreatorView extends React.Component {
             node, i;
 
         //build up our collections
-        node = this.gme.getNode(state.taskContainer);
+        node = this.client.getNode(state.taskContainer);
         if (node) {
             state.tasks = node.getChildrenIds();
         } else {
             state.tasks = [];
         }
 
-        node = this.gme.getNode(state.conditionContainer);
+        node = this.client.getNode(state.conditionContainer);
         if (node) {
             state.conditions = node.getChildrenIds();
         } else {
             state.conditions = [];
         }
 
-        node = this.gme.getNode(state.board);
+        node = this.client.getNode(state.board);
         if (node) {
             state.tiles = node.getChildrenIds();
         } else {
@@ -75,7 +79,7 @@ export default class CreatorView extends React.Component {
 
         state.pieces = [];
         for (i = 0; i < state.tiles.length; i += 1) {
-            node = this.gme.getNode(state.tiles[i]);
+            node = this.client.getNode(state.tiles[i]);
             if (node) {
                 _.union(state.pieces, node.getChildrenIds());
             }
@@ -84,20 +88,8 @@ export default class CreatorView extends React.Component {
         this.setState(state);
     }
 
-    getMetaId(name) {
-        var metaNodes = this.gme.getAllMetaNodes(),
-            i;
-        for (i = 0; i < metaNodes.length; i += 1) {
-            if (metaNodes[i].getAttribute('name') === name) {
-                return metaNodes[i].getId();
-            }
-        }
-
-        return null;
-    }
-
     getBoardPicture() {
-        var node = this.gme.getNode(this.state.board);
+        var node = this.client.getNode(this.state.board);
 
         if (node) {
             return node.getAttribute('picture') || "empty.png";
@@ -111,7 +103,7 @@ export default class CreatorView extends React.Component {
             tile, i;
 
         for (i = 0; i < this.state.tiles.length; i += 1) {
-            tile = this.gme.getNode(this.state.tiles[i]);
+            tile = this.client.getNode(this.state.tiles[i]);
             if (tile) {
                 tiles.push({
                     id: this.state.tiles[i],
@@ -131,49 +123,31 @@ export default class CreatorView extends React.Component {
     }
 
     addPlayer() {
-        var baseId = this.getMetaId('Player'),
-            params = {parentId: '/W'},
+        var baseId = this.client.getMetaId('Player'),
+            params = {parentId: this.client.gameId},
             result,
             currentActivePlayer,
-            gameNode = this.gme.getNode('/W'),
-            numSoFar = this.getNumOfPlayers();
+            gameNode = this.client.getGameNode(),
+            numSoFar = this.client.getNumOfPlayers();
 
         params[baseId] = {};
 
-        this.gme.startTransaction('addingNewPlayer');
-        result = this.gme.createChildren(params);
+        this.client.startTransaction('addingNewPlayer');
+        result = this.client.createChildren(params);
         result = result[baseId];
-        result = this.gme.getNode(result);
+        result = this.client.getNode(result);
         if (result) {
-            currentActivePlayer = this.gme.getNode(gameNode.getPointer('activePlayer').to);
+            currentActivePlayer = this.client.getNode(gameNode.getPointer('activePlayer').to);
             if (currentActivePlayer) {
-                this.gme.makePointer(result.getId(), 'next', currentActivePlayer.getPointer('next').to);
-                this.gme.makePointer(currentActivePlayer.getId(), 'next', result.getId());
+                this.client.makePointer(result.getId(), 'next', currentActivePlayer.getPointer('next').to);
+                this.client.makePointer(currentActivePlayer.getId(), 'next', result.getId());
             } else {
-                this.gme.makePointer(result.getId(), 'next', result.getId());
+                this.client.makePointer(result.getId(), 'next', result.getId());
             }
-            this.gme.makePointer('/W', 'activePlayer', result.getId());
-            this.gme.setAttributes(result.getId(), 'name', 'Player' + (numSoFar + 1));
+            this.client.makePointer(this.client.gameId(), 'activePlayer', result.getId());
+            this.client.setAttributes(result.getId(), 'name', 'Player' + (numSoFar + 1));
         }
-        this.gme.completeTransaction('addingNewPlayerFinished');
-    }
-
-    getNumOfPlayers() {
-        var playerIds = [],
-            gameNode = this.gme.getNode('/W'),
-            player = gameNode === null ? null : this.gme.getNode(gameNode.getPointer('activePlayer').to),
-            notFinished = true;
-
-        while (player && notFinished) {
-            if (playerIds.indexOf(player.getId()) === -1) {
-                playerIds.push(player.getId());
-                player = this.gme.getNode(player.getPointer('next').to);
-            } else {
-                notFinished = false;
-            }
-        }
-
-        return playerIds.length;
+        this.client.completeTransaction('addingNewPlayerFinished');
     }
 
     //script
@@ -182,15 +156,19 @@ export default class CreatorView extends React.Component {
     }
 
     removeScript(event) {
-        this.gme.delMoreNodes([event.currentTarget.getAttribute('id')], 'remove task');
+        this.client.delMoreNodes([event.currentTarget.getAttribute('id')], 'remove task');
     }
 
     updateScript(updateObject) {
         if (updateObject) {
-            this.gme.startTransaction('update script holder object');
-            this.gme.setAttributes(updateObject.id, 'name', updateObject.name);
-            this.gme.setAttributes(updateObject.id, 'script', updateObject.code);
-            this.gme.completeTransaction('finished script update');
+            this.client.startTransaction('update script holder object');
+            this.client.setAttributes(updateObject.id, 'name', updateObject.name);
+            this.client.setAttributes(updateObject.id, 'script', updateObject.code);
+            this.client.setAttributes(updateObject.id, 'description', updateObject.description);
+            if (this.state.tasks.indexOf(updateObject.id) !== -1) {
+                this.client.makePointer(updateObject.id, 'premise', updateObject.condition);
+            }
+            this.client.completeTransaction('finished script update');
         }
 
         this.setState({phase: 'overview', target: null});
@@ -203,50 +181,60 @@ export default class CreatorView extends React.Component {
 
     finishBoardEdit(updateObject) {
         var tile,
-            baseId = this.getMetaId('Tile'),
+            baseId = this.client.getMetaId('Tile'),
             params,
             result,
             newTile,
             i;
 
         if (updateObject) {
-            this.gme.startTransaction('updating board');
+            this.client.startTransaction('updating board');
             for (i = 0; i < updateObject.tiles.length; i += 1) {
                 tile = updateObject.tiles[i];
                 if (tile.id === null) {
                     //creating new tile
                     params = {parentId: this.state.board};
                     params[baseId] = {};
-                    result = this.gme.createChildren(params, 'adding new tile');
+                    result = this.client.createChildren(params, 'adding new tile');
                     newTile = result[baseId];
                     if (newTile) {
-                        this.gme.setRegistry(newTile, 'position', {x: tile.x, y: tile.y});
-                        this.gme.setRegistry(newTile, 'measure', {width: tile.width, height: tile.height});
-                        this.gme.setAttributes(newTile, 'isVisible', tile.isVisible === true);
-                        this.gme.setAttributes(newTile, 'coordinate', Number(tile.position));
+                        this.client.setRegistry(newTile, 'position', {x: tile.x, y: tile.y});
+                        this.client.setRegistry(newTile, 'measure', {width: tile.width, height: tile.height});
+                        this.client.setAttributes(newTile, 'isVisible', tile.isVisible === true);
+                        this.client.setAttributes(newTile, 'coordinate', Number(tile.position));
                     }
                 } else {
                     //update tile
-                    this.gme.setRegistry(tile.id, 'position', {x: tile.x, y: tile.y});
-                    this.gme.setRegistry(tile.id, 'measure', {width: tile.width, height: tile.height});
-                    this.gme.setAttributes(tile.id, 'isVisible', tile.isVisible === true);
-                    this.gme.setAttributes(tile.id, 'coordinate', Number(tile.position));
+                    this.client.setRegistry(tile.id, 'position', {x: tile.x, y: tile.y});
+                    this.client.setRegistry(tile.id, 'measure', {width: tile.width, height: tile.height});
+                    this.client.setAttributes(tile.id, 'isVisible', tile.isVisible === true);
+                    this.client.setAttributes(tile.id, 'coordinate', Number(tile.position));
                 }
             }
 
-            this.gme.completeTransaction('board updated');
+            this.client.completeTransaction('board updated');
         }
+        this.setState({phase: 'overview'});
+    }
+
+    //task assignment
+
+    taskAssigner() {
+        this.setState({phase: 'taskAssign'});
+    }
+
+    onFinishTaskAssigner() {
         this.setState({phase: 'overview'});
     }
 
     //condition
     addCondition() {
-        var baseId = this.getMetaId('Condition'),
+        var baseId = this.client.getMetaId('Condition'),
             params = {parentId: this.state.conditionContainer},
             result;
 
         params[baseId] = {};
-        result = this.gme.createChildren(params, 'adding new condition');
+        result = this.client.createChildren(params, 'adding new condition');
         result = result[baseId];
         if (result) {
             this.setState({phase: 'editScript', target: result});
@@ -255,12 +243,12 @@ export default class CreatorView extends React.Component {
 
     //task
     addTask() {
-        var baseId = this.getMetaId('Task'),
+        var baseId = this.client.getMetaId('Task'),
             params = {parentId: this.state.taskContainer},
             result;
 
         params[baseId] = {};
-        result = this.gme.createChildren(params, 'adding new task');
+        result = this.client.createChildren(params, 'adding new task');
         result = result[baseId];
         if (result) {
             this.setState({phase: 'editScript', target: result});
@@ -271,15 +259,21 @@ export default class CreatorView extends React.Component {
     render() {
         switch (this.state.phase) {
             case 'editScript':
-                var node = this.gme.getNode(this.state.target);
+                var node = this.client.getNode(this.state.target);
                 return <ScriptEditComponent id={this.state.target}
                                             name={node.getAttribute('name')}
                                             code={node.getAttribute('script')}
-                                            update={this.updateScript}/>;
+                                            update={this.updateScript}
+                                            hasCondition={this.state.tasks.indexOf(this.state.target) !== -1}
+                                            condition={this.client.getPointerTarget(this.state.target,'premise')}
+                                            allConditions={this.client.getAllConditionNames()}
+                                            description={node.getAttribute('description') || ""}/>;
             case 'editBoard':
                 return <BoardEditComponent tiles={this.getTileInformation()}
                                            picture={this.getBoardPicture()} update={this.finishBoardEdit}
-                                           gmeClient={this.gme}/>;
+                                           client={this.client}/>;
+            case 'taskAssign':
+                return <TaskAssignerComponent client={this.client} onFinish={this.onFinishTaskAssigner}/>;
             default:
                 var tasksToEdit = [],
                     tasksToRemove = [],
@@ -293,7 +287,7 @@ export default class CreatorView extends React.Component {
                 //tasks
                 for (i = 0; i < this.state.tasks.length; i += 1) {
                     id = this.state.tasks[i];
-                    item = this.gme.getNode(id);
+                    item = this.client.getNode(id);
                     tasksToEdit.push(<li key={id} id={id} onClick={this.editScript}>
                         <a>{item.getAttribute('name')}</a>
                     </li>);
@@ -329,7 +323,7 @@ export default class CreatorView extends React.Component {
                 //conditions
                 for (i = 0; i < this.state.conditions.length; i += 1) {
                     id = this.state.conditions[i];
-                    item = this.gme.getNode(id);
+                    item = this.client.getNode(id);
                     conditionsToEdit.push(<li key={id} id={id} onClick={this.editScript}>
                         <a>{item.getAttribute('name')}</a>
                     </li>);
@@ -365,8 +359,9 @@ export default class CreatorView extends React.Component {
                 return <div className="col-sm-6">
                     <button className="btn btn-default btn-lg" onClick={this.editBoard}>EditBoard</button>
                     <button className="btn btn-default btn-lg" onClick={this.addPlayer}>
-                        AddPlayer <span className="badge">{this.getNumOfPlayers()}</span>
+                        AddPlayer <span className="badge">{this.client.getNumOfPlayers()}</span>
                     </button>
+                    <button className="btn btn-default btn-lg" onClick={this.taskAssigner}>AssignTasks</button>
                     <br/>
                     <div className="btn btn-group" role="group">
                         <button type="button" className="btn btn-default" onClick={this.addTask}>
@@ -388,5 +383,5 @@ export default class CreatorView extends React.Component {
 }
 
 CreatorView.propTypes = {
-    gmeClient: React.PropTypes.object.isRequired
+    client: React.PropTypes.object.isRequired
 };

@@ -97,7 +97,7 @@ export default class BoardEditComponent extends React.Component {
             tile;
 
         if (this.state.phase === 'pieceManagement') {
-            return <PieceManagementComponent id={this.state.target} gmeClient={this.props.gmeClient}
+            return <PieceManagementComponent id={this.state.target} client={this.props.client}
                                              onFinish={this.finishPieceManagement}/>;
         }
 

@@ -9,14 +9,11 @@ export default class PieceManagerComponent extends React.Component {
     constructor(props) {
         super(props);
 
-        this.gme = this.props.gmeClient;
+        this.client = this.props.client;
 
         this.gatherPieceInformation = this.gatherPieceInformation.bind(this);
         this.addPiece = this.addPiece.bind(this);
-        this.getMetaId = this.getMetaId.bind(this);
         this.removePiece = this.removePiece.bind(this);
-        this.getPlayerIds = this.getPlayerIds.bind(this);
-        this.getPlayerName = this.getPlayerName.bind(this);
         this.setOwner = this.setOwner.bind(this);
         this.setPicture = this.setPicture.bind(this);
 
@@ -27,14 +24,14 @@ export default class PieceManagerComponent extends React.Component {
     }
 
     gatherPieceInformation() {
-        var tileNode = this.gme.getNode(this.props.id),
+        var tileNode = this.client.getNode(this.props.id),
             pieces = [],
             pieceIds = tileNode.getChildrenIds(),
             pieceNode,
             i;
 
         for (i = 0; i < pieceIds.length; i += 1) {
-            pieceNode = this.gme.getNode(pieceIds[i]);
+            pieceNode = this.client.getNode(pieceIds[i]);
             pieces.push({
                 id: pieceIds[i],
                 name: pieceNode.getAttribute('name'),
@@ -46,70 +43,33 @@ export default class PieceManagerComponent extends React.Component {
         this.setState({pieces: pieces});
     }
 
-    //TODO should be refactored to some common library place
-    getMetaId(name) {
-        var metaNodes = this.gme.getAllMetaNodes(),
-            i;
-        for (i = 0; i < metaNodes.length; i += 1) {
-            if (metaNodes[i].getAttribute('name') === name) {
-                return metaNodes[i].getId();
-            }
-        }
-
-        return null;
-    }
-
-    getPlayerIds() {
-        var playerIds = [],
-            gameNode = this.gme.getNode('/W'),
-            player = gameNode === null ? null : this.gme.getNode(gameNode.getPointer('activePlayer').to),
-            notFinished = true;
-
-        while (player && notFinished) {
-            if (playerIds.indexOf(player.getId()) === -1) {
-                playerIds.push(player.getId());
-                player = this.gme.getNode(player.getPointer('next').to);
-            } else {
-                notFinished = false;
-            }
-        }
-
-        return playerIds;
-    }
-
-    getPlayerName(playerId) {
-        return this.gme.getNode(playerId).getAttribute('name');
-    }
-
     addPiece() {
-        var baseId = this.getMetaId('Piece'),
-            gameNode = this.gme.getNode('/W'),
-            activePlayer = gameNode.getPointer('activePlayer').to,
-            tileNode = this.gme.getNode(this.props.id),
+        var baseId = this.client.getMetaId('Piece'),
+            activePlayer = this.client.getPointerTarget(this.client.gameId, 'activePlayer'),
             parameters = {parentId: this.props.id},
             result;
         parameters[baseId] = {};
 
-        this.gme.startTransaction('adding new piece to tile:', this.props.id);
-        result = this.gme.createChildren(parameters);
+        this.client.startTransaction('adding new piece to tile:', this.props.id);
+        result = this.client.createChildren(parameters);
         result = result[baseId];
-        this.gme.setAttributes(result, 'picture', 'o.png');
-        this.gme.makePointer(result, 'owner', activePlayer);
-        this.gme.completeTransaction();
+        this.client.setAttributes(result, 'picture', 'o.png');
+        this.client.makePointer(result, 'owner', activePlayer);
+        this.client.completeTransaction();
     }
 
     removePiece(event) {
-        this.gme.delMoreNodes([event.target.getAttribute('id')]);
+        this.client.delMoreNodes([event.target.getAttribute('id')]);
     }
 
     setOwner(event) {
         var params = event.currentTarget.getAttribute('id').split('+');
-        this.gme.makePointer(params[0], 'owner', params[1], 'change piece owner');
+        this.client.makePointer(params[0], 'owner', params[1], 'change piece owner');
     }
 
     setPicture(event) {
         var params = event.currentTarget.getAttribute('id').split('+');
-        this.gme.setAttributes(params[0], 'picture', params[1], 'change piece picture');
+        this.client.setAttributes(params[0], 'picture', params[1], 'change piece picture');
     }
 
     componentWillReceiveProps(/*nextProps*/) {
@@ -123,7 +83,7 @@ export default class PieceManagerComponent extends React.Component {
     render() {
         var pieces = [],
             piece, i, j,
-            ownerIds = this.getPlayerIds(),
+            ownerIds = this.client.getPlayerIds(),
             pictureIds = ['o.png', 'x.png'],
             owners = [],
             pictures = [],
@@ -134,7 +94,7 @@ export default class PieceManagerComponent extends React.Component {
             for (j = 0; j < ownerIds.length; j += 1) {
                 owners.push(<li key={"owner"+ownerIds[j]} id={piece.id+'+'+ownerIds[j]}
                                 onClick={this.setOwner}><a>
-                    {this.getPlayerName(ownerIds[j])}
+                    {this.client.getPlayerName(ownerIds[j])}
                 </a></li>)
             }
             pictures = [];
@@ -158,7 +118,7 @@ export default class PieceManagerComponent extends React.Component {
                 <div className="btn-group">
                     <button className="btn btn-warning dropdown-toggle" type="button"
                             id={"dropO"+piece.id} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {this.getPlayerName(piece.owner)}<span className="caret"/>
+                        {this.client.getPlayerName(piece.owner)}<span className="caret"/>
                     </button>
                     <ul className="dropdown-menu">
                         {owners}
@@ -178,6 +138,6 @@ export default class PieceManagerComponent extends React.Component {
 
 PieceManagerComponent.propTypes = {
     id: React.PropTypes.string.isRequired,
-    gmeClient: React.PropTypes.object.isRequired,
+    client: React.PropTypes.object.isRequired,
     onFinish: React.PropTypes.func.isRequired
 };
