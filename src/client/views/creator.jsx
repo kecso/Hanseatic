@@ -181,6 +181,7 @@ export default class CreatorView extends React.Component {
 
     finishBoardEdit(updateObject) {
         var tile,
+            tilesToDelete = this.client.getTileIds(),
             baseId = this.client.getMetaId('Tile'),
             params,
             result,
@@ -204,6 +205,8 @@ export default class CreatorView extends React.Component {
                         this.client.setAttributes(newTile, 'coordinate', Number(tile.position));
                     }
                 } else {
+                    //setting tiles to delete
+                    tilesToDelete.splice(tilesToDelete.indexOf(tile.id), 1);
                     //update tile
                     this.client.setRegistry(tile.id, 'position', {x: tile.x, y: tile.y});
                     this.client.setRegistry(tile.id, 'measure', {width: tile.width, height: tile.height});
@@ -212,6 +215,9 @@ export default class CreatorView extends React.Component {
                 }
             }
 
+            this.client.delMoreNodes(tilesToDelete);
+
+            this.client.setAttributes(this.state.board, 'picture', updateObject.picture);
             this.client.completeTransaction('board updated');
         }
         this.setState({phase: 'overview'});
@@ -271,7 +277,8 @@ export default class CreatorView extends React.Component {
             case 'editBoard':
                 return <BoardEditComponent tiles={this.getTileInformation()}
                                            picture={this.getBoardPicture()} update={this.finishBoardEdit}
-                                           client={this.client}/>;
+                                           client={this.client} boards={this.props.lists.boards}
+                                           pieces={this.props.lists.pieces}/>;
             case 'taskAssign':
                 return <TaskAssignerComponent client={this.client} onFinish={this.onFinishTaskAssigner}/>;
             default:

@@ -4,6 +4,7 @@
  */
 
 import React from 'react';
+import PictureSelectorComponent from './pictureselector.jsx';
 
 export default class PieceManagerComponent extends React.Component {
     constructor(props) {
@@ -15,18 +16,20 @@ export default class PieceManagerComponent extends React.Component {
         this.addPiece = this.addPiece.bind(this);
         this.removePiece = this.removePiece.bind(this);
         this.setOwner = this.setOwner.bind(this);
-        this.setPicture = this.setPicture.bind(this);
+        this.selectPicture = this.selectPicture.bind(this);
+        this.selectPictureFinished = this.selectPictureFinished.bind(this);
 
         this.state = {
+            phase: 'overview',
+            target: null,
             pieces: []
         };
 
     }
 
     gatherPieceInformation() {
-        var tileNode = this.client.getNode(this.props.id),
-            pieces = [],
-            pieceIds = tileNode.getChildrenIds(),
+        var pieces = [],
+            pieceIds = this.client.getAllPieceIdsOnTile(this.props.id),
             pieceNode,
             i;
 
@@ -40,7 +43,7 @@ export default class PieceManagerComponent extends React.Component {
             });
         }
 
-        this.setState({pieces: pieces});
+        this.setState({target: null, phase: 'overview', pieces: pieces});
     }
 
     addPiece() {
@@ -67,9 +70,12 @@ export default class PieceManagerComponent extends React.Component {
         this.client.makePointer(params[0], 'owner', params[1], 'change piece owner');
     }
 
-    setPicture(event) {
-        var params = event.currentTarget.getAttribute('id').split('+');
-        this.client.setAttributes(params[0], 'picture', params[1], 'change piece picture');
+    selectPicture(event) {
+        this.setState({phase: 'pictureSelection', target: event.currentTarget.getAttribute('id')});
+    }
+
+    selectPictureFinished(selected) {
+        this.client.setAttributes(this.state.target, 'picture', selected);
     }
 
     componentWillReceiveProps(/*nextProps*/) {
@@ -84,10 +90,14 @@ export default class PieceManagerComponent extends React.Component {
         var pieces = [],
             piece, i, j,
             ownerIds = this.client.getPlayerIds(),
-            pictureIds = ['o.png', 'x.png'],
             owners = [],
-            pictures = [],
             owner;
+
+        if (this.state.phase === 'pictureSelection') {
+            return <PictureSelectorComponent list={this.props.pictures} base="/pieces/"
+                                             onFinish={this.selectPictureFinished}/>
+        }
+
         for (i = 0; i < this.state.pieces.length; i += 1) {
             piece = this.state.pieces[i];
             owners = [];
@@ -97,24 +107,12 @@ export default class PieceManagerComponent extends React.Component {
                     {this.client.getPlayerName(ownerIds[j])}
                 </a></li>)
             }
-            pictures = [];
-            for (j = 0; j < pictureIds.length; j += 1) {
-                pictures.push(<li key={"picture"+pictureIds[j]} id={piece.id+'+'+pictureIds[j]}
-                                  onClick={this.setPicture}><a>
-                    {pictureIds[j]}
-                </a></li>)
-            }
             pieces.push(<li key={piece.id}
-                            className="list-group-item">{piece.name + '[' + piece.id + ']'}
-                <div className="btn-group">
-                    <button className="btn btn-default dropdown-toggle" type="button"
-                            id={"dropP"+piece.id} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {piece.picture}<span className="caret"/>
-                    </button>
-                    <ul className="dropdown-menu">
-                        {pictures}
-                    </ul>
-                </div>
+                            className="list-group-item">
+                <svg id={piece.id} height="25" width="25" onClick={this.selectPicture}>
+                    <image height="25" xlinkHref={"/pieces/"+piece.picture} width="25"/>
+                </svg>
+                {piece.name + '[' + piece.id + ']'}
                 <div className="btn-group">
                     <button className="btn btn-warning dropdown-toggle" type="button"
                             id={"dropO"+piece.id} data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -129,15 +127,17 @@ export default class PieceManagerComponent extends React.Component {
         }
         return <div>
             <h3>Piece Management for Tile [{this.props.id}]</h3>
-            <ul className="list-group col-sm-6">{pieces}</ul>
             <button className="btn btn-warning" onClick={this.addPiece}>AddPiece</button>
             <button className="btn btn-default" onClick={this.props.onFinish}>Finish</button>
+            <ul className="list-group col-sm-6">{pieces}</ul>
         </div>;
     }
 }
 
-PieceManagerComponent.propTypes = {
+PieceManagerComponent
+    .propTypes = {
     id: React.PropTypes.string.isRequired,
     client: React.PropTypes.object.isRequired,
+    pictures: React.PropTypes.array.isRequired,
     onFinish: React.PropTypes.func.isRequired
 };

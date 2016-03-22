@@ -5,6 +5,7 @@
 import React from 'react';
 import TileEditComponent from './tileedit.jsx';
 import PieceManagementComponent from './piecemanager.jsx';
+import PictureSelectorComponent from './pictureselector.jsx';
 
 export default class BoardEditComponent extends React.Component {
     constructor(props) {
@@ -14,9 +15,11 @@ export default class BoardEditComponent extends React.Component {
         this.tileUpdated = this.tileUpdated.bind(this);
         this.save = this.save.bind(this);
         this.cancel = this.cancel.bind(this);
-        this.setBack = this.setBack.bind(this);
         this.pieceMgmnt = this.pieceMgmnt.bind(this);
         this.finishPieceManagement = this.finishPieceManagement.bind(this);
+        this.boardSelection = this.boardSelection.bind(this);
+        this.boardSelectionFinished = this.boardSelectionFinished.bind(this);
+        this.removeTile = this.removeTile.bind(this);
 
         this.state = {
             phase: 'overview',
@@ -54,10 +57,6 @@ export default class BoardEditComponent extends React.Component {
         this.props.update(null);
     }
 
-    setBack() {
-        console.log('pop-up dialog to choose / upload a background');
-    }
-
     addTile() {
         var tiles = this.state.tiles;
 
@@ -66,8 +65,8 @@ export default class BoardEditComponent extends React.Component {
             x: 300,
             y: 300,
             position: tiles.length,
-            width: 50,
-            height: 50,
+            width: 100,
+            height: 100,
             shape: 'rect',
             color: 'red',
             isVisible: true
@@ -76,8 +75,34 @@ export default class BoardEditComponent extends React.Component {
         this.setState({tiles: tiles});
     }
 
+    removeTile(tileId) {
+        var tiles = this.state.tiles,
+            i,
+            index = -1;
+
+        for (i = 0; i < tiles.length; i += 1) {
+            if (tiles[i].id === tileId) {
+                index = i;
+            }
+        }
+
+        if (index !== -1) {
+            tiles.splice(index, 1);
+        }
+
+        this.setState({tiles: tiles});
+    }
+
     pieceMgmnt(tileId) {
         this.setState({phase: 'pieceManagement', target: tileId});
+    }
+
+    boardSelection() {
+        this.setState({phase: 'boardSelection'});
+    }
+
+    boardSelectionFinished(selected) {
+        this.setState({phase: 'overview', picture: selected});
     }
 
     finishPieceManagement() {
@@ -98,21 +123,25 @@ export default class BoardEditComponent extends React.Component {
 
         if (this.state.phase === 'pieceManagement') {
             return <PieceManagementComponent id={this.state.target} client={this.props.client}
+                                             pictures={this.props.pieces}
                                              onFinish={this.finishPieceManagement}/>;
+        } else if (this.state.phase === 'boardSelection') {
+            return <PictureSelectorComponent list={this.props.boards} base="/boards/" selected={this.state.picture}
+                                             onFinish={this.boardSelectionFinished}/>;
         }
 
         for (i = 0; i < this.state.tiles.length; i += 1) {
             tile = this.state.tiles[i];
-            console.log('tile', tile.x, tile.y);
             tiles.push(<TileEditComponent id={tile.id || ""} key={tile.position} x={tile.x} y={tile.y}
                                           position={tile.position} width={tile.width} height={tile.height}
                                           shape={tile.shape} color={tile.color} isVisible={tile.isVisible}
-                                          update={this.tileUpdated} pieceManagement={this.pieceMgmnt}/>);
+                                          remove={this.removeTile} update={this.tileUpdated}
+                                          pieceManagement={this.pieceMgmnt}/>);
         }
         return <div>
             <div>
                 <button className="btn btn-default" onClick={this.addTile}>Add tile</button>
-                <button className="btn btn-default disabled" onClick={this.setBack}>Set background</button>
+                <button className="btn btn-default" onClick={this.boardSelection}>Set background</button>
                 <button className="btn btn-warning" onClick={this.save}>Save changes</button>
                 <button className="btn btn-danger" onClick={this.cancel}>Cancel</button>
             </div>
@@ -128,5 +157,7 @@ export default class BoardEditComponent extends React.Component {
 BoardEditComponent.propTypes = {
     tiles: React.PropTypes.array.isRequired,
     picture: React.PropTypes.string.isRequired,
+    boards: React.PropTypes.array.isRequired,
+    pieces: React.PropTypes.array.isRequired,
     update: React.PropTypes.func.isRequired
 };

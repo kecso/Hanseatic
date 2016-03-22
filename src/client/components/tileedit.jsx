@@ -16,6 +16,7 @@ export default class TileEditComponent extends React.Component {
         this.onMouseLeave = this.onMouseLeave.bind(this);
         this.startPieceMgmnt = this.startPieceMgmnt.bind(this);
         this.changeVisibility = this.changeVisibility.bind(this);
+        this.deleteTile = this.deleteTile.bind(this);
 
         this.state = {
             x: this.props.x,
@@ -106,32 +107,36 @@ export default class TileEditComponent extends React.Component {
         });
     }
 
+    deleteTile() {
+        this.props.remove(this.props.id);
+    }
+
     render() {
-        var text;
+        var visibility;
+
         if (this.state.isVisible) {
-            text = <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
-                         textAnchor="middle">{this.props.position}</text>;
+            visibility = <image height="20" xlinkHref="/icons/visible.svg"
+                                width="20" x="40" y="0" onMouseDown={this.changeVisibility}/>;
         } else {
-            text = <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
-                         textAnchor="middle">{'(' + this.props.position + ')'}</text>;
+            visibility = <image height="20" xlinkHref="/icons/invisible.svg"
+                                width="20" x="40" y="0" onMouseDown={this.changeVisibility}/>;
         }
         if (this.props.shape === 'rect') {
             return <svg height={this.state.height} width={this.state.width} x={this.state.x} y={this.state.y}
                         onMouseUp={this.onMouseUp} onMouseLeave={this.onMouseLeave} onMouseMove={this.onMouseMove}>
-                <rect height={this.state.height} width={this.state.width} x="0" y="0" stroke={this.props.color}
+                <rect height={this.state.height} width={this.state.width} x="0" y="0" stroke="black" strokeWidth="3"
                       fill="none"/>
-                <rect height="20" width="20" x="0" y="0" fill={this.props.color}/>
-                <rect height="20" width="20" x="40" y="0" fill={this.props.color}/>
-                <rect height="20" width="20" x={this.state.width-20} y={this.state.height-20} fill={this.props.color}/>
-                {text}
-                <image height="20" xlinkHref="/icons/si-glyph-arrow-move.svg"
+                <text className="diasbled" x={this.state.width/2} y={this.state.height/2}
+                      textAnchor="middle">{this.props.position}</text>
+                <image height="20" xlinkHref="/icons/move.svg"
                        width="20" x="0" y="0" onMouseDown={this.startMove}/>
-                <image height="20" xlinkHref="/icons/tribal_bunny.svg"
+                <image height="20" xlinkHref="/icons/details.svg"
                        width="20" x="20" y="0" onMouseDown={this.startPieceMgmnt}/>
-                <image height="20" xlinkHref="/icons/si-glyph-feather.svg"
-                       width="20" x="40" y="0" onMouseDown={this.changeVisibility}/>
-                <image height="20" xlinkHref="/icons/si-glyph-arrow-resize-2.svg" width="20" x={this.state.width-20}
-                       y={this.state.height-20} onMouseDown={this.startResize} fill={this.props.color}/>
+                {visibility}
+                <image height="20" xlinkHref="/icons/delete.svg"
+                       width="20" x="60" y="0" onMouseDown={this.deleteTile}/>
+                <image height="20" xlinkHref="/icons/resize.svg" width="20" x={this.state.width-20}
+                       y={this.state.height-20} onMouseDown={this.startResize}/>
             </svg>;
 
         } else {
@@ -152,5 +157,6 @@ TileEditComponent.propTypes = {
     color: React.PropTypes.string.isRequired,
     isVisible: React.PropTypes.bool.isRequired,
     update: React.PropTypes.func.isRequired,
+    remove: React.PropTypes.func.isRequired,
     pieceManagement: React.PropTypes.func.isRequired
 };
