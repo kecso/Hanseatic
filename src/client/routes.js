@@ -7,10 +7,10 @@ import LoginView from './views/login.jsx';
 import RegisterView from './views/register.jsx';
 import ProfileView from './views/profile.jsx';
 import InitiatingView from './views/initiating.jsx';
-import PlayView from './views/play.jsx';
 import StaticView from './views/static.jsx';
 import TicTacToeView from './views/tictactoe.jsx';
 import CreatorView from './views/creator.jsx';
+import ArchiveView from './views/archive.jsx';
 
 var $ = require('jquery'),
     HanseaticGame = require('./HanseaticGame'),
@@ -28,7 +28,8 @@ module.exports = Backbone.Router.extend({
         'rest/external/hanseatic/play/:gameId': '_play',
         'rest/external/hanseatic/static': '_static',
         'rest/external/hanseatic/tictactoe': '_tictactoe',
-        'rest/external/hanseatic/creator': '_creator',
+        'rest/external/hanseatic/creator/:gameId': '_creator',
+        'rest/external/hanseatic/archive/:gameId': '_archive',
         '*path': '_landing'
     },
 
@@ -61,6 +62,7 @@ module.exports = Backbone.Router.extend({
         self.__createGameFromSeed = self.__createGameFromSeed.bind(this);
         self.__initializeGame = self.__initializeGame.bind(this);
         self.__openProject = self.__openProject.bind(this);
+        self.__getHistory = self.__getHistory.bind(this);
     },
 
     __waitForGme: function (callback) {
@@ -81,7 +83,7 @@ module.exports = Backbone.Router.extend({
     __openProject: function (projectId, callback) {
         var self = this;
 
-        self.gme.selectProject('guest+' + projectId, 'master', callback);
+        self.gme.selectProject(projectId, 'master', callback);
 
     },
 
@@ -111,8 +113,53 @@ module.exports = Backbone.Router.extend({
         });
     },
 
+    __getHistory: function (callback) {
+        var self = this,
+            history = [],
+            work = false,
+            start = self.hanseaticClient.getActiveCommitHash(),
+            needMore = true,
+            timerId = setInterval(function () {
+                if (!work && needMore) {
+                    work = true;
+                    self.hanseaticClient.getHistory(self.hanseaticClient.getActiveProjectId(),
+                        start, 1000, function (err, commits) {
+                            if (err) {
+                                clearInterval(timerId);
+                                callback(err);
+                                return;
+                            }
+
+                            if (commits.length < 1000) {
+                                needMore = false;
+                            }
+
+                            for (var i = 0; i < commits.length; i += 1) {
+                                history.push(commits[i]._id);
+                                start = commits[i]._id;
+                            }
+                            work = false;
+                        }
+                    );
+                }
+
+                if (!work && !needMore) {
+                    clearInterval(timerId);
+                    callback(null, history);
+                }
+            }, 1);
+    },
+
     _landing: function () {
-        ReactDOM.render(<LandingView router={this} dispatcher={this.app}/>, document.getElementById('mainDiv'));
+        var self = this;
+        Q.nfcall(self.__waitForGme)
+            .then(function (lists) {
+                ReactDOM.render(<LandingView client={self.hanseaticClient} router={self}/>,
+                    document.getElementById('mainDiv'));
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
     },
 
     _login: function () {
@@ -158,14 +205,11 @@ module.exports = Backbone.Router.extend({
         ReactDOM.render(<StaticView/>, document.getElementById('mainDiv'));
     },
 
-    _creator: function () {
+    _creator: function (projectId) {
         var self = this;
         Q.nfcall(self.__waitForGme)
             .then(function () {
-                return Q.nfcall(self.__createGameFromSeed, 'TicTacToe3');
-            })
-            .then(function () {
-                return Q.nfcall(self.__openProject, 'Demo3_001');
+                return Q.nfcall(self.__openProject, projectId);
             })
             .then(function () {
                 return Q.nfcall(self.__collectsLists);
@@ -179,6 +223,24 @@ module.exports = Backbone.Router.extend({
             });
     },
 
+    _archive: function (gameId) {
+        var self = this;
+        Q.nfcall(self.__waitForGme)
+            .then(function () {
+                return Q.nfcall(self.__openProject, gameId);
+            })
+            .then(function () {
+                return Q.nfcall(self.__getHistory);
+            })
+            .then(function (history) {
+                console.log('history', history);
+                ReactDOM.render(<ArchiveView client={self.hanseaticClient} history={history}/>,
+                    document.getElementById('mainDiv'));
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    },
     _tictactoe: function () {
         var self = this;
 

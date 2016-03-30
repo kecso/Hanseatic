@@ -144,7 +144,7 @@ export default class CreatorView extends React.Component {
             } else {
                 this.client.makePointer(result.getId(), 'next', result.getId());
             }
-            this.client.makePointer(this.client.gameId(), 'activePlayer', result.getId());
+            this.client.makePointer(this.client.gameId, 'activePlayer', result.getId());
             this.client.setAttributes(result.getId(), 'name', 'Player' + (numSoFar + 1));
         }
         this.client.completeTransaction('addingNewPlayerFinished');
