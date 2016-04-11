@@ -55,6 +55,35 @@ function HanseaticClient(gmeClient) {
         return null;
     };
 
+    this.isTile = function (id) {
+        var node = this.getNode(id);
+        if (node) {
+            return node.getMetaTypeId() === this.getMetaId('Tile');
+        }
+        return false;
+    };
+
+    this.isPiece = function (id) {
+        var node = this.getNode(id);
+        if (node) {
+            return node.getMetaTypeId() === this.getMetaId('Piece');
+        }
+        return false;
+    };
+
+    this.getTileIdOfCoordinate = function (coordinate) {
+        var tilesIds = this.getTileIds(),
+            i,
+            item;
+        for (i = 0; i < tilesIds.length; i += 1) {
+            item = this.getNode(tilesIds[i]);
+            if (Number(coordinate) === Number(item.getAttribute('coordinate'))) {
+                return tilesIds[i];
+            }
+        }
+        return null;
+    };
+
     this.getPlayerIds = function () {
         var playerIds = [],
             gameNode = this.getGameNode(),

@@ -3,31 +3,18 @@
 import React from       'react';
 import ReactDOM from    'react-dom';
 import LandingView from './views/landing.jsx';
-import LoginView from './views/login.jsx';
-import RegisterView from './views/register.jsx';
-import ProfileView from './views/profile.jsx';
-import InitiatingView from './views/initiating.jsx';
-import StaticView from './views/static.jsx';
-import TicTacToeView from './views/tictactoe.jsx';
 import CreatorView from './views/creator.jsx';
 import ArchiveView from './views/archive.jsx';
+import PlayerView from './views/player.jsx';
 
 var $ = require('jquery'),
-    HanseaticGame = require('./HanseaticGame'),
     HanseaticClient = require('./helper/hanseaticClient'),
     Q = require('q');
 
 module.exports = Backbone.Router.extend({
     routes: {
         'rest/external/hanseatic': '_landing',
-        'rest/external/hanseatic/login': '_login',
-        'rest/external/hanseatic/register': '_register',
-        'rest/external/hanseatic/profile/:profileId': '_profile',
-        'rest/external/hanseatic/initiating/:gameType': '_initiatingNull',
-        'rest/external/hanseatic/initiating/:gameType/:gameId': '_initiating',
-        'rest/external/hanseatic/play/:gameId': '_play',
-        'rest/external/hanseatic/static': '_static',
-        'rest/external/hanseatic/tictactoe': '_tictactoe',
+        'rest/external/hanseatic/player/:gameId': '_player',
         'rest/external/hanseatic/creator/:gameId': '_creator',
         'rest/external/hanseatic/archive/:gameId': '_archive',
         '*path': '_landing'
@@ -36,11 +23,6 @@ module.exports = Backbone.Router.extend({
     initialize: function (options) {
         this.app = options.app;
         this.view = undefined;
-        //this.gme = new GME.classes.Client(GME.gmeConfig);
-        //
-        //this.gme.connectToDatabase(function(){
-        //   console.log('connected');
-        //});
         this.initialized = false;
 
         var self = this;
@@ -57,12 +39,79 @@ module.exports = Backbone.Router.extend({
         });
 
         //binding
-        self._tictactoe = self._tictactoe.bind(this);
         self.__waitForGme = self.__waitForGme.bind(this);
-        self.__createGameFromSeed = self.__createGameFromSeed.bind(this);
-        self.__initializeGame = self.__initializeGame.bind(this);
         self.__openProject = self.__openProject.bind(this);
         self.__getHistory = self.__getHistory.bind(this);
+        self.__buildTaskProcessor = self.__buildTaskProcessor.bind(this);
+    },
+
+    __buildTaskProcessor: function () {
+        var deferred = Q.defer(),
+            UIPattern = {},
+            client = this.hanseaticClient,
+            nodesAreLoaded = function (/*events*/) {
+                var classTaskProcessor,
+                    txtClass = 'classTaskProcessor = function(game){ ',
+                    i,
+                    conditionNames = {},
+                    ids,
+                    condition,
+                    name,
+                    item;
+
+                //first adding functions
+                ids = client.getFunctionContainerNode().getChildrenIds();
+                txtClass += 'var ';
+                for (i = 0; i < ids.length; i += 1) {
+                    item = client.getNode(ids[i]);
+                    txtClass += item.getAttribute('name') + ' = ' + item.getAttribute('script') + ',';
+                }
+                txtClass += 'endFunctions = true;';
+
+                //now adding conditions as functions
+                ids = client.getConditionContainerNode().getChildrenIds();
+                txtClass += 'var ';
+                for (i = 0; i < ids.length; i += 1) {
+                    item = client.getNode(ids[i]);
+                    conditionNames[ids[i]] = item.getAttribute('name');
+                    txtClass += item.getAttribute('name') + ' = ' + item.getAttribute('script') + ',';
+                }
+                txtClass += 'endConditions = true;';
+
+                //finally making the tasks accessible to outside world
+                ids = client.getTaskContainerNode().getChildrenIds();
+                for (i = 0; i < ids.length; i += 1) {
+                    item = client.getNode(ids[i]);
+                    name = item.getAttribute('name');
+                    condition = client.getPointerTarget(ids[i], 'premise');
+                    txtClass += 'var _' + name + ' = ' + item.getAttribute('script') + ';';
+                    if (condition) {
+                        txtClass += 'this.' + name + ' = function(targetId){ if(' +
+                            client.getNode(condition).getAttribute('name') + '(targetId)){ _' + name + '(targetId);}};';
+                    } else {
+                        txtClass += 'this.' + name + ' = function(targetId){ _' + name + '(targetId);};';
+                    }
+                }
+
+                //closing the class
+                txtClass+='return this;}';
+
+                //now try to evaluate what we just built
+                try {
+                    eval(txtClass);
+                    deferred.resolve(new classTaskProcessor(client));
+                }
+                catch (e) {
+                    console.log(e);
+                    deferred.reject(new Error('unable to build task processor'));
+                }
+            };
+
+        UIPattern[client.gameId] = {children: 3};
+
+        client.addUI(this, nodesAreLoaded, 'HanseaticTaskBuilder');
+        client.updateTerritory('HanseaticTaskBuilder', UIPattern);
+        return deferred.promise;
     },
 
     __waitForGme: function (callback) {
@@ -85,22 +134,6 @@ module.exports = Backbone.Router.extend({
 
         self.gme.selectProject(projectId, 'master', callback);
 
-    },
-
-    __createGameFromSeed: function (seedName, callback) {
-        this.gameId = seedName + '_' + Math.round(Math.random() * 10000);
-        this.gme.seedProject({
-            type: 'file',
-            projectName: this.gameId,
-            seedName: seedName,
-            ownerId: 'guest'
-        }, callback);
-    },
-
-    __initializeGame: function (callback) {
-        var self = this;
-        self.game = new HanseaticGame(self.gme, self.gme.getActiveProjectId());
-        self.game.initialize(callback);
     },
 
     __collectsLists: function (callback) {
@@ -162,47 +195,23 @@ module.exports = Backbone.Router.extend({
             });
     },
 
-    _login: function () {
-        ReactDOM.render(<LoginView router={this} dispatcher={this.app}/>, document.getElementById('mainDiv'));
-    },
-
-    _register: function () {
-        ReactDOM.render(<RegisterView dispatcher={this.app} router={this}/>, document.getElementById('mainDiv'));
-    },
-
-    _profile: function (profileId) {
-        ReactDOM.render(<ProfileView id={profileId} router={this}
-                                     dispatcher={this.app}/>, document.getElementById('mainDiv'));
-    },
-
-    _initiatingNull: function (gameType) {
-        ReactDOM.render(<InitiatingView id="" seed={gameType} router={this} dispatcher={this.app}/>,
-            document.getElementById('mainDiv'));
-    },
-    _initiating: function (gameType, gameId) {
-        ReactDOM.render(<InitiatingView id={gameId} seed={gameType} router={this}
-                                        dispatcher={this.app}/>, document.getElementById('mainDiv'));
-    },
-
-    _play: function (gameId) {
-        //var self = this;
-        //Q.nfcall(self.__openProject, gameId)
-        //    .then(function () {
-        //        return Q.nfcall(self.__initializeGame);
-        //    })
-        //    .then(function () {
-        //        ReactDOM.render(<PlayView id={gameId} router={self}
-        //                                  dispatcher={self.app} gme={self.gme} game={self.game}/>,
-        //            document.getElementById('mainDiv'));
-        //    })
-        //    .catch(function (err) {
-        //        console.log(err);
-        //    });
-        console.log('ehune');
-    },
-
-    _static: function () {
-        ReactDOM.render(<StaticView/>, document.getElementById('mainDiv'));
+    _player: function (gameId) {
+        var self = this;
+        Q.nfcall(self.__waitForGme)
+            .then(function () {
+                return Q.nfcall(self.__openProject, gameId);
+            })
+            .then(function () {
+                return self.__buildTaskProcessor();
+            })
+            .then(function (taskProcessor) {
+                console.log(taskProcessor);
+                ReactDOM.render(<PlayerView client={self.hanseaticClient} taskProcessor={taskProcessor}/>,
+                    document.getElementById('mainDiv'));
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
     },
 
     _creator: function (projectId) {
@@ -241,31 +250,9 @@ module.exports = Backbone.Router.extend({
                 console.log(err);
             });
     },
-    _tictactoe: function () {
-        var self = this;
-
-        console.log('igyni');
-        Q.nfcall(self.__waitForGme)
-            .then(function () {
-                return Q.nfcall(self.__createGameFromSeed, 'TicTacToe3');
-            })
-            .then(function () {
-                return Q.nfcall(self.__openProject, self.gameId);
-            })
-            .then(function () {
-                return Q.nfcall(self.__initializeGame);
-            })
-            .then(function () {
-                ReactDOM.render(<TicTacToeView router={self}
-                                               dispatcher={self.app} gme={self.gme} game={self.game}/>,
-                    document.getElementById('mainDiv'));
-            })
-            .catch(function (err) {
-                console.log(err);
-            });
-    },
 
     _default: function () {
-        console.log('Default path taken!!!');
+        console.log('unknown path, redirect to landing screen');
+        self.navigate('rest/external/hanseatic/', {trigger: true});
     }
 });

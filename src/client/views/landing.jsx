@@ -51,7 +51,6 @@ export default class LandingView extends React.Component {
     }
 
     create(event) {
-        console.log(event.key, event.target.value);
         var self = this;
         /**
          *
@@ -97,8 +96,21 @@ export default class LandingView extends React.Component {
     }
 
     play(event) {
-        this.props.router.navigate('rest/external/hanseatic/player/' +
-            this.state.games[Number(event.target.getAttribute('id'))]._id, {trigger: true});
+        var self = this;
+        this.client.seedProject({
+            projectName: this.state.games[Number(event.target.getAttribute('id'))].name +
+            '_' + Math.round(Math.random() * 10000),
+            ownerId: 'player',
+            seedName: this.state.games[Number(event.target.getAttribute('id'))]._id,
+            type: 'db'
+        }, function (err, result) {
+            if (err) {
+                window.alert('Failed to create project:' + err);
+                self.setState({phase: 'overview'});
+            } else {
+                self.props.router.navigate('rest/external/hanseatic/player/' + result.projectId, {trigger: true});
+            }
+        });
     }
 
     startArchiver() {
