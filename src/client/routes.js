@@ -56,6 +56,7 @@ module.exports = Backbone.Router.extend({
                     conditionNames = {},
                     ids,
                     condition,
+                    condChecker = 'this.isValid = function(taskName,targetId){ switch(taskName){',
                     name,
                     item;
 
@@ -84,17 +85,18 @@ module.exports = Backbone.Router.extend({
                     item = client.getNode(ids[i]);
                     name = item.getAttribute('name');
                     condition = client.getPointerTarget(ids[i], 'premise');
-                    txtClass += 'var _' + name + ' = ' + item.getAttribute('script') + ';';
+                    txtClass += 'this.' + name + ' = ' + item.getAttribute('script') + ';';
                     if (condition) {
-                        txtClass += 'this.' + name + ' = function(targetId){ if(' +
-                            client.getNode(condition).getAttribute('name') + '(targetId)){ _' + name + '(targetId);}};';
-                    } else {
-                        txtClass += 'this.' + name + ' = function(targetId){ _' + name + '(targetId);};';
+                        condChecker += 'case \'' + name + '\': return '
+                            + client.getNode(condition).getAttribute('name') + '(targetId);';
                     }
                 }
 
+                //closing condition checker and adding to the class
+                condChecker+='default: return true;}};';
+                txtClass+=condChecker;
                 //closing the class
-                txtClass+='return this;}';
+                txtClass += 'return this;}';
 
                 //now try to evaluate what we just built
                 try {

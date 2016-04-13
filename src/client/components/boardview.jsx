@@ -16,8 +16,7 @@ export default class BoardViewComponent extends React.Component {
     }
 
     onClick(event) {
-        console.log(event.target.getAttribute('id'), event.clientX, event.clientY);
-        this.props.clickEvent({id: event.target.getAttribute('id'), x: event.clientX, y: event.clientY});
+        this.props.clickEvent({id: event.target.getAttribute('id'), x: event.pageX, y: event.pageY});
     }
 
     buildState() {

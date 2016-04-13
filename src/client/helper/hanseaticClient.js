@@ -106,6 +106,10 @@ function HanseaticClient(gmeClient) {
         return this.getNode(playerId).getAttribute('name');
     };
 
+    this.getActivePlayerId = function () {
+        return this.getPointerTarget(this.gameId, 'activePlayer')
+    };
+
     this.getTileIds = function () {
         return this.getBoardNode().getChildrenIds();
     };
@@ -146,6 +150,25 @@ function HanseaticClient(gmeClient) {
             names[ids[i]] = this.getNode(ids[i]).getAttribute('name');
         }
         return names;
-    }
+    };
+
+    this.getPossibleTaskNames = function (id) {
+        var node = this.getNode(id),
+            tasks = [],
+            allTaskIds,
+            item,
+            i;
+        if (node) {
+            allTaskIds = node.getMemberIds('possibleTasks');
+            for (i = 0; i < allTaskIds.length; i += 1) {
+                item = this.getNode(allTaskIds[i]);
+                if (node) {
+                    tasks.push(item.getAttribute('name'));
+                }
+            }
+        }
+
+        return tasks;
+    };
 }
 module.exports = HanseaticClient;
