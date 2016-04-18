@@ -24,8 +24,8 @@ export default class GameStateComponent extends React.Component {
     }
 
     render() {
-        return <div className="col-sm-12">
-            <div className="col-sm-offset-1 col-sm-2">
+        return <div className="col-sm-6">
+            <div className="col-sm-6">
                 <div className="input-group">
                     <span className="input-group-addon" id="task-game">Game</span>
                     <label className="form-control" aria-describedby="task-game">

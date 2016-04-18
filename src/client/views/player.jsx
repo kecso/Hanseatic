@@ -7,6 +7,7 @@ import React from 'react';
 import BoardViewComponent from '../components/boardview.jsx';
 import GameStateComponent from '../components/gamestate.jsx';
 import ContextMenuComponent from '../components/contextmenu.jsx';
+import HomeComponent from '../components/homecomponent.jsx';
 
 export default class PlayerView extends React.Component {
     constructor(props) {
@@ -34,6 +35,8 @@ export default class PlayerView extends React.Component {
             phase: 'active',
             selected: null
         });
+
+        this.startStep();
     }
 
     getValidTasks(itemId) {
@@ -98,10 +101,13 @@ export default class PlayerView extends React.Component {
                                             x={this.state.selected.x} y={this.state.selected.y}/>;
         }
         return <div>
-            <GameStateComponent finished={this.client.getGameNode().getAttribute('isOver')}
-                                player={this.client.getNode(this.client.getActivePlayerId()).getAttribute('name')}/>
+            <div className="col-sm-12">
+                <HomeComponent router={this.props.router}/>
+                <GameStateComponent finished={this.client.getGameNode().getAttribute('isOver')}
+                                    player={this.client.getNode(this.client.getActivePlayerId()).getAttribute('name')}/>
+                <button className="btn btn-default" onClick={this.finishStep}>EndTurn</button>
+            </div>
             <BoardViewComponent client={this.client} clickEvent={this.boardClick}/>
-            <button className="btn btn-default" onClick={this.finishStep}>EndTurn</button>
             {context}
         </div>;
     }
@@ -110,5 +116,6 @@ export default class PlayerView extends React.Component {
 
 PlayerView.propTypes = {
     client: React.PropTypes.object.isRequired,
-    taskProcessor: React.PropTypes.object.isRequired
+    taskProcessor: React.PropTypes.object.isRequired,
+    router: React.PropTypes.object.isRequired
 };

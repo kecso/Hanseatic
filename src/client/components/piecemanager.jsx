@@ -56,7 +56,7 @@ export default class PieceManagerComponent extends React.Component {
         this.client.startTransaction('adding new piece to tile:', this.props.id);
         result = this.client.createChildren(parameters);
         result = result[baseId];
-        this.client.setAttributes(result, 'picture', 'o.png');
+        this.client.setAttributes(result, 'picture', 'o.svg');
         this.client.makePointer(result, 'owner', activePlayer);
         this.client.completeTransaction();
     }

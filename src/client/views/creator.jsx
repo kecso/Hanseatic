@@ -23,6 +23,7 @@ export default class CreatorView extends React.Component {
         this.removeScript = this.removeScript.bind(this);
         this.addTask = this.addTask.bind(this);
         this.addCondition = this.addCondition.bind(this);
+        this.addFunction = this.addFunction.bind(this);
 
         this.projectUpdated = this.projectUpdated.bind(this);
         this.getBoardPicture = this.getBoardPicture.bind(this);
@@ -41,6 +42,8 @@ export default class CreatorView extends React.Component {
             tasks: [],
             conditionContainer: this.client.conditionContainerId,
             conditions: [],
+            functionContainer: this.client.functionContainerId,
+            functions: [],
             tiles: [],
             pieces: []
         };
@@ -68,6 +71,13 @@ export default class CreatorView extends React.Component {
             state.conditions = node.getChildrenIds();
         } else {
             state.conditions = [];
+        }
+
+        node = this.client.getNode(state.functionContainer);
+        if (node) {
+            state.functions = node.getChildrenIds();
+        } else {
+            state.functions = [];
         }
 
         node = this.client.getNode(state.board);
@@ -247,6 +257,20 @@ export default class CreatorView extends React.Component {
         }
     }
 
+    //function
+    addFunction() {
+        var baseId = this.client.getMetaId('Function'),
+            params = {parentId: this.state.functionContainer},
+            result;
+
+        params[baseId] = {};
+        result = this.client.createChildren(params, 'adding new function');
+        result = result[baseId];
+        if (result) {
+            this.setState({phase: 'editScript', target: result});
+        }
+    }
+
     //task
     addTask() {
         var baseId = this.client.getMetaId('Task'),
@@ -288,6 +312,9 @@ export default class CreatorView extends React.Component {
                     conditionsToEdit = [],
                     conditionsToRemove = [],
                     conditionDropdowns = [],
+                    functionDropdowns = [],
+                    functionsToEdit = [],
+                    functionsToRemove = [],
                     i, btnClass,
                     id, item;
 
@@ -352,13 +379,49 @@ export default class CreatorView extends React.Component {
                     }
                     conditionDropdowns.push(<div key={"conditionDrop"+i} className="btn-group" role="group">
                         <button typeof="button" className={btnClass} type="button"
-                                id={"taskDrop"+i} data-toggle="dropdown" aria-haspopup="true"
+                                id={"conditionDrop"+i} data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false">
                             {i === 0 ? "EditCondition" : "RemoveCondition"}
                             <span className="caret"></span>
                         </button>
                         <ul className="dropdown-menu" aria-labelledby={"conditionDrop"+i}>
                             {i === 0 ? conditionsToEdit : conditionsToRemove}
+                        </ul>
+                    </div>);
+                }
+
+                //functions
+                for (i = 0; i < this.state.functions.length; i += 1) {
+                    id = this.state.functions[i];
+                    item = this.client.getNode(id);
+                    functionsToEdit.push(<li key={id} id={id} onClick={this.editScript}>
+                        <a>{item.getAttribute('name')}</a>
+                    </li>);
+                    functionsToRemove.push(<li key={id} id={id} onClick={this.removeScript}>
+                        <a>{item.getAttribute('name')}</a>
+                    </li>);
+                }
+                for (i = 0; i < 2; i += 1) {
+                    if (i === 0) {
+                        btnClass = "btn btn-warning dropdown-toggle";
+                        if (functionsToEdit.length === 0) {
+                            btnClass += " disabled";
+                        }
+                    } else {
+                        btnClass = "btn btn-danger dropdown-toggle";
+                        if (functionsToRemove.length === 0) {
+                            btnClass += " disabled";
+                        }
+                    }
+                    functionDropdowns.push(<div key={"functionDrop"+i} className="btn-group" role="group">
+                        <button typeof="button" className={btnClass} type="button"
+                                id={"functionDrop"+i} data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            {i === 0 ? "EditFunction" : "RemoveFunction"}
+                            <span className="caret"></span>
+                        </button>
+                        <ul className="dropdown-menu" aria-labelledby={"functionDrop"+i}>
+                            {i === 0 ? functionsToEdit : functionsToRemove}
                         </ul>
                     </div>);
                 }
@@ -382,6 +445,12 @@ export default class CreatorView extends React.Component {
                             AddCondition
                         </button>
                         {conditionDropdowns}
+                    </div>
+                    <div className="btn btn-group" role="group">
+                        <button type="button" className="btn btn-default" onClick={this.addFunction}>
+                            AddFunction
+                        </button>
+                        {functionDropdowns}
                     </div>
                 </div>
         }

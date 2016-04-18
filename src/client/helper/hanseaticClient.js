@@ -6,7 +6,8 @@ function HanseaticClient(gmeClient) {
 
     //to allow the helper to be a single source of client, it will provide all funcitons of the gmeClient
     var i,
-        GAMEID = '/W';
+        GAMEID = '/W',
+        self = this;
 
     for (i in gmeClient) {
         this[i] = gmeClient[i];
@@ -170,5 +171,130 @@ function HanseaticClient(gmeClient) {
 
         return tasks;
     };
+
+    function clearTile(tileId) {
+        var tile = self.getNode(tileId),
+            pieceIds = tile.getChildrenIds(),
+            i;
+
+        self.setAttributes(tileId, 'selected', false);
+        self.setAttributes(tileId, 'highlighted', false);
+        for (i = 0; i < pieceIds.length; i += 1) {
+            self.setAttributes(pieceIds[i], 'selected', false);
+            self.setAttributes(pieceIds[i], 'highlighted', false);
+        }
+    }
+
+    function clearAllTiles() {
+        var tileIds = self.getTileIds(),
+            i;
+
+        for (i = 0; i < tileIds.length; i += 1) {
+            clearTile(tileIds[i]);
+        }
+    }
+
+    this.endTurn = function () {
+        var message = 'finishing step of [' + self.getPlayerName(self.getActivePlayerId()) + ']';
+
+        self.makePointer(self.gameId, 'activePlayer',
+            self.getPointerTarget(self.getActivePlayerId(), 'next'));
+        clearAllTiles();
+        self.completeTransaction(message);
+    };
+
+    this.endGame = function(winnerId){
+        if(winnerId){
+            game.setAttributes(winnerId,'isWinning',true);
+        }
+        game.setAttributes(self.gameId,'isOver',true);
+    };
+
+    this.getSelectedItem = function () {
+        var allTileIds = self.getTileIds(),
+            tile,
+            piece,
+            i,
+            pieceIds,
+            j;
+
+        for (i = 0; i < allTileIds.length; i += 1) {
+            tile = self.getNode(allTileIds[i]);
+            if (tile.getAttribute('highlighted')) {
+                return allTileIds[i];
+            }
+            pieceIds = self.getAllPieceIdsOnTile(allTileIds[i]);
+            for (j = 0; j < pieceIds.length; j += 1) {
+                piece = self.getNode(pieceIds[j]);
+                if (piece.getAttribute('highlighted')) {
+                    return pieceIds[j];
+                }
+            }
+        }
+    };
+
+    this.selectItem = function (itemId) {
+        var oldId = self.getSelectedItem();
+
+        self.setAttributes(oldId, 'selected', false);
+        self.setAttributes(itemId, 'selected', true);
+    };
+
+    this.getHighlightedItems = function () {
+        var items = [],
+            allTileIds = self.getTileIds(),
+            tile,
+            piece,
+            i,
+            pieceIds,
+            j;
+
+        for (i = 0; i < allTileIds.length; i += 1) {
+            tile = self.getNode(allTileIds[i]);
+            if (tile.getAttribute('highlighted')) {
+                items.push(allTileIds[i]);
+            }
+            pieceIds = self.getAllPieceIdsOnTile(allTileIds[i]);
+            for (j = 0; j < pieceIds.length; j += 1) {
+                piece = self.getNode(pieceIds[j]);
+                if (piece.getAttribute('highlighted')) {
+                    piece.push(pieceIds[j]);
+                }
+            }
+        }
+
+        return items;
+    };
+
+    this.highlightItem = function (itemId) {
+        self.setAttributes(itemId, 'highlighted', true);
+    };
+
+    this.clearHighlights = function () {
+        var allTileIds = self.getTileIds(),
+            tile,
+            piece,
+            i,
+            pieceIds,
+            j;
+
+        for (i = 0; i < allTileIds.length; i += 1) {
+            tile = self.getNode(allTileIds[i]);
+            if (tile.getAttribute('highlighted')) {
+                self.setAttribtues(allTileIds[i], 'highlighted', false);
+            }
+            pieceIds = self.getAllPieceIdsOnTile(allTileIds[i]);
+            for (j = 0; j < pieceIds.length; j += 1) {
+                piece = self.getNode(pieceIds[j]);
+                if (piece.getAttribute('highlighted')) {
+                    self.setAttribtues(pieceIds[j], 'highlighted', false);
+                }
+            }
+        }
+    };
+
+    this.getCoordinateOfPiece = function(pieceId){
+        return game.getNode(game.getNode(pieceId).game.getParentId()).getAttribute('coordinate');
+    }
 }
 module.exports = HanseaticClient;

@@ -93,8 +93,8 @@ module.exports = Backbone.Router.extend({
                 }
 
                 //closing condition checker and adding to the class
-                condChecker+='default: return true;}};';
-                txtClass+=condChecker;
+                condChecker += 'default: return true;}};';
+                txtClass += condChecker;
                 //closing the class
                 txtClass += 'return this;}';
 
@@ -208,7 +208,7 @@ module.exports = Backbone.Router.extend({
             })
             .then(function (taskProcessor) {
                 console.log(taskProcessor);
-                ReactDOM.render(<PlayerView client={self.hanseaticClient} taskProcessor={taskProcessor}/>,
+                ReactDOM.render(<PlayerView client={self.hanseaticClient} taskProcessor={taskProcessor} router={self}/>,
                     document.getElementById('mainDiv'));
             })
             .catch(function (err) {
