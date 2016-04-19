@@ -20,7 +20,6 @@ export default class BoardViewComponent extends React.Component {
     }
 
     buildState() {
-        console.log('BS');
         var state = {},
             node,
             tileIds,

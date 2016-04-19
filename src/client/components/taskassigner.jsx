@@ -79,14 +79,16 @@ export default class TaskAssignerComponent extends React.Component {
             targets.push(<li key={this.state.allTiles[i]}>
                 <a id={this.state.allTiles[i]} onClick={this.setTarget}>
                     {this.client.getNode(this.state.allTiles[i]).getAttribute('name') +
-                    '[' + this.state.allTiles[i] + ']'}
+                    '['+this.client.getNode(this.state.allTiles[i]).getAttribute('coordinate')+
+                    '] [' + this.state.allTiles[i] + ']'}
                 </a></li>);
             pieceIds = this.client.getAllPieceIdsOnTile(this.state.allTiles[i]);
             for (j = 0; j < pieceIds.length; j += 1) {
                 targets.push(<li key={pieceIds[j]}>
                     <a id={pieceIds[j]} onClick={this.setTarget}>
                         <span className="glyphicon glyphicon-pawn"></span>
-                        {this.client.getNode(pieceIds[j]).getAttribute('name') + '[' + pieceIds[j] + ']'}
+                        {this.client.getNode(pieceIds[j]).getAttribute('name') +
+                        '['+this.client.getCoordinateOfPiece(pieceIds[j])+'] [' + pieceIds[j] + ']'}
                     </a></li>);
             }
         }

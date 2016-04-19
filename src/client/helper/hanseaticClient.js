@@ -294,7 +294,7 @@ function HanseaticClient(gmeClient) {
     };
 
     this.getCoordinateOfPiece = function(pieceId){
-        return game.getNode(game.getNode(pieceId).game.getParentId()).getAttribute('coordinate');
+        return this.getNode(this.getNode(pieceId).getParentId()).getAttribute('coordinate');
     }
 }
 module.exports = HanseaticClient;

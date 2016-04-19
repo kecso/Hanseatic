@@ -54,7 +54,27 @@ export default class PlayerView extends React.Component {
     }
 
     startStep() {
+        var playerId = this.client.getActivePlayerId(),
+            tasks = this.getValidTasks(playerId),
+            selected = {
+                id: playerId,
+                tasks: tasks,
+                x: 0,
+                y: 0
+            };
+
         this.client.startTransaction();
+        if (tasks.length === 0) {
+            return;
+        }
+
+        if (tasks.length === 1) {
+            this.taskProcessor[tasks[0]](playerId);
+            this.setState({phase: 'inStep'});
+            return;
+        }
+
+        this.setState({selected: selected, phase: 'inStep'});
     }
 
     finishStep() {
@@ -63,12 +83,23 @@ export default class PlayerView extends React.Component {
         this.client.makePointer(this.client.gameId, 'activePlayer',
             this.client.getPointerTarget(this.client.getActivePlayerId(), 'next'));
         this.client.completeTransaction(message);
+        this.setState({selected: null, phase: 'active'});
 
     }
 
     boardClick(event) {
         event.tasks = this.getValidTasks(event.id);
-        this.setState({selected: event});
+        if (event.tasks.length === 0) {
+            return;
+        }
+
+        if (event.tasks.length === 1) {
+            this.taskProcessor[event.tasks[0]](event.id);
+            this.setState({phase: 'active', selected: null});
+            return;
+        }
+
+        this.setState({selected: event, phase: 'active'});
     }
 
     executeTask(taskName) {
