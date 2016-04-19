@@ -195,6 +195,7 @@ function HanseaticClient(gmeClient) {
     }
 
     this.endTurn = function () {
+        console.log('who was calling???');
         var message = 'finishing step of [' + self.getPlayerName(self.getActivePlayerId()) + ']';
 
         self.makePointer(self.gameId, 'activePlayer',
@@ -203,11 +204,11 @@ function HanseaticClient(gmeClient) {
         self.completeTransaction(message);
     };
 
-    this.endGame = function(winnerId){
-        if(winnerId){
-            game.setAttributes(winnerId,'isWinning',true);
+    this.endGame = function (winnerId) {
+        if (winnerId) {
+            self.setAttributes(winnerId, 'isWinning', true);
         }
-        game.setAttributes(self.gameId,'isOver',true);
+        self.setAttributes(self.gameId, 'isOver', true);
     };
 
     this.getSelectedItem = function () {
@@ -220,13 +221,13 @@ function HanseaticClient(gmeClient) {
 
         for (i = 0; i < allTileIds.length; i += 1) {
             tile = self.getNode(allTileIds[i]);
-            if (tile.getAttribute('highlighted')) {
+            if (tile.getAttribute('selected')) {
                 return allTileIds[i];
             }
             pieceIds = self.getAllPieceIdsOnTile(allTileIds[i]);
             for (j = 0; j < pieceIds.length; j += 1) {
                 piece = self.getNode(pieceIds[j]);
-                if (piece.getAttribute('highlighted')) {
+                if (piece.getAttribute('selected')) {
                     return pieceIds[j];
                 }
             }
@@ -236,7 +237,9 @@ function HanseaticClient(gmeClient) {
     this.selectItem = function (itemId) {
         var oldId = self.getSelectedItem();
 
-        self.setAttributes(oldId, 'selected', false);
+        if (oldId) {
+            self.setAttributes(oldId, 'selected', false);
+        }
         self.setAttributes(itemId, 'selected', true);
     };
 
@@ -293,7 +296,7 @@ function HanseaticClient(gmeClient) {
         }
     };
 
-    this.getCoordinateOfPiece = function(pieceId){
+    this.getCoordinateOfPiece = function (pieceId) {
         return this.getNode(this.getNode(pieceId).getParentId()).getAttribute('coordinate');
     }
 }
