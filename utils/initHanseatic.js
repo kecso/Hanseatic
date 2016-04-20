@@ -72,6 +72,14 @@ usermanager.main([
         ]);
     })
     .then(function () {
+        return importer.main(['node', './node_modules/src/bin/import.js',
+            './utils/TicTacToe.json',
+            '-p', 'TicTacToe',
+            '-b', 'master',
+            '-o', 'creator'
+        ]);
+    })
+    .then(function () {
         console.log('everything is fine')
     })
     .catch(function (err) {

@@ -63,6 +63,11 @@ export default class PlayerView extends React.Component {
                 y: 0
             };
 
+        if(this.client.getGameNode().getAttribute('isOver') === true){
+            this.setState({phase:'finished'});
+            return;
+        }
+
         this.client.startTransaction();
         if (tasks.length === 0) {
             return;
@@ -88,6 +93,10 @@ export default class PlayerView extends React.Component {
     }
 
     boardClick(event) {
+        if(this.client.getGameNode().getAttribute('isOver') === true){
+            return;
+        }
+
         event.tasks = this.getValidTasks(event.id);
         if (event.tasks.length === 0) {
             return;
@@ -122,7 +131,8 @@ export default class PlayerView extends React.Component {
     }
 
     render() {
-        var context = <div/>;
+        var context = <div/>,
+            endTurnButton;
 
         if (this.state.phase === 'init') {
             return <div>initiating...</div>;
@@ -131,12 +141,18 @@ export default class PlayerView extends React.Component {
             context = <ContextMenuComponent items={this.state.selected.tasks} onSelect={this.executeTask}
                                             x={this.state.selected.x} y={this.state.selected.y}/>;
         }
+
+        if(this.state.phase === 'finished'){
+            endTurnButton = <button className="btn btn-default" disabled>EndTurn</button>;
+        } else {
+            endTurnButton = <button className="btn btn-default" onClick={this.finishStep}>EndTurn</button>;
+        }
         return <div>
             <div className="col-sm-12">
                 <HomeComponent router={this.props.router}/>
                 <GameStateComponent finished={this.client.getGameNode().getAttribute('isOver')}
                                     player={this.client.getNode(this.client.getActivePlayerId()).getAttribute('name')}/>
-                <button className="btn btn-default" onClick={this.finishStep}>EndTurn</button>
+                {endTurnButton}
             </div>
             <BoardViewComponent client={this.client} clickEvent={this.boardClick}/>
             {context}

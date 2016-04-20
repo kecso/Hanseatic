@@ -195,7 +195,6 @@ function HanseaticClient(gmeClient) {
     }
 
     this.endTurn = function () {
-        console.log('who was calling???');
         var message = 'finishing step of [' + self.getPlayerName(self.getActivePlayerId()) + ']';
 
         self.makePointer(self.gameId, 'activePlayer',
