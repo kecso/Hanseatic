@@ -3,134 +3,78 @@
  */
 
 //we add siteAdmin priviliges to the guest user, which is not the best, but that is what we have so far
-var usermanager = require('webgme/src/bin/usermanager');
+var usermanager = require('webgme/src/bin/usermanager'),
+    importer = require('webgme/src/bin/import');
 
 usermanager.main([
-    'node',
-    './node_modules/src/bin/usermanager.js',
-    'useradd',
-    '-c',
-    '-s',
-    'guest',
-    'guest@nomail.com',
-    'guest'])
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'useradd',
-            '-c',
-            'p1',
-            'p1@nomail.com',
-            'p1']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'useradd',
-            '-c',
-            'p2',
-            'p2@nomail.com',
-            'p2']);
-    })
-    .then(function(){
+        'node',
+        './node_modules/src/bin/usermanager.js',
+        'useradd',
+        '-c',
+        '-s',
+        'guest',
+        'guest@nomail.com',
+        'guest'])
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'organizationadd',
-            'startingGames']);
+            'creator']);
     })
-    .then(function(){
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'organizationadd',
-            'ongoingGames']);
+            'player']);
     })
-    .then(function(){
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'organizationadd',
-            'archiveGames']);
+            'archiver']);
     })
-    .then(function(){
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'usermod_organization_add',
+            '-m',
             'guest',
-            'archiveGames']);
+            'creator']);
     })
-    .then(function(){
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'usermod_organization_add',
+            '-m',
             'guest',
-            'ongoingGames']);
+            'player']);
     })
-    .then(function(){
+    .then(function () {
         return usermanager.main([
             'node',
             './node_modules/src/bin/usermanager.js',
             'usermod_organization_add',
+            '-m',
             'guest',
-            'startingGames']);
+            'archiver']);
     })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p1',
-            'archiveGames']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p1',
-            'ongoingGames']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p1',
-            'startingGames']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p2',
-            'archiveGames']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p2',
-            'ongoingGames']);
-    })
-    .then(function(){
-        return usermanager.main([
-            'node',
-            './node_modules/src/bin/usermanager.js',
-            'usermod_organization_add',
-            'p2',
-            'startingGames']);
+    .then(function () {
+        return importer.main(['node', './node_modules/src/bin/import.js',
+            './utils/pegSolitare.json',
+            '-p', 'pegSolitare',
+            '-b', 'master',
+            '-o', 'creator'
+        ]);
     })
     .then(function () {
         console.log('everything is fine')
     })
     .catch(function (err) {
-        console.log('something went wrong:',err);
+        console.log('something went wrong:', err);
     });
 
