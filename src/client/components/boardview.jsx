@@ -39,8 +39,8 @@ export default class BoardViewComponent extends React.Component {
                 pieceInfo = {
                     id: tileIds[i],
                     picture: null,
-                    selected: false,
-                    highlighted: false,
+                    selected: node.getAttribute('selected'),
+                    highlighted: node.getAttribute('highlighted'),
                     x: node.getRegistry('position').x,
                     y: node.getRegistry('position').y,
                     width: node.getRegistry('measure').width,
@@ -57,9 +57,12 @@ export default class BoardViewComponent extends React.Component {
 
                 pieceIds = this.client.getAllPieceIdsOnTile(tileIds[i]);
                 for (j = 0; j < pieceIds.length; j += 1) {
+                    pieceInfo = JSON.parse(JSON.stringify(pieceInfo));
                     node = this.client.getNode(pieceIds[j]);
                     pieceInfo.id = pieceIds[j];
                     pieceInfo.picture = node.getAttribute('picture');
+                    pieceInfo.selected = node.getAttribute('selected');
+                    pieceInfo.highlighted = node.getAttribute('highlighted');
                     state.pieces.push(pieceInfo);
                 }
             }
@@ -86,12 +89,32 @@ export default class BoardViewComponent extends React.Component {
             item = this.state.pieces[i];
             pieces.push(<image key={item.id} id={item.id} height={item.height} xlinkHref={"/pieces/"+item.picture}
                                width={item.width} x={item.x} y={item.y}/>);
+            if (item.highlighted) {
+                pieces.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
+                                  width={item.width} x={item.x} y={item.y} stroke="black" strokeWidth="3"
+                                  fill="none"/>);
+            }
+            if (item.selected) {
+                pieces.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
+                                  width={item.width} x={item.x} y={item.y} stroke="nonde"
+                                  fill="black" fillOpacity="0.3"/>);
+            }
         }
 
         for (i = 0; i < this.state.tiles.length; i += 1) {
             item = this.state.tiles[i];
             tiles.push(<rect key={item.id} id={item.id} height={item.height} width={item.width} x={item.x} y={item.y}
-                             stroke="none" fill="white" fillOpacity="0.05"/>)
+                             stroke="none" fill="white" fillOpacity="0.05"/>);
+            if (item.highlighted) {
+                tiles.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
+                                 width={item.width} x={item.x} y={item.y} stroke="black" strokeWidth="3"
+                                 fill="none"/>);
+            }
+            if (item.selected) {
+                pieces.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
+                                  width={item.width} x={item.x} y={item.y} stroke="none"
+                                  fill="black" fillOpacity="0.3"/>);
+            }
         }
 
         return <svg width={600} height={600} onClick={this.onClick}>
