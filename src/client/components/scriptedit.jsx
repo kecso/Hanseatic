@@ -74,7 +74,8 @@ export default class ScriptEditComponent extends React.Component {
                 <a id="nullCondition" onClick={this.setCondition}>
                     none
                 </a></li>],
-            i;
+            i,
+            functionList = [];
         for (i in this.props.allConditions) {
             conditions.push(<li key={i}>
                 <a id={i} onClick={this.setCondition}>
@@ -82,7 +83,7 @@ export default class ScriptEditComponent extends React.Component {
                 </a></li>);
         }
         if (this.props.hasCondition) {
-            condition = <div className="input-group">
+            condition = <div className="input-group col-sm-9">
                 <span className="input-group-addon" id="task-condition">Condition</span>
                 <button className="btn btn-default btn-block dropdown-toggle" aria-describedby="task-condition"
                         type="button" id="conditionDropdown" data-toggle="dropdown" aria-haspopup="true"
@@ -97,21 +98,34 @@ export default class ScriptEditComponent extends React.Component {
         } else {
             condition = <div/>;
         }
-        return <div className="col-sm-6">
-            <div className="input-group">
+
+        for (i = 0; i < this.props.functionlist.length; i += 1) {
+            functionList.push(<li key={i}>{this.props.functionlist[i]}</li>);
+        }
+
+        return <div className="col-sm-8">
+            <div className="input-group col-sm-9">
                 <span className="input-group-addon" id="task-name">Name</span>
                 <input type="text" className="form-control" aria-describedby="task-name" value={this.state.name}
                        onChange={this.nameChange}/>
             </div>
             {condition}
-            <div className="input-group">
+            <div className="input-group col-sm-9">
                 <span className="input-group-addon" id="task-description">Description</span>
                 <textarea className="form-control" aria-describedby="task-description" value={this.state.description}
                           onChange={this.descriptionChange}/>
             </div>
-            <textarea className="form-control" rows="20" value={this.state.code} onChange={this.updateCode}/>
-            <button className="btn btn-danger" onClick={this.save}>Save changes</button>
-            <button className="btn btn-default" onClick={this.cancel}>Cancel</button>
+            <div className="col-sm-9">
+                <textarea className="form-control" rows="20" value={this.state.code} onChange={this.updateCode}/>
+                <button className="btn btn-danger" onClick={this.save}>Save changes</button>
+                <button className="btn btn-default" onClick={this.cancel}>Cancel</button>
+            </div>
+            <div className="col-sm-3">
+                <ul className="list-group">
+                    <h3>Existing functions</h3>
+                    {functionList}
+                </ul>
+            </div>
         </div>
     }
 
@@ -124,5 +138,6 @@ ScriptEditComponent.propTypes = {
     hasCondition: React.PropTypes.bool.isRequired,
     condition: React.PropTypes.string,
     allConditions: React.PropTypes.object.isRequired,
-    description: React.PropTypes.string.isRequired
+    description: React.PropTypes.string.isRequired,
+    functionlist: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
 };

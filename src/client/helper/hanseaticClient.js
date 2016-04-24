@@ -297,6 +297,46 @@ function HanseaticClient(gmeClient) {
 
     this.getCoordinateOfPiece = function (pieceId) {
         return this.getNode(this.getNode(pieceId).getParentId()).getAttribute('coordinate');
-    }
+    };
+
+    this.getDiceId = function () {
+        var gameChildrenIds = self.getGameNode().getChildrenIds(),
+            i;
+
+        for (i = 0; i < gameChildrenIds.length; i += 1) {
+            if (self.getNode(gameChildrenIds[i]).getMetaTypeId() === self.getMetaId('Dice')) {
+                return gameChildrenIds[i];
+            }
+        }
+        return null;
+    };
+
+    this.roll = function () {
+        var diceId = self.getDiceId(),
+            value;
+
+        if (diceId) {
+            value = Math.floor((Math.random() * 6) + 1);
+            self.setAttributes(diceId, 'value', value);
+        }
+    };
+
+    this.getDiceValue = function () {
+        var diceId = self.getDiceId();
+
+        if (diceId) {
+            return self.getNode(diceId).getAttribute('value');
+        }
+
+        return 0;
+    };
+
+    this.clearDice = function () {
+        var diceId = self.getDiceId();
+
+        if (diceId) {
+            self.setAttributes(diceId, 'value', 0);
+        }
+    };
 }
 module.exports = HanseaticClient;

@@ -31,6 +31,9 @@ export default class CreatorView extends React.Component {
         this.addPlayer = this.addPlayer.bind(this);
         this.taskAssigner = this.taskAssigner.bind(this);
         this.onFinishTaskAssigner = this.onFinishTaskAssigner.bind(this);
+        this.addDice = this.addDice.bind(this);
+        this.delDice = this.delDice.bind(this);
+        this.getFunctionNames = this.getFunctionNames.bind(this);
 
         UIPattern[this.client.gameId] = {children: 3};
 
@@ -45,7 +48,8 @@ export default class CreatorView extends React.Component {
             functionContainer: this.client.functionContainerId,
             functions: [],
             tiles: [],
-            pieces: []
+            pieces: [],
+            hasDice: false
         };
 
         this.client.addUI(this, this.projectUpdated, 'HanseaticCreator');
@@ -94,6 +98,8 @@ export default class CreatorView extends React.Component {
                 _.union(state.pieces, node.getChildrenIds());
             }
         }
+
+        state.hasDice = this.client.getDiceId() !== null;
 
         this.setState(state);
     }
@@ -271,6 +277,24 @@ export default class CreatorView extends React.Component {
         }
     }
 
+    getFunctionNames() {
+        var names = [],
+            ids = this.state.functions || [],
+            i;
+
+        for (i = 0; i < ids.length; i += 1) {
+            names.push(this.client.getNode(ids[i]).getAttribute('name'));
+        }
+
+        //the default 'Function' should be removed
+        i = names.indexOf('Function');
+        if (i !== -1) {
+            names.splice(i, 1);
+        }
+        
+        return names;
+    }
+
     //task
     addTask() {
         var baseId = this.client.getMetaId('Task'),
@@ -286,18 +310,35 @@ export default class CreatorView extends React.Component {
 
     }
 
+    //dice
+    addDice() {
+        var params = {parentId: this.client.gameId};
+
+        params[this.client.getMetaId('Dice')] = {};
+
+        this.client.createChildren(params);
+    }
+
+    delDice() {
+        var diceId = this.client.getDiceId();
+        if (diceId) {
+            this.client.delMoreNodes([diceId]);
+        }
+    }
+
     render() {
         switch (this.state.phase) {
             case 'editScript':
                 var node = this.client.getNode(this.state.target);
                 return <ScriptEditComponent id={this.state.target}
                                             name={node.getAttribute('name')}
-                                            code={node.getAttribute('script')}
+                                            code={node.getAttribute('script') || ""}
                                             update={this.updateScript}
                                             hasCondition={this.state.tasks.indexOf(this.state.target) !== -1}
                                             condition={this.client.getPointerTarget(this.state.target,'premise')}
                                             allConditions={this.client.getAllConditionNames()}
-                                            description={node.getAttribute('description') || ""}/>;
+                                            description={node.getAttribute('description') || ""}
+                                            functionlist={this.getFunctionNames()}/>;
             case 'editBoard':
                 return <BoardEditComponent tiles={this.getTileInformation()}
                                            picture={this.getBoardPicture()} update={this.finishBoardEdit}
@@ -315,6 +356,7 @@ export default class CreatorView extends React.Component {
                     functionDropdowns = [],
                     functionsToEdit = [],
                     functionsToRemove = [],
+                    dice,
                     i, btnClass,
                     id, item;
 
@@ -426,12 +468,18 @@ export default class CreatorView extends React.Component {
                     </div>);
                 }
 
+                if (this.state.hasDice) {
+                    dice = <button className="btn btn-lg btn-danger" onClick={this.delDice}>Remove dice</button>;
+                } else {
+                    dice = <button className="btn btn-lg btn-warning" onClick={this.addDice}>Add dice</button>;
+                }
                 return <div className="col-sm-6">
                     <button className="btn btn-default btn-lg" onClick={this.editBoard}>EditBoard</button>
                     <button className="btn btn-default btn-lg" onClick={this.addPlayer}>
                         AddPlayer <span className="badge">{this.client.getNumOfPlayers()}</span>
                     </button>
                     <button className="btn btn-default btn-lg" onClick={this.taskAssigner}>AssignTasks</button>
+                    {dice}
                     <br/>
                     <div className="btn btn-group" role="group">
                         <button type="button" className="btn btn-default" onClick={this.addTask}>
