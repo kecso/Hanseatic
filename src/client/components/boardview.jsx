@@ -13,18 +13,53 @@ export default class BoardViewComponent extends React.Component {
 
         this.buildState = this.buildState.bind(this);
         this.onClick = this.onClick.bind(this);
+        this.getMultiPieceArray = this.getMultiPieceArray.bind(this);
     }
 
     onClick(event) {
         this.props.clickEvent({id: event.target.getAttribute('id'), x: event.pageX, y: event.pageY});
     }
 
+    computeSize(size) {
+        var sqrt = Math.sqrt(size);
+
+        if (Math.trunc(sqrt) * Math.trunc(sqrt) === size) {
+            return Math.trunc(sqrt);
+        }
+        return Math.trunc(sqrt) + 1;
+    }
+
+    getMultiPieceArray(startX, startY, width, height, size) {
+        var paramArray = [],
+            computedSize = this.computeSize(size),
+            stepX = width / computedSize,
+            stepY = height / computedSize,
+            x = startX,
+            y = startY - stepY,
+            i, j;
+        for (i = 0; i < computedSize; i += 1) {
+            x = startX;
+            y+=stepY;
+            for (j = 0; j < computedSize; j += 1) {
+                paramArray.push({
+                    x:x,
+                    y:y,
+                    width:stepX,
+                    height:stepY
+                });
+                x+=stepX;
+            }
+        }
+        return paramArray;
+    }
+
     buildState() {
         var state = {},
             node,
             tileIds,
-            pieceInfo,
+            tileInfo,
             pieceIds,
+            pieceInfos,
             i, j;
         node = this.client.getBoardNode();
 
@@ -36,7 +71,7 @@ export default class BoardViewComponent extends React.Component {
         for (i = 0; i < tileIds.length; i += 1) {
             node = this.client.getNode(tileIds[i]);
             if (node.getAttribute('isVisible')) {
-                pieceInfo = {
+                tileInfo = {
                     id: tileIds[i],
                     picture: null,
                     selected: node.getAttribute('selected'),
@@ -47,23 +82,20 @@ export default class BoardViewComponent extends React.Component {
                     height: node.getRegistry('measure').height
                 };
                 //first save the info to the state
-                state.tiles.push(pieceInfo);
-
-                pieceInfo = JSON.parse(JSON.stringify(pieceInfo));
-                pieceInfo.x = pieceInfo.x + pieceInfo.width * 0.1;
-                pieceInfo.y = pieceInfo.y + pieceInfo.height * 0.1;
-                pieceInfo.width *= 0.8;
-                pieceInfo.height *= 0.8;
+                state.tiles.push(tileInfo);
 
                 pieceIds = this.client.getAllPieceIdsOnTile(tileIds[i]);
+                pieceInfos = this.getMultiPieceArray(tileInfo.x + tileInfo.width * 0.1,
+                    tileInfo.y + tileInfo.height * 0.1,
+                0.8*tileInfo.width,0.8*tileInfo.height,pieceIds.length);
+
                 for (j = 0; j < pieceIds.length; j += 1) {
-                    pieceInfo = JSON.parse(JSON.stringify(pieceInfo));
                     node = this.client.getNode(pieceIds[j]);
-                    pieceInfo.id = pieceIds[j];
-                    pieceInfo.picture = node.getAttribute('picture');
-                    pieceInfo.selected = node.getAttribute('selected');
-                    pieceInfo.highlighted = node.getAttribute('highlighted');
-                    state.pieces.push(pieceInfo);
+                    pieceInfos[j].id = pieceIds[j];
+                    pieceInfos[j].picture = node.getAttribute('picture');
+                    pieceInfos[j].selected = node.getAttribute('selected');
+                    pieceInfos[j].highlighted = node.getAttribute('highlighted');
+                    state.pieces.push(pieceInfos[j]);
                 }
             }
         }

@@ -99,6 +99,10 @@ export default class PlayerView extends React.Component {
 
         event.tasks = this.getValidTasks(event.id);
         if (event.tasks.length === 0) {
+            if(this.client.isPiece(event.id)){
+                event.id = this.client.getNode(event.id).getParentId();
+                this.boardClick(event);
+            }
             return;
         }
 
