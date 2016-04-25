@@ -1,0 +1,3766 @@
+{
+    "_metadata": {
+        "type": "project",
+        "rootGuid": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+        "hasAssets": false
+    },
+    "root": {
+        "path": "",
+        "guid": "03d36072-9e09-7866-cb4e-d0a36ff825f6"
+    },
+    "containment": {
+        "040f6ce9-4cf6-37f9-2629-0955d2f02105": {},
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": {
+            "1fabd547-4eff-351b-8403-e90b9e89ea45": {},
+            "29708893-4f49-2a4e-11d5-b66dfaa8d63a": {},
+            "29b50b0f-4ac0-7edf-61f1-045fdfb0f9d0": {
+                "a74282d1-0864-43c6-6d60-b2c5d6e63fd1": {}
+            },
+            "4c80d26a-8102-70cc-b1dd-817b3fccca74": {},
+            "6a28abcd-f2ce-01f6-9f06-c92120673f23": {
+                "7e7d9e93-32d7-8e71-7968-2a1bc6f16168": {},
+                "903fd8fd-5093-c9a2-5e1a-15d601ddfb02": {}
+            },
+            "70c33907-f1cb-8f6a-4753-02e9db948cb8": {},
+            "9292f388-fa0c-16c7-9394-81fdb965f424": {
+                "21e721c0-87f8-a9a5-6c1e-5c7f1d50930a": {},
+                "3f0aaa63-854c-a1b5-ef50-f3b8050fd59a": {},
+                "4b69a4f5-680b-1eb1-fd86-3c1811fb73b3": {},
+                "522e8b0a-a5ba-eade-258d-9e2528fa2e82": {},
+                "eb2b8648-3cf1-db41-d4e1-1681ccb992cc": {},
+                "f25b64d8-89ad-aeb7-a66d-f9f2159cacad": {}
+            },
+            "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94": {
+                "00cf950f-3148-aa52-4662-36a944e19a3a": {},
+                "025a8110-4ac6-4828-396f-71e90bf0bbf6": {},
+                "070a6eac-a113-c4cf-6bc0-389920a004b7": {},
+                "092e8c97-6bd8-80cf-e7f4-886993fc43ad": {},
+                "0f23c1db-da5a-ecc9-34f5-9201e11a3018": {},
+                "0f56803d-e03b-c7b1-5741-5bb18fe75974": {},
+                "12490437-fde0-4931-a4dd-c2ba3240f8ae": {},
+                "17be15f8-6273-dc9d-79b6-cfe850bd80c8": {},
+                "1a28a040-b55f-5d45-3f19-7c57d663a2e9": {},
+                "1f74655b-b258-a6e2-957c-053427ef8618": {},
+                "21e5810e-e31d-67da-d6c9-590660fd63e0": {},
+                "2901c0f4-4bca-0728-b95d-2037d09dc2a6": {},
+                "2c7967ae-6c52-73a0-c13e-ef29d2add4b7": {},
+                "2e4011a6-99e2-cdef-adda-bf6561136872": {},
+                "345299ec-f4b2-f149-75d7-e18dbe616632": {},
+                "39527d6f-7b91-d12a-212d-e4627f4b496b": {
+                    "28553af2-84d3-df2c-c0a8-a711c5dc5bf2": {},
+                    "a5bad9c3-015c-838e-f198-35138ac615ca": {},
+                    "d33f9d9c-6a83-a421-6169-737e7399c188": {},
+                    "f3dbce29-d348-7166-5b16-03867c5bed0b": {}
+                },
+                "3b4372f6-f86e-ef88-09ec-aa4ac1608da4": {},
+                "3c99c9fc-bcf0-a0a7-0477-9c41449fdb9c": {},
+                "3d071138-4835-614b-9c6f-a730746a0483": {
+                    "00315690-eec0-ae32-831c-126a965a5441": {},
+                    "5f97140c-12ea-9d3d-11fc-5e903e655582": {},
+                    "cbb51f71-8913-43c2-ee5c-6eea55e1314e": {},
+                    "d1532ef4-cabb-f9ed-efc5-2e97bc4f623d": {}
+                },
+                "3e4f4128-5f16-7ce5-61a4-e2d9fddd8e93": {},
+                "4b306e80-178f-fc2b-ea07-0b3503dc5d6e": {},
+                "4befa7b3-f7ed-e3f4-0ed9-8e425d8901a0": {},
+                "4c1cdea9-e56b-c52f-2450-987e70c649b7": {},
+                "4d72afe1-b33b-210a-d0a4-06834182ca10": {},
+                "4f167c27-e266-79f0-d2c5-3af0b1ff8960": {},
+                "50d99f54-b777-25fe-e310-3d2f270bbeeb": {},
+                "57b2a4e6-8832-982f-8eb1-096ecbf73aa1": {},
+                "5baf9651-2b4a-18af-701d-efc0c172c240": {},
+                "5d22329c-96e8-c55b-8774-fe309eeb7b54": {},
+                "66c5f296-6d0c-88c0-c9d3-64f09c190f2b": {
+                    "39a2c3ac-11b2-6ac9-df35-1e9dda9e135d": {},
+                    "485e0b58-c039-87b7-4d0f-7f27a0cbb04f": {},
+                    "8c2f0155-f7f4-e8cc-f3e9-f8fcd8b366e9": {},
+                    "f99f833f-0099-6435-9689-478656dbe82b": {}
+                },
+                "67757015-6885-03b1-8ae2-3aac23fcda7c": {},
+                "7104612e-96d5-791f-48f1-ab40568d48fb": {},
+                "72479153-192b-b144-e31f-a70a6d762066": {},
+                "72ed5dee-c9fb-b29d-5348-62e4f970c8cc": {},
+                "7331f1bd-7e2f-4c14-bf25-3e9b96e8e322": {},
+                "76b1680c-e494-ed62-7154-ba3baf2f4bd3": {},
+                "7c9e444e-a8e8-865d-e993-fec571127701": {},
+                "7fc10220-bf31-13d1-ec23-883a12d23fb1": {},
+                "81459b2a-7e35-34b2-df83-bd969d6bf00b": {},
+                "819d17e6-9e2b-3840-e619-792a172dd25d": {},
+                "8414212f-6155-0317-9946-6f7600117bf0": {},
+                "893417e1-a627-c1b0-f833-42b132176d55": {},
+                "8b347e41-a979-7afd-aca3-e334e3d071f1": {},
+                "8cef598b-5d40-2961-d17c-17e13f9b1f6a": {},
+                "8f0215fc-76f1-6d9d-629a-f3ebf040856e": {},
+                "8f284763-f800-233b-bfd7-36dd812f56ba": {},
+                "93129548-5df0-15ac-4974-98e7e33f154b": {},
+                "a160763a-235f-aabb-2baf-c780928479de": {},
+                "a2adba83-03ec-f614-23ec-c0fb2ecb4c38": {},
+                "a6847f4f-2076-b186-97d8-4c4908dbe3f3": {},
+                "aa406865-18ed-59d4-6ae3-989635d83801": {},
+                "abf7b5cd-836b-dfc5-9d02-fe456a70a173": {},
+                "af28d68e-0b47-ded9-861c-3c3f1fb58818": {},
+                "afe406c7-82b5-c738-b988-9985d03024ec": {},
+                "b2146cde-5fd3-50c5-94a9-a16ae43f18fa": {},
+                "b41e7660-9ca5-40b1-b935-d932fb5c0bdd": {},
+                "b5e3b941-7dc4-e2bf-c85c-2147dbd3a40c": {},
+                "ba3ffa1f-943b-c7c9-4629-9fd90cc5bbd6": {},
+                "bca2f33d-b567-7fc5-7ad6-dc7a11e1d8cb": {},
+                "bd42df68-a50c-8f2b-3535-9386b5476e7e": {},
+                "c07c1f32-41e8-f1b7-37b3-8b74a46c9318": {},
+                "c16e692e-d5f8-adca-4709-0af9ee0ebe3c": {},
+                "c2949ca3-240b-57fc-159d-a91bce0489fb": {},
+                "c9831bac-c1b4-8e41-9512-46b9b4d123ea": {},
+                "d2354e61-c23d-bbf9-2446-22672e6afc62": {},
+                "d91ada83-9a85-368d-b1aa-1741dce1c5d8": {},
+                "dabb5adf-9ab6-773a-adcc-40c362ef8313": {},
+                "e48cae2c-e7f0-277e-1b01-68bb7119ac3a": {},
+                "ea0178b5-e354-73cc-fb7d-adb027472291": {},
+                "ea83d691-9bc3-9002-fb32-76792b6e88ad": {},
+                "eb266628-1269-3cdc-764d-729b4fe7a6ad": {
+                    "0ccb2d3c-0573-4d2a-b2d0-8994dcdf8e25": {},
+                    "c43fc806-08b7-9b8a-dc9a-190e2a24221d": {},
+                    "ddd4af27-b724-6988-3820-3bd64799c6e7": {},
+                    "f308b179-2e62-4e00-1654-c103bf6ee3fd": {}
+                },
+                "edd95680-f565-2ea3-b086-0c257a1f655f": {},
+                "f6007adb-a47a-fa0f-66bc-c9233e905531": {},
+                "f63b8a5c-ae9d-7441-903d-836223fdeaee": {},
+                "f6beeea4-897d-eade-feb9-c49b246bb53c": {},
+                "fb5fb3bd-0242-38bc-24fe-66244e4f9f55": {},
+                "fe28ea29-1b68-41dd-54fe-4efc87231c4d": {}
+            },
+            "dff28846-207b-636c-a356-94862d399bc7": {}
+        },
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": {
+            "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": {},
+            "173eae9a-e8f7-a0cc-f886-156a1082db54": {},
+            "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": {},
+            "2ae59976-6f36-726a-c1e8-479e6b18f9b7": {},
+            "392b8725-5e78-6f25-2aad-80858525a3c0": {},
+            "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": {},
+            "645b54cb-cdfe-51b2-f332-aa60af5758d7": {
+                "23fc6de9-e67d-76ff-1866-5991caf3a57d": {},
+                "6061cd2b-5e73-09d6-e691-94ef3524638e": {},
+                "c383dd1d-500c-2819-5143-f41be7e14239": {}
+            },
+            "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": {},
+            "6e5fb3b4-fa42-8108-f141-6f11c9fab183": {},
+            "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd": {},
+            "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": {},
+            "cc92a5a1-44e9-bd01-4b40-4e390a61f796": {},
+            "dfd037f0-09c7-7264-88de-521c01d5fb2a": {},
+            "fe3445de-6941-6faf-a7f6-39a357b58315": {}
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {}
+    },
+    "bases": {},
+    "nodes": {
+        "00315690-eec0-ae32-831c-126a965a5441": {
+            "attributes": {
+                "picture": "ghost_red.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "3d071138-4835-614b-9c6f-a730746a0483",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "4c80d26a-8102-70cc-b1dd-817b3fccca74"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "00cf950f-3148-aa52-4662-36a944e19a3a": {
+            "attributes": {
+                "coordinate": 41,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 320,
+                    "y": 559
+                }
+            },
+            "sets": {}
+        },
+        "025a8110-4ac6-4828-396f-71e90bf0bbf6": {
+            "attributes": {
+                "coordinate": 38,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": 439
+                }
+            },
+            "sets": {}
+        },
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": {
+            "attributes": {
+                "name": "ROOT"
+            },
+            "base": null,
+            "meta": {
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": null,
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "MetaSheets": [
+                    {
+                        "SetID": "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d",
+                        "order": 0,
+                        "title": "META"
+                    },
+                    {
+                        "SetID": "MetaAspectSet_289ad86c-6666-aa8c-e386-334845ec5656",
+                        "order": 1,
+                        "title": "Basic"
+                    }
+                ],
+                "ProjectRegistry": {
+                    "FCO_ID": "/1"
+                },
+                "usedAddOns": "",
+                "validDecorators": "ModelDecorator CircleDecorator MetaDecorator SVGDecorator UMLStateMachineDecorator DefaultDecorator",
+                "validPlugins": "",
+                "validVisualizers": "ModelEditor METAAspect"
+            },
+            "sets": {
+                "MetaAspectSet": [
+                    {
+                        "attributes": {},
+                        "guid": "040f6ce9-4cf6-37f9-2629-0955d2f02105",
+                        "registry": {
+                            "position": {
+                                "x": 132,
+                                "y": 460
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "registry": {
+                            "position": {
+                                "x": 567,
+                                "y": 82
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "registry": {
+                            "position": {
+                                "x": 814,
+                                "y": 117
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                        "registry": {
+                            "position": {
+                                "x": 614,
+                                "y": 180
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "2ae59976-6f36-726a-c1e8-479e6b18f9b7",
+                        "registry": {
+                            "position": {
+                                "x": 751,
+                                "y": 345
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "392b8725-5e78-6f25-2aad-80858525a3c0",
+                        "registry": {
+                            "position": {
+                                "x": 582,
+                                "y": 336
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd",
+                        "registry": {
+                            "position": {
+                                "x": 704,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+                        "registry": {
+                            "position": {
+                                "x": 210,
+                                "y": 69
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "registry": {
+                            "position": {
+                                "x": 404,
+                                "y": 205
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+                        "registry": {
+                            "position": {
+                                "x": 814,
+                                "y": 197
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd",
+                        "registry": {
+                            "position": {
+                                "x": 125,
+                                "y": 126
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+                        "registry": {
+                            "position": {
+                                "x": 401,
+                                "y": 316
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+                        "registry": {
+                            "position": {
+                                "x": 44,
+                                "y": 240
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "registry": {
+                            "position": {
+                                "x": 104,
+                                "y": 165
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 100,
+                                "y": 100
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                        "registry": {
+                            "position": {
+                                "x": 391,
+                                "y": 454
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "fe3445de-6941-6faf-a7f6-39a357b58315",
+                        "registry": {
+                            "position": {
+                                "x": 703,
+                                "y": 88
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_289ad86c-6666-aa8c-e386-334845ec5656": [
+                    {
+                        "attributes": {},
+                        "guid": "040f6ce9-4cf6-37f9-2629-0955d2f02105",
+                        "registry": {
+                            "position": {
+                                "x": 135,
+                                "y": 367
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "registry": {
+                            "position": {
+                                "x": 576,
+                                "y": 88
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "registry": {
+                            "position": {
+                                "x": 809,
+                                "y": 93
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                        "registry": {
+                            "position": {
+                                "x": 576,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "2ae59976-6f36-726a-c1e8-479e6b18f9b7",
+                        "registry": {
+                            "position": {
+                                "x": 751,
+                                "y": 345
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "392b8725-5e78-6f25-2aad-80858525a3c0",
+                        "registry": {
+                            "position": {
+                                "x": 582,
+                                "y": 336
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd",
+                        "registry": {
+                            "position": {
+                                "x": 704,
+                                "y": 191
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+                        "registry": {
+                            "position": {
+                                "x": 279,
+                                "y": 69
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "registry": {
+                            "position": {
+                                "x": 404,
+                                "y": 205
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+                        "registry": {
+                            "position": {
+                                "x": 810,
+                                "y": 192
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd",
+                        "registry": {
+                            "position": {
+                                "x": 125,
+                                "y": 126
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+                        "registry": {
+                            "position": {
+                                "x": 401,
+                                "y": 316
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "registry": {
+                            "position": {
+                                "x": 279,
+                                "y": 192
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                        "registry": {
+                            "position": {
+                                "x": 391,
+                                "y": 454
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "fe3445de-6941-6faf-a7f6-39a357b58315",
+                        "registry": {
+                            "position": {
+                                "x": 703,
+                                "y": 88
+                            }
+                        }
+                    }
+                ],
+                "MetaAspectSet_68f8146d-b1b7-6c40-3464-f8c070e97e8d": [
+                    {
+                        "attributes": {},
+                        "guid": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+                        "registry": {
+                            "position": {
+                                "x": 44,
+                                "y": 240
+                            }
+                        }
+                    },
+                    {
+                        "attributes": {},
+                        "guid": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                        "registry": {
+                            "position": {
+                                "x": 38,
+                                "y": 99
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        "040f6ce9-4cf6-37f9-2629-0955d2f02105": {
+            "attributes": {
+                "color": "",
+                "highlighted": false,
+                "name": "VisualItem",
+                "selected": false
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "highlighted": {
+                        "type": "boolean"
+                    },
+                    "selected": {
+                        "type": "boolean"
+                    },
+                    "color": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 132,
+                    "y": 460
+                }
+            },
+            "sets": {}
+        },
+        "070a6eac-a113-c4cf-6bc0-389920a004b7": {
+            "attributes": {
+                "coordinate": 34,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 41
+                },
+                "position": {
+                    "x": 399,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "092e8c97-6bd8-80cf-e7f4-886993fc43ad": {
+            "attributes": {
+                "coordinate": 48,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 42
+                },
+                "position": {
+                    "x": 241,
+                    "y": 360
+                }
+            },
+            "sets": {}
+        },
+        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": {
+            "attributes": {
+                "name": "Tasks"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 538,
+                    "y": 308
+                }
+            },
+            "sets": {}
+        },
+        "0ccb2d3c-0573-4d2a-b2d0-8994dcdf8e25": {
+            "attributes": {
+                "picture": "ghost_black.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "eb266628-1269-3cdc-764d-729b4fe7a6ad",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "29708893-4f49-2a4e-11d5-b66dfaa8d63a"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "0f23c1db-da5a-ecc9-34f5-9201e11a3018": {
+            "attributes": {
+                "coordinate": 62,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 280,
+                    "y": 41
+                }
+            },
+            "sets": {}
+        },
+        "0f56803d-e03b-c7b1-5741-5bb18fe75974": {
+            "attributes": {
+                "coordinate": 11,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 42
+                },
+                "position": {
+                    "x": 240,
+                    "y": 159
+                }
+            },
+            "sets": {}
+        },
+        "12490437-fde0-4931-a4dd-c2ba3240f8ae": {
+            "attributes": {
+                "coordinate": 55,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 40
+                },
+                "position": {
+                    "x": 1,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "173eae9a-e8f7-a0cc-f886-156a1082db54": {
+            "attributes": {
+                "name": "Functions"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "17be15f8-6273-dc9d-79b6-cfe850bd80c8": {
+            "attributes": {
+                "coordinate": 18,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 40
+                },
+                "position": {
+                    "x": 319,
+                    "y": 41
+                }
+            },
+            "sets": {}
+        },
+        "1a28a040-b55f-5d45-3f19-7c57d663a2e9": {
+            "attributes": {
+                "coordinate": 76,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 43
+                },
+                "position": {
+                    "x": 280,
+                    "y": 359
+                }
+            },
+            "sets": {}
+        },
+        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": {
+            "attributes": {
+                "name": "Task"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "pointers": {
+                    "premise": {
+                        "items": [
+                            "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "premise": null
+            },
+            "registry": {
+                "position": {
+                    "x": 321,
+                    "y": 375
+                }
+            },
+            "sets": {}
+        },
+        "1f74655b-b258-a6e2-957c-053427ef8618": {
+            "attributes": {
+                "coordinate": 53,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 40,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "1fabd547-4eff-351b-8403-e90b9e89ea45": {
+            "attributes": {
+                "name": "Player4"
+            },
+            "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                "next": "4c80d26a-8102-70cc-b1dd-817b3fccca74"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "903fd8fd-5093-c9a2-5e1a-15d601ddfb02",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "21e5810e-e31d-67da-d6c9-590660fd63e0": {
+            "attributes": {
+                "coordinate": 29,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 42
+                },
+                "position": {
+                    "x": 559,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "21e721c0-87f8-a9a5-6c1e-5c7f1d50930a": {
+            "attributes": {
+                "description": "",
+                "name": "getCoordinatesOfPieces",
+                "script": "function(){\nvar pieceIds = game.getNode(game.getActivePlayerId()).getCollectionPaths('owner'),\ni,\ncoordinate,\ncoordinates = [];\n\nfor(i=0;i<pieceIds.length;i+=1){\ncoordinate = game.getCoordinateOfPiece(pieceIds[i]);\nif(coordinates.indexOf(coordinate) === -1){\ncoordinates.push(coordinate);\n}\n}\n\nreturn coordinates;\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "23fc6de9-e67d-76ff-1866-5991caf3a57d": {
+            "attributes": {},
+            "base": "fe3445de-6941-6faf-a7f6-39a357b58315",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "fe3445de-6941-6faf-a7f6-39a357b58315"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 111
+                }
+            },
+            "sets": {}
+        },
+        "28553af2-84d3-df2c-c0a8-a711c5dc5bf2": {
+            "attributes": {
+                "picture": "ghost_yellow.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "39527d6f-7b91-d12a-212d-e4627f4b496b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "1fabd547-4eff-351b-8403-e90b9e89ea45"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "2901c0f4-4bca-0728-b95d-2037d09dc2a6": {
+            "attributes": {
+                "coordinate": 28,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 558,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "29708893-4f49-2a4e-11d5-b66dfaa8d63a": {
+            "attributes": {
+                "name": "Player3"
+            },
+            "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                "next": "1fabd547-4eff-351b-8403-e90b9e89ea45"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "903fd8fd-5093-c9a2-5e1a-15d601ddfb02",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "29b50b0f-4ac0-7edf-61f1-045fdfb0f9d0": {
+            "attributes": {},
+            "base": "23fc6de9-e67d-76ff-1866-5991caf3a57d",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {},
+            "registry": {},
+            "sets": {}
+        },
+        "2ae59976-6f36-726a-c1e8-479e6b18f9b7": {
+            "attributes": {
+                "description": "",
+                "name": "Script",
+                "script": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "description": {
+                        "type": "string"
+                    },
+                    "script": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "2c7967ae-6c52-73a0-c13e-ef29d2add4b7": {
+            "attributes": {
+                "coordinate": 75,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 42
+                },
+                "position": {
+                    "x": 280,
+                    "y": 399
+                }
+            },
+            "sets": {}
+        },
+        "2e4011a6-99e2-cdef-adda-bf6561136872": {
+            "attributes": {
+                "coordinate": 56,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 40
+                },
+                "position": {
+                    "x": 1,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "345299ec-f4b2-f149-75d7-e18dbe616632": {
+            "attributes": {
+                "coordinate": 19,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": 80
+                }
+            },
+            "sets": {}
+        },
+        "392b8725-5e78-6f25-2aad-80858525a3c0": {
+            "attributes": {
+                "name": "CanHaveTasks"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "pointers": {
+                    "possibleTasks": {
+                        "items": [
+                            "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            -1
+                        ]
+                    }
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 511,
+                    "y": 131
+                }
+            },
+            "sets": {
+                "possibleTasks": []
+            }
+        },
+        "39527d6f-7b91-d12a-212d-e4627f4b496b": {
+            "attributes": {
+                "coordinate": 3,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 118,
+                    "height": 118
+                },
+                "position": {
+                    "x": 46,
+                    "y": 434
+                }
+            },
+            "sets": {}
+        },
+        "39a2c3ac-11b2-6ac9-df35-1e9dda9e135d": {
+            "attributes": {
+                "picture": "ghost_blue.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "66c5f296-6d0c-88c0-c9d3-64f09c190f2b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "dff28846-207b-636c-a356-94862d399bc7"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "3b4372f6-f86e-ef88-09ec-aa4ac1608da4": {
+            "attributes": {
+                "coordinate": 23,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 361,
+                    "y": 241
+                }
+            },
+            "sets": {}
+        },
+        "3c99c9fc-bcf0-a0a7-0477-9c41449fdb9c": {
+            "attributes": {
+                "coordinate": 20,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": 120
+                }
+            },
+            "sets": {}
+        },
+        "3d071138-4835-614b-9c6f-a730746a0483": {
+            "attributes": {
+                "coordinate": 0,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 117,
+                    "height": 119
+                },
+                "position": {
+                    "x": 47,
+                    "y": 38
+                }
+            },
+            "sets": {}
+        },
+        "3e4f4128-5f16-7ce5-61a4-e2d9fddd8e93": {
+            "attributes": {
+                "coordinate": 59,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 40
+                },
+                "position": {
+                    "x": 119,
+                    "y": 279
+                }
+            },
+            "sets": {}
+        },
+        "3f0aaa63-854c-a1b5-ef50-f3b8050fd59a": {
+            "attributes": {
+                "description": "",
+                "name": "getOwnCoordinates",
+                "script": "function(){\nreturn getCoordinateMap()[game.getActivePlayerId()]\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "485e0b58-c039-87b7-4d0f-7f27a0cbb04f": {
+            "attributes": {
+                "picture": "ghost_blue.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "66c5f296-6d0c-88c0-c9d3-64f09c190f2b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "dff28846-207b-636c-a356-94862d399bc7"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "4b306e80-178f-fc2b-ea07-0b3503dc5d6e": {
+            "attributes": {
+                "coordinate": 8,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 41
+                },
+                "position": {
+                    "x": 160,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "4b69a4f5-680b-1eb1-fd86-3c1811fb73b3": {
+            "attributes": {
+                "description": "",
+                "name": "getCoordinateMap",
+                "script": "function(){\nvar playerIds = game.getPlayerIds(),\ncoordinateMap = {},\ni;\n\nfor(i=0;i<playerIds.length;i+=1){\nswitch(game.getNode(playerIds[i]).getAttribute('name')){\ncase 'Player1':\ncoordinateMap[playerIds[i]] = {base:0,start:5,end:55,extra:57};\nbreak;\ncase 'Player2':\ncoordinateMap[playerIds[i]] = {base:1,start:18,end:16,extra:62};\nbreak;\ncase 'Player3':\ncoordinateMap[playerIds[i]] = {base:2,start:31,end:29,extra:67};\nbreak;\ncase 'Player4':\ncoordinateMap[playerIds[i]] = {base:3,start:44,end:42,extra:72};\nbreak;\n}\n}\nreturn coordinateMap;\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "4befa7b3-f7ed-e3f4-0ed9-8e425d8901a0": {
+            "attributes": {
+                "coordinate": 39,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 320,
+                    "y": 479
+                }
+            },
+            "sets": {}
+        },
+        "4c1cdea9-e56b-c52f-2450-987e70c649b7": {
+            "attributes": {
+                "coordinate": 60,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 159,
+                    "y": 279
+                }
+            },
+            "sets": {}
+        },
+        "4c80d26a-8102-70cc-b1dd-817b3fccca74": {
+            "attributes": {
+                "name": "Player1"
+            },
+            "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                "next": "dff28846-207b-636c-a356-94862d399bc7"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "903fd8fd-5093-c9a2-5e1a-15d601ddfb02",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "4d72afe1-b33b-210a-d0a4-06834182ca10": {
+            "attributes": {
+                "coordinate": 26,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 39
+                },
+                "position": {
+                    "x": 480,
+                    "y": 241
+                }
+            },
+            "sets": {}
+        },
+        "4f167c27-e266-79f0-d2c5-3af0b1ff8960": {
+            "attributes": {
+                "coordinate": 58,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 42
+                },
+                "position": {
+                    "x": 80,
+                    "y": 279
+                }
+            },
+            "sets": {}
+        },
+        "50d99f54-b777-25fe-e310-3d2f270bbeeb": {
+            "attributes": {
+                "coordinate": 47,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 240,
+                    "y": 400
+                }
+            },
+            "sets": {}
+        },
+        "522e8b0a-a5ba-eade-258d-9e2528fa2e82": {
+            "attributes": {
+                "description": "",
+                "name": "everyOneIsHome",
+                "script": "function(){\nvar coordinates = getCoordinatesOfPieces();\nif(coordinates.length === 1 && coordinates[0] === 4){\nreturn true;\n}\nreturn false;\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "57b2a4e6-8832-982f-8eb1-096ecbf73aa1": {
+            "attributes": {
+                "coordinate": 21,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 319,
+                    "y": 161
+                }
+            },
+            "sets": {}
+        },
+        "5baf9651-2b4a-18af-701d-efc0c172c240": {
+            "attributes": {
+                "coordinate": 70,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 40
+                },
+                "position": {
+                    "x": 399,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": {
+            "attributes": {
+                "name": "Condition"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 391,
+                    "y": 118
+                }
+            },
+            "sets": {}
+        },
+        "5d22329c-96e8-c55b-8774-fe309eeb7b54": {
+            "attributes": {
+                "coordinate": 15,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 42
+                },
+                "position": {
+                    "x": 239,
+                    "y": 1
+                }
+            },
+            "sets": {}
+        },
+        "5f97140c-12ea-9d3d-11fc-5e903e655582": {
+            "attributes": {
+                "picture": "ghost_red.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "3d071138-4835-614b-9c6f-a730746a0483",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "4c80d26a-8102-70cc-b1dd-817b3fccca74"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "6061cd2b-5e73-09d6-e691-94ef3524638e": {
+            "attributes": {},
+            "base": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 157
+                }
+            },
+            "sets": {}
+        },
+        "645b54cb-cdfe-51b2-f332-aa60af5758d7": {
+            "attributes": {
+                "isOver": false,
+                "name": "Game"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c",
+                        "173eae9a-e8f7-a0cc-f886-156a1082db54",
+                        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+                        "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd",
+                        "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                        "fe3445de-6941-6faf-a7f6-39a357b58315"
+                    ],
+                    "minItems": [
+                        1,
+                        1,
+                        1,
+                        -1,
+                        -1,
+                        1
+                    ],
+                    "maxItems": [
+                        1,
+                        1,
+                        1,
+                        -1,
+                        -1,
+                        1
+                    ]
+                },
+                "attributes": {
+                    "isOver": {
+                        "type": "boolean"
+                    }
+                },
+                "pointers": {
+                    "activePlayer": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "activePlayer": null,
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 332,
+                    "y": 228
+                }
+            },
+            "sets": {}
+        },
+        "66c5f296-6d0c-88c0-c9d3-64f09c190f2b": {
+            "attributes": {
+                "coordinate": 1,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 117,
+                    "height": 116
+                },
+                "position": {
+                    "x": 443,
+                    "y": 38
+                }
+            },
+            "sets": {}
+        },
+        "67757015-6885-03b1-8ae2-3aac23fcda7c": {
+            "attributes": {
+                "coordinate": 24,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 40
+                },
+                "position": {
+                    "x": 400,
+                    "y": 241
+                }
+            },
+            "sets": {}
+        },
+        "6a28abcd-f2ce-01f6-9f06-c92120673f23": {
+            "attributes": {},
+            "base": "6061cd2b-5e73-09d6-e691-94ef3524638e",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {},
+            "registry": {},
+            "sets": {}
+        },
+        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": {
+            "attributes": {
+                "name": "Board",
+                "picture": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 600,
+                    "y": 67
+                }
+            },
+            "sets": {}
+        },
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": {
+            "attributes": {
+                "name": "TheGame"
+            },
+            "base": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "meta": {},
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "activePlayer": "1fabd547-4eff-351b-8403-e90b9e89ea45",
+                "base": "645b54cb-cdfe-51b2-f332-aa60af5758d7"
+            },
+            "registry": {
+                "position": {
+                    "x": 339,
+                    "y": 197
+                }
+            },
+            "sets": {}
+        },
+        "6e5fb3b4-fa42-8108-f141-6f11c9fab183": {
+            "attributes": {
+                "name": "Function"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "mixins": [
+                    "2ae59976-6f36-726a-c1e8-479e6b18f9b7"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 162,
+                    "y": 165
+                }
+            },
+            "sets": {}
+        },
+        "70c33907-f1cb-8f6a-4753-02e9db948cb8": {
+            "attributes": {},
+            "base": "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "7104612e-96d5-791f-48f1-ab40568d48fb": {
+            "attributes": {
+                "coordinate": 17,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": -1
+                }
+            },
+            "sets": {}
+        },
+        "72479153-192b-b144-e31f-a70a6d762066": {
+            "attributes": {
+                "coordinate": 66,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 40
+                },
+                "position": {
+                    "x": 279,
+                    "y": 200
+                }
+            },
+            "sets": {}
+        },
+        "72ed5dee-c9fb-b29d-5348-62e4f970c8cc": {
+            "attributes": {
+                "coordinate": 16,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 279,
+                    "y": 1
+                }
+            },
+            "sets": {}
+        },
+        "7331f1bd-7e2f-4c14-bf25-3e9b96e8e322": {
+            "attributes": {
+                "coordinate": 6,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 41
+                },
+                "position": {
+                    "x": 81,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "76b1680c-e494-ed62-7154-ba3baf2f4bd3": {
+            "attributes": {
+                "coordinate": 43,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 39
+                },
+                "position": {
+                    "x": 240,
+                    "y": 560
+                }
+            },
+            "sets": {}
+        },
+        "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd": {
+            "attributes": {
+                "name": "Dice",
+                "value": 0
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "value": {
+                        "type": "integer",
+                        "max": 6
+                    }
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 152,
+                    "y": 287
+                }
+            },
+            "sets": {}
+        },
+        "7c9e444e-a8e8-865d-e993-fec571127701": {
+            "attributes": {
+                "coordinate": 45,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 42
+                },
+                "position": {
+                    "x": 240,
+                    "y": 478
+                }
+            },
+            "sets": {}
+        },
+        "7e7d9e93-32d7-8e71-7968-2a1bc6f16168": {
+            "attributes": {
+                "description": "",
+                "name": "movePiece",
+                "script": "function(pieceId){\nvar info = getOwnCoordinates(),\nstart = game.getCoordinateOfPiece(pieceId),\ndice = game.getDiceValue(),\nend,\nparams={};\n\nparams[pieceId] = {};\n\nif(start === info.base){\nend = info.start;\n} else if(start>=info.extra){\nif(start+dice>info.extra+4){\nend = 4;\n} else {\nend = start+dice;\n}\n} else {\nif(start+dice > info.end && start < info.end){\nend = start+dice - info.end - 1;\nif(end > 4){\nend = 4;\n} else {\nend +=info.extra;\n}\n} else if(start+dice > 56){\nend = start+dice - 56 + 5;\n} else {\nend = start+dice;\n} \n}\n\nparams.parentId = game.getTileIdOfCoordinate(end);\nif(end !== 4){\nsendPiecesBackToBase(end);\n}\ngame.moveMoreNodes(params);\nif(everyOneIsHome()){\ngame.endGame(game.getActivePlayerId());\n}\ngame.endTurn();\n}"
+            },
+            "base": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+            "meta": {},
+            "parent": "6a28abcd-f2ce-01f6-9f06-c92120673f23",
+            "pointers": {
+                "base": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                "premise": "a74282d1-0864-43c6-6d60-b2c5d6e63fd1"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "7fc10220-bf31-13d1-ec23-883a12d23fb1": {
+            "attributes": {
+                "coordinate": 72,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 280,
+                    "y": 519
+                }
+            },
+            "sets": {}
+        },
+        "81459b2a-7e35-34b2-df83-bd969d6bf00b": {
+            "attributes": {
+                "coordinate": 40,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": 519
+                }
+            },
+            "sets": {}
+        },
+        "819d17e6-9e2b-3840-e619-792a172dd25d": {
+            "attributes": {
+                "coordinate": 57,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 38,
+                    "height": 38
+                },
+                "position": {
+                    "x": 42,
+                    "y": 281
+                }
+            },
+            "sets": {}
+        },
+        "8414212f-6155-0317-9946-6f7600117bf0": {
+            "attributes": {
+                "coordinate": 7,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 42
+                },
+                "position": {
+                    "x": 120,
+                    "y": 239
+                }
+            },
+            "sets": {}
+        },
+        "893417e1-a627-c1b0-f833-42b132176d55": {
+            "attributes": {
+                "coordinate": 64,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 280,
+                    "y": 120
+                }
+            },
+            "sets": {}
+        },
+        "8b347e41-a979-7afd-aca3-e334e3d071f1": {
+            "attributes": {
+                "coordinate": 25,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 440,
+                    "y": 241
+                }
+            },
+            "sets": {}
+        },
+        "8c2f0155-f7f4-e8cc-f3e9-f8fcd8b366e9": {
+            "attributes": {
+                "picture": "ghost_blue.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "66c5f296-6d0c-88c0-c9d3-64f09c190f2b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "dff28846-207b-636c-a356-94862d399bc7"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "8cef598b-5d40-2961-d17c-17e13f9b1f6a": {
+            "attributes": {
+                "coordinate": 22,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 319,
+                    "y": 199
+                }
+            },
+            "sets": {}
+        },
+        "8f0215fc-76f1-6d9d-629a-f3ebf040856e": {
+            "attributes": {
+                "coordinate": 61,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 199,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "8f284763-f800-233b-bfd7-36dd812f56ba": {
+            "attributes": {
+                "coordinate": 27,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 519,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "903fd8fd-5093-c9a2-5e1a-15d601ddfb02": {
+            "attributes": {
+                "description": "",
+                "name": "rollAndHighlight",
+                "script": "function(){\nvar coordinates = getOwnCoordinates(),\npieceCoordinates = getCoordinatesOfPieces(),\ndiceValue,\nhighlighted = false,\ni;\ngame.roll();\ndiceValue = game.getDiceValue();\n\nfor(i=0;i<pieceCoordinates.length;i+=1){\nif((pieceCoordinates[i] === coordinates.base && diceValue === 6) ||\n(pieceCoordinates[i]>=5 && pieceCoordinates[i]<=56) ||\npieceCoordinates[i]>=coordinates.extra){\nhighlightCoordinate(pieceCoordinates[i]);\nhighlighted = true;\n} \n}\n\nif(!highlighted){\ngame.endTurn();\nreturn;\n}\n}"
+            },
+            "base": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+            "meta": {},
+            "parent": "6a28abcd-f2ce-01f6-9f06-c92120673f23",
+            "pointers": {
+                "base": "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f",
+                "premise": null
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "9292f388-fa0c-16c7-9394-81fdb965f424": {
+            "attributes": {},
+            "base": "173eae9a-e8f7-a0cc-f886-156a1082db54",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "173eae9a-e8f7-a0cc-f886-156a1082db54"
+            },
+            "registry": {
+                "position": {
+                    "x": 89,
+                    "y": 206
+                }
+            },
+            "sets": {}
+        },
+        "93129548-5df0-15ac-4974-98e7e33f154b": {
+            "attributes": {
+                "coordinate": 9,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 41
+                },
+                "position": {
+                    "x": 200,
+                    "y": 239
+                }
+            },
+            "sets": {}
+        },
+        "a160763a-235f-aabb-2baf-c780928479de": {
+            "attributes": {
+                "coordinate": 33,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 42
+                },
+                "position": {
+                    "x": 440,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "a2adba83-03ec-f614-23ec-c0fb2ecb4c38": {
+            "attributes": {
+                "coordinate": 46,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 241,
+                    "y": 439
+                }
+            },
+            "sets": {}
+        },
+        "a5bad9c3-015c-838e-f198-35138ac615ca": {
+            "attributes": {
+                "picture": "ghost_yellow.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "39527d6f-7b91-d12a-212d-e4627f4b496b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "1fabd547-4eff-351b-8403-e90b9e89ea45"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "a6847f4f-2076-b186-97d8-4c4908dbe3f3": {
+            "attributes": {
+                "coordinate": 73,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 280,
+                    "y": 479
+                }
+            },
+            "sets": {}
+        },
+        "a74282d1-0864-43c6-6d60-b2c5d6e63fd1": {
+            "attributes": {
+                "description": "",
+                "name": "isMovable",
+                "script": "function(pieceId){\nvar coordinate = game.getCoordinateOfPiece(pieceId),\nselectedId = game.getSelectedItem(),\nhighlightedIds = game.getHighlightedItems(),\ni;\nif(selectedId && game.getNode(selectedId).getAttribute('coordinate') === coordinate){\nreturn true;\n}\n\nfor(i=0;i<highlightedIds.length;i+=1){\nif(game.getNode(highlightedIds[i]).getAttribute('coordinate') === coordinate){\nreturn true;\n}\n}\n\nreturn false;\n}"
+            },
+            "base": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd",
+            "meta": {},
+            "parent": "29b50b0f-4ac0-7edf-61f1-045fdfb0f9d0",
+            "pointers": {
+                "base": "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "aa406865-18ed-59d4-6ae3-989635d83801": {
+            "attributes": {
+                "coordinate": 36,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 42
+                },
+                "position": {
+                    "x": 321,
+                    "y": 359
+                }
+            },
+            "sets": {}
+        },
+        "abf7b5cd-836b-dfc5-9d02-fe456a70a173": {
+            "attributes": {
+                "coordinate": 5,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 41,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "af28d68e-0b47-ded9-861c-3c3f1fb58818": {
+            "attributes": {
+                "coordinate": 69,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 39
+                },
+                "position": {
+                    "x": 440,
+                    "y": 281
+                }
+            },
+            "sets": {}
+        },
+        "afe406c7-82b5-c738-b988-9985d03024ec": {
+            "attributes": {
+                "coordinate": 32,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 39
+                },
+                "position": {
+                    "x": 479,
+                    "y": 321
+                }
+            },
+            "sets": {}
+        },
+        "b2146cde-5fd3-50c5-94a9-a16ae43f18fa": {
+            "attributes": {
+                "coordinate": 44,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 240,
+                    "y": 519
+                }
+            },
+            "sets": {}
+        },
+        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": {
+            "attributes": {
+                "coordinate": 0,
+                "isVisible": true,
+                "name": "Tile"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "dfd037f0-09c7-7264-88de-521c01d5fb2a"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                },
+                "attributes": {
+                    "coordinate": {
+                        "type": "integer"
+                    },
+                    "isVisible": {
+                        "type": "boolean"
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0",
+                    "040f6ce9-4cf6-37f9-2629-0955d2f02105"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 620,
+                    "y": 350
+                }
+            },
+            "sets": {}
+        },
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": {
+            "attributes": {
+                "name": "Language"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 44,
+                    "y": 240
+                }
+            },
+            "sets": {}
+        },
+        "b41e7660-9ca5-40b1-b935-d932fb5c0bdd": {
+            "attributes": {
+                "coordinate": 14,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 240,
+                    "y": 40
+                }
+            },
+            "sets": {}
+        },
+        "b5e3b941-7dc4-e2bf-c85c-2147dbd3a40c": {
+            "attributes": {
+                "coordinate": 4,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 120,
+                    "height": 121
+                },
+                "position": {
+                    "x": 241,
+                    "y": 239
+                }
+            },
+            "sets": {}
+        },
+        "ba3ffa1f-943b-c7c9-4629-9fd90cc5bbd6": {
+            "attributes": {
+                "coordinate": 49,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 41
+                },
+                "position": {
+                    "x": 199,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "bca2f33d-b567-7fc5-7ad6-dc7a11e1d8cb": {
+            "attributes": {
+                "coordinate": 35,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 41
+                },
+                "position": {
+                    "x": 361,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "bd42df68-a50c-8f2b-3535-9386b5476e7e": {
+            "attributes": {
+                "coordinate": 10,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 39
+                },
+                "position": {
+                    "x": 241,
+                    "y": 200
+                }
+            },
+            "sets": {}
+        },
+        "c07c1f32-41e8-f1b7-37b3-8b74a46c9318": {
+            "attributes": {
+                "coordinate": 42,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 42
+                },
+                "position": {
+                    "x": 280,
+                    "y": 558
+                }
+            },
+            "sets": {}
+        },
+        "c16e692e-d5f8-adca-4709-0af9ee0ebe3c": {
+            "attributes": {
+                "coordinate": 52,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 80,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "c2949ca3-240b-57fc-159d-a91bce0489fb": {
+            "attributes": {
+                "coordinate": 71,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 360,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "c383dd1d-500c-2819-5143-f41be7e14239": {
+            "attributes": {},
+            "base": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa",
+            "meta": {},
+            "parent": "645b54cb-cdfe-51b2-f332-aa60af5758d7",
+            "pointers": {
+                "base": "6db2e2fe-bc79-c683-ccf2-6258692ecfaa"
+            },
+            "registry": {
+                "position": {
+                    "x": 87,
+                    "y": 62
+                }
+            },
+            "sets": {}
+        },
+        "c43fc806-08b7-9b8a-dc9a-190e2a24221d": {
+            "attributes": {
+                "picture": "ghost_black.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "eb266628-1269-3cdc-764d-729b4fe7a6ad",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "29708893-4f49-2a4e-11d5-b66dfaa8d63a"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "c9831bac-c1b4-8e41-9512-46b9b4d123ea": {
+            "attributes": {
+                "coordinate": 63,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 279,
+                    "y": 80
+                }
+            },
+            "sets": {}
+        },
+        "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94": {
+            "attributes": {
+                "picture": "ludo.svg"
+            },
+            "base": "c383dd1d-500c-2819-5143-f41be7e14239",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {},
+            "registry": {},
+            "sets": {}
+        },
+        "cbb51f71-8913-43c2-ee5c-6eea55e1314e": {
+            "attributes": {
+                "picture": "ghost_red.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "3d071138-4835-614b-9c6f-a730746a0483",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "4c80d26a-8102-70cc-b1dd-817b3fccca74"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "cc92a5a1-44e9-bd01-4b40-4e390a61f796": {
+            "attributes": {
+                "id": "",
+                "isWinning": false,
+                "name": "Player"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "isWinning": {
+                        "type": "boolean"
+                    }
+                },
+                "pointers": {
+                    "next": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "next": null
+            },
+            "registry": {
+                "position": {
+                    "x": 713,
+                    "y": 201
+                }
+            },
+            "sets": {
+                "possibleTasks": []
+            }
+        },
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": {
+            "attributes": {
+                "name": "FCO"
+            },
+            "base": null,
+            "meta": {
+                "attributes": {
+                    "name": {
+                        "type": "string"
+                    }
+                }
+            },
+            "parent": "03d36072-9e09-7866-cb4e-d0a36ff825f6",
+            "pointers": {
+                "base": null
+            },
+            "registry": {
+                "DisplayFormat": "$name",
+                "PortSVGIcon": "",
+                "SVGIcon": "",
+                "decorator": "",
+                "isAbstract": false,
+                "isPort": false,
+                "position": {
+                    "x": 100,
+                    "y": 100
+                },
+                "validVisualizers": "ModelEditor METAAspect SetEditor Crosscut GraphViz"
+            },
+            "sets": {}
+        },
+        "d1532ef4-cabb-f9ed-efc5-2e97bc4f623d": {
+            "attributes": {
+                "picture": "ghost_red.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "3d071138-4835-614b-9c6f-a730746a0483",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "4c80d26a-8102-70cc-b1dd-817b3fccca74"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "d2354e61-c23d-bbf9-2446-22672e6afc62": {
+            "attributes": {
+                "coordinate": 67,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 519,
+                    "y": 280
+                }
+            },
+            "sets": {}
+        },
+        "d33f9d9c-6a83-a421-6169-737e7399c188": {
+            "attributes": {
+                "picture": "ghost_yellow.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "39527d6f-7b91-d12a-212d-e4627f4b496b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "1fabd547-4eff-351b-8403-e90b9e89ea45"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "d91ada83-9a85-368d-b1aa-1741dce1c5d8": {
+            "attributes": {
+                "coordinate": 51,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 39
+                },
+                "position": {
+                    "x": 119,
+                    "y": 320
+                }
+            },
+            "sets": {}
+        },
+        "dabb5adf-9ab6-773a-adcc-40c362ef8313": {
+            "attributes": {
+                "coordinate": 54,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 1,
+                    "y": 320
+                }
+            },
+            "sets": {}
+        },
+        "ddd4af27-b724-6988-3820-3bd64799c6e7": {
+            "attributes": {
+                "picture": "ghost_black.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "eb266628-1269-3cdc-764d-729b4fe7a6ad",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "29708893-4f49-2a4e-11d5-b66dfaa8d63a"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "dfd037f0-09c7-7264-88de-521c01d5fb2a": {
+            "attributes": {
+                "name": "Piece",
+                "picture": ""
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "attributes": {
+                    "picture": {
+                        "type": "string"
+                    }
+                },
+                "pointers": {
+                    "owner": {
+                        "items": [
+                            "cc92a5a1-44e9-bd01-4b40-4e390a61f796"
+                        ],
+                        "minItems": [
+                            -1
+                        ],
+                        "maxItems": [
+                            1
+                        ],
+                        "max": 1,
+                        "min": 1
+                    }
+                },
+                "mixins": [
+                    "040f6ce9-4cf6-37f9-2629-0955d2f02105",
+                    "392b8725-5e78-6f25-2aad-80858525a3c0"
+                ]
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+                "owner": null
+            },
+            "registry": {
+                "position": {
+                    "x": 681,
+                    "y": 164
+                }
+            },
+            "sets": {}
+        },
+        "dff28846-207b-636c-a356-94862d399bc7": {
+            "attributes": {
+                "name": "Player2"
+            },
+            "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+            "meta": {},
+            "parent": "6e12322d-6143-5992-8aa5-f7aeba14047a",
+            "pointers": {
+                "base": "cc92a5a1-44e9-bd01-4b40-4e390a61f796",
+                "next": "29708893-4f49-2a4e-11d5-b66dfaa8d63a"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "903fd8fd-5093-c9a2-5e1a-15d601ddfb02",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "e48cae2c-e7f0-277e-1b01-68bb7119ac3a": {
+            "attributes": {
+                "coordinate": 30,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 558,
+                    "y": 320
+                }
+            },
+            "sets": {}
+        },
+        "ea0178b5-e354-73cc-fb7d-adb027472291": {
+            "attributes": {
+                "coordinate": 50,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 42,
+                    "height": 41
+                },
+                "position": {
+                    "x": 159,
+                    "y": 319
+                }
+            },
+            "sets": {}
+        },
+        "ea83d691-9bc3-9002-fb32-76792b6e88ad": {
+            "attributes": {
+                "coordinate": 12,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 39,
+                    "height": 41
+                },
+                "position": {
+                    "x": 241,
+                    "y": 120
+                }
+            },
+            "sets": {}
+        },
+        "eb266628-1269-3cdc-764d-729b4fe7a6ad": {
+            "attributes": {
+                "coordinate": 2,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 116,
+                    "height": 118
+                },
+                "position": {
+                    "x": 444,
+                    "y": 436
+                }
+            },
+            "sets": {}
+        },
+        "eb2b8648-3cf1-db41-d4e1-1681ccb992cc": {
+            "attributes": {
+                "description": "",
+                "name": "sendPiecesBackToBase",
+                "script": "function(coordinate){\nvar pieceIds = game.getAllPieceIdsOnTile(game.getTileIdOfCoordinate(coordinate)),\ninfo = getCoordinateMap(),\nparams,\ni;\nfor(i=0;i<pieceIds.length;i+=1){\nif(game.getActivePlayerId() !== game.getPointerTarget(pieceIds[i],'owner')){\nparams = {};\nparams[pieceIds[i]]={};\nparams.parentId = game.getTileIdOfCoordinate(info[game.getPointerTarget(pieceIds[i],'owner')].base);\ngame.moveMoreNodes(params);\n}\n}\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "edd95680-f565-2ea3-b086-0c257a1f655f": {
+            "attributes": {
+                "coordinate": 13,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 41
+                },
+                "position": {
+                    "x": 239,
+                    "y": 80
+                }
+            },
+            "sets": {}
+        },
+        "f25b64d8-89ad-aeb7-a66d-f9f2159cacad": {
+            "attributes": {
+                "description": "",
+                "name": "highlightCoordinate",
+                "script": "function(coordinate){\nconsole.log('highlight',coordinate);\nif(coordinate<4){\ngame.selectItem(game.getTileIdOfCoordinate(coordinate));\n} else {\ngame.highlightItem(game.getTileIdOfCoordinate(coordinate));\n}\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
+        },
+        "f308b179-2e62-4e00-1654-c103bf6ee3fd": {
+            "attributes": {
+                "picture": "ghost_black.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "eb266628-1269-3cdc-764d-729b4fe7a6ad",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "29708893-4f49-2a4e-11d5-b66dfaa8d63a"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "f3dbce29-d348-7166-5b16-03867c5bed0b": {
+            "attributes": {
+                "picture": "ghost_yellow.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "39527d6f-7b91-d12a-212d-e4627f4b496b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "1fabd547-4eff-351b-8403-e90b9e89ea45"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "f6007adb-a47a-fa0f-66bc-c9233e905531": {
+            "attributes": {
+                "coordinate": 37,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 320,
+                    "y": 400
+                }
+            },
+            "sets": {}
+        },
+        "f63b8a5c-ae9d-7441-903d-836223fdeaee": {
+            "attributes": {
+                "coordinate": 65,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 43
+                },
+                "position": {
+                    "x": 279,
+                    "y": 159
+                }
+            },
+            "sets": {}
+        },
+        "f6beeea4-897d-eade-feb9-c49b246bb53c": {
+            "attributes": {
+                "coordinate": 68,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 41
+                },
+                "position": {
+                    "x": 479,
+                    "y": 279
+                }
+            },
+            "sets": {}
+        },
+        "f99f833f-0099-6435-9689-478656dbe82b": {
+            "attributes": {
+                "picture": "ghost_blue.svg"
+            },
+            "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+            "meta": {},
+            "parent": "66c5f296-6d0c-88c0-c9d3-64f09c190f2b",
+            "pointers": {
+                "base": "dfd037f0-09c7-7264-88de-521c01d5fb2a",
+                "owner": "dff28846-207b-636c-a356-94862d399bc7"
+            },
+            "registry": {},
+            "sets": {
+                "possibleTasks": [
+                    {
+                        "attributes": {},
+                        "guid": "7e7d9e93-32d7-8e71-7968-2a1bc6f16168",
+                        "registry": {}
+                    }
+                ]
+            }
+        },
+        "fb5fb3bd-0242-38bc-24fe-66244e4f9f55": {
+            "attributes": {
+                "coordinate": 74,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 41,
+                    "height": 42
+                },
+                "position": {
+                    "x": 280,
+                    "y": 439
+                }
+            },
+            "sets": {}
+        },
+        "fe28ea29-1b68-41dd-54fe-4efc87231c4d": {
+            "attributes": {
+                "coordinate": 31,
+                "isVisible": true
+            },
+            "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69",
+            "meta": {},
+            "parent": "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94",
+            "pointers": {
+                "base": "b2e6a0ac-7083-7ed3-58f9-739187fa8e69"
+            },
+            "registry": {
+                "measure": {
+                    "width": 40,
+                    "height": 40
+                },
+                "position": {
+                    "x": 519,
+                    "y": 321
+                }
+            },
+            "sets": {}
+        },
+        "fe3445de-6941-6faf-a7f6-39a357b58315": {
+            "attributes": {
+                "name": "Conditions"
+            },
+            "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045",
+            "meta": {
+                "children": {
+                    "items": [
+                        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd"
+                    ],
+                    "minItems": [
+                        -1
+                    ],
+                    "maxItems": [
+                        -1
+                    ]
+                }
+            },
+            "parent": "b3265284-01a2-4d2d-e222-727ff25bc2ff",
+            "pointers": {
+                "base": "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045"
+            },
+            "registry": {
+                "position": {
+                    "x": 448,
+                    "y": 235
+                }
+            },
+            "sets": {}
+        }
+    },
+    "relids": {
+        "00315690-eec0-ae32-831c-126a965a5441": "R",
+        "00cf950f-3148-aa52-4662-36a944e19a3a": "I",
+        "025a8110-4ac6-4828-396f-71e90bf0bbf6": "A",
+        "03d36072-9e09-7866-cb4e-d0a36ff825f6": null,
+        "040f6ce9-4cf6-37f9-2629-0955d2f02105": "3",
+        "070a6eac-a113-c4cf-6bc0-389920a004b7": "7r",
+        "092e8c97-6bd8-80cf-e7f4-886993fc43ad": "OA",
+        "0c2343bd-37f9-377f-2be5-66ee2fa2ee5c": "C",
+        "0ccb2d3c-0573-4d2a-b2d0-8994dcdf8e25": "d",
+        "0f23c1db-da5a-ecc9-34f5-9201e11a3018": "g",
+        "0f56803d-e03b-c7b1-5741-5bb18fe75974": "D",
+        "12490437-fde0-4931-a4dd-c2ba3240f8ae": "0v",
+        "173eae9a-e8f7-a0cc-f886-156a1082db54": "m",
+        "17be15f8-6273-dc9d-79b6-cfe850bd80c8": "Z",
+        "1a28a040-b55f-5d45-3f19-7c57d663a2e9": "t1",
+        "1cb4a176-7f0e-07e6-043a-4ffa1921ea4f": "e",
+        "1f74655b-b258-a6e2-957c-053427ef8618": "cp",
+        "1fabd547-4eff-351b-8403-e90b9e89ea45": "Y",
+        "21e5810e-e31d-67da-d6c9-590660fd63e0": "B",
+        "21e721c0-87f8-a9a5-6c1e-5c7f1d50930a": "3",
+        "23fc6de9-e67d-76ff-1866-5991caf3a57d": "o",
+        "28553af2-84d3-df2c-c0a8-a711c5dc5bf2": "G",
+        "2901c0f4-4bca-0728-b95d-2037d09dc2a6": "V",
+        "29708893-4f49-2a4e-11d5-b66dfaa8d63a": "C",
+        "29b50b0f-4ac0-7edf-61f1-045fdfb0f9d0": "o",
+        "2ae59976-6f36-726a-c1e8-479e6b18f9b7": "5",
+        "2c7967ae-6c52-73a0-c13e-ef29d2add4b7": "j",
+        "2e4011a6-99e2-cdef-adda-bf6561136872": "pp",
+        "345299ec-f4b2-f149-75d7-e18dbe616632": "4",
+        "392b8725-5e78-6f25-2aad-80858525a3c0": "I",
+        "39527d6f-7b91-d12a-212d-e4627f4b496b": "5",
+        "39a2c3ac-11b2-6ac9-df35-1e9dda9e135d": "Y",
+        "3b4372f6-f86e-ef88-09ec-aa4ac1608da4": "E",
+        "3c99c9fc-bcf0-a0a7-0477-9c41449fdb9c": "Y",
+        "3d071138-4835-614b-9c6f-a730746a0483": "N",
+        "3e4f4128-5f16-7ce5-61a4-e2d9fddd8e93": "jr",
+        "3f0aaa63-854c-a1b5-ef50-f3b8050fd59a": "h",
+        "485e0b58-c039-87b7-4d0f-7f27a0cbb04f": "5",
+        "4b306e80-178f-fc2b-ea07-0b3503dc5d6e": "W",
+        "4b69a4f5-680b-1eb1-fd86-3c1811fb73b3": "5",
+        "4befa7b3-f7ed-e3f4-0ed9-8e425d8901a0": "L",
+        "4c1cdea9-e56b-c52f-2450-987e70c649b7": "Sf",
+        "4c80d26a-8102-70cc-b1dd-817b3fccca74": "7",
+        "4d72afe1-b33b-210a-d0a4-06834182ca10": "v",
+        "4f167c27-e266-79f0-d2c5-3af0b1ff8960": "fi",
+        "50d99f54-b777-25fe-e310-3d2f270bbeeb": "S",
+        "522e8b0a-a5ba-eade-258d-9e2528fa2e82": "N",
+        "57b2a4e6-8832-982f-8eb1-096ecbf73aa1": "1",
+        "5baf9651-2b4a-18af-701d-efc0c172c240": "We",
+        "5c779c9d-4ee3-b8ad-2fdb-7c0c90fc3bbd": "r",
+        "5d22329c-96e8-c55b-8774-fe309eeb7b54": "R",
+        "5f97140c-12ea-9d3d-11fc-5e903e655582": "v",
+        "6061cd2b-5e73-09d6-e691-94ef3524638e": "b",
+        "645b54cb-cdfe-51b2-f332-aa60af5758d7": "P",
+        "66c5f296-6d0c-88c0-c9d3-64f09c190f2b": "m",
+        "67757015-6885-03b1-8ae2-3aac23fcda7c": "k",
+        "6a28abcd-f2ce-01f6-9f06-c92120673f23": "b",
+        "6db2e2fe-bc79-c683-ccf2-6258692ecfaa": "b",
+        "6e12322d-6143-5992-8aa5-f7aeba14047a": "W",
+        "6e5fb3b4-fa42-8108-f141-6f11c9fab183": "c",
+        "70c33907-f1cb-8f6a-4753-02e9db948cb8": "t",
+        "7104612e-96d5-791f-48f1-ab40568d48fb": "J",
+        "72479153-192b-b144-e31f-a70a6d762066": "e",
+        "72ed5dee-c9fb-b29d-5348-62e4f970c8cc": "0",
+        "7331f1bd-7e2f-4c14-bf25-3e9b96e8e322": "p",
+        "76b1680c-e494-ed62-7154-ba3baf2f4bd3": "6v",
+        "79247ae5-61ba-ca0e-fc35-d09baf9bc2cd": "o",
+        "7c9e444e-a8e8-865d-e993-fec571127701": "XG",
+        "7e7d9e93-32d7-8e71-7968-2a1bc6f16168": "n",
+        "7fc10220-bf31-13d1-ec23-883a12d23fb1": "v8",
+        "81459b2a-7e35-34b2-df83-bd969d6bf00b": "ED",
+        "819d17e6-9e2b-3840-e619-792a172dd25d": "5U",
+        "8414212f-6155-0317-9946-6f7600117bf0": "b",
+        "893417e1-a627-c1b0-f833-42b132176d55": "ec",
+        "8b347e41-a979-7afd-aca3-e334e3d071f1": "F",
+        "8c2f0155-f7f4-e8cc-f3e9-f8fcd8b366e9": "N",
+        "8cef598b-5d40-2961-d17c-17e13f9b1f6a": "M",
+        "8f0215fc-76f1-6d9d-629a-f3ebf040856e": "q",
+        "8f284763-f800-233b-bfd7-36dd812f56ba": "9",
+        "903fd8fd-5093-c9a2-5e1a-15d601ddfb02": "u",
+        "9292f388-fa0c-16c7-9394-81fdb965f424": "p",
+        "93129548-5df0-15ac-4974-98e7e33f154b": "G",
+        "a160763a-235f-aabb-2baf-c780928479de": "U",
+        "a2adba83-03ec-f614-23ec-c0fb2ecb4c38": "28",
+        "a5bad9c3-015c-838e-f198-35138ac615ca": "Y",
+        "a6847f4f-2076-b186-97d8-4c4908dbe3f3": "s",
+        "a74282d1-0864-43c6-6d60-b2c5d6e63fd1": "4",
+        "aa406865-18ed-59d4-6ae3-989635d83801": "QH",
+        "abf7b5cd-836b-dfc5-9d02-fe456a70a173": "C",
+        "af28d68e-0b47-ded9-861c-3c3f1fb58818": "O",
+        "afe406c7-82b5-c738-b988-9985d03024ec": "G3",
+        "b2146cde-5fd3-50c5-94a9-a16ae43f18fa": "3",
+        "b2e6a0ac-7083-7ed3-58f9-739187fa8e69": "i",
+        "b3265284-01a2-4d2d-e222-727ff25bc2ff": "n",
+        "b41e7660-9ca5-40b1-b935-d932fb5c0bdd": "n",
+        "b5e3b941-7dc4-e2bf-c85c-2147dbd3a40c": "6",
+        "ba3ffa1f-943b-c7c9-4629-9fd90cc5bbd6": "h",
+        "bca2f33d-b567-7fc5-7ad6-dc7a11e1d8cb": "f",
+        "bd42df68-a50c-8f2b-3535-9386b5476e7e": "w",
+        "c07c1f32-41e8-f1b7-37b3-8b74a46c9318": "T",
+        "c16e692e-d5f8-adca-4709-0af9ee0ebe3c": "i",
+        "c2949ca3-240b-57fc-159d-a91bce0489fb": "Q",
+        "c383dd1d-500c-2819-5143-f41be7e14239": "e",
+        "c43fc806-08b7-9b8a-dc9a-190e2a24221d": "t",
+        "c9831bac-c1b4-8e41-9512-46b9b4d123ea": "3r",
+        "c9cabbfb-fcb1-2039-28d4-a9d5f2a21e94": "e",
+        "cbb51f71-8913-43c2-ee5c-6eea55e1314e": "X",
+        "cc92a5a1-44e9-bd01-4b40-4e390a61f796": "g",
+        "cd891e7b-e2ea-e929-f6cd-9faf4f1fc045": "1",
+        "d1532ef4-cabb-f9ed-efc5-2e97bc4f623d": "Z",
+        "d2354e61-c23d-bbf9-2446-22672e6afc62": "7",
+        "d33f9d9c-6a83-a421-6169-737e7399c188": "B",
+        "d91ada83-9a85-368d-b1aa-1741dce1c5d8": "M2",
+        "dabb5adf-9ab6-773a-adcc-40c362ef8313": "H",
+        "ddd4af27-b724-6988-3820-3bd64799c6e7": "e",
+        "dfd037f0-09c7-7264-88de-521c01d5fb2a": "J",
+        "dff28846-207b-636c-a356-94862d399bc7": "J",
+        "e48cae2c-e7f0-277e-1b01-68bb7119ac3a": "fY",
+        "ea0178b5-e354-73cc-fb7d-adb027472291": "K",
+        "ea83d691-9bc3-9002-fb32-76792b6e88ad": "P",
+        "eb266628-1269-3cdc-764d-729b4fe7a6ad": "r",
+        "eb2b8648-3cf1-db41-d4e1-1681ccb992cc": "1",
+        "edd95680-f565-2ea3-b086-0c257a1f655f": "y",
+        "f25b64d8-89ad-aeb7-a66d-f9f2159cacad": "G",
+        "f308b179-2e62-4e00-1654-c103bf6ee3fd": "X",
+        "f3dbce29-d348-7166-5b16-03867c5bed0b": "W",
+        "f6007adb-a47a-fa0f-66bc-c9233e905531": "2",
+        "f63b8a5c-ae9d-7441-903d-836223fdeaee": "GQ",
+        "f6beeea4-897d-eade-feb9-c49b246bb53c": "ur",
+        "f99f833f-0099-6435-9689-478656dbe82b": "8",
+        "fb5fb3bd-0242-38bc-24fe-66244e4f9f55": "U9",
+        "fe28ea29-1b68-41dd-54fe-4efc87231c4d": "a",
+        "fe3445de-6941-6faf-a7f6-39a357b58315": "z"
+    },
+    "metaSheets": {}
+}

@@ -143,7 +143,7 @@ export default class BoardViewComponent extends React.Component {
                                  fill="none"/>);
             }
             if (item.selected) {
-                pieces.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
+                tiles.push(<rect key={item.id+'_highlight'} id={item.id+'_highlight'} height={item.height}
                                   width={item.width} x={item.x} y={item.y} stroke="none"
                                   fill="black" fillOpacity="0.3"/>);
             }
