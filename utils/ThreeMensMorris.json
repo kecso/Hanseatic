@@ -20,6 +20,7 @@
             },
             "9292f388-fa0c-16c7-9394-81fdb965f424": {
                 "1d13c125-6cde-d321-139a-4e6234b1cc7f": {},
+                "33943fab-d2a6-8da2-a662-c30bfe676e9b": {},
                 "86169149-d1f8-0ac7-4d9a-3bd8177c3834": {},
                 "86991095-a423-5350-4238-337260a0e2a2": {},
                 "936b4c4d-b1b2-8081-d2ec-c43c8b054c00": {},
@@ -718,9 +719,9 @@
         },
         "1d13c125-6cde-d321-139a-4e6234b1cc7f": {
             "attributes": {
-                "description": "Determines if a move from <from> to <to> is theoretically valid. Ignores Start Zones.",
+                "description": "Determines if a move from <from> to <to> is theoretically valid.",
                 "name": "adjacent",
-                "script": "function(from, to){\nswitch(from){\n     case 0:{\n          switch(to){\n              case 1:\n                   return true;\n              case 3:\n                   return true;\n              case 4:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 1:{\n          switch(to){\n              case 0:\n                   return true;\n              case 2:\n                   return true;\n              case 4:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 2:{\n          switch(to){\n              case 1:\n                   return true;\n              case 4:\n                   return true;\n              case 5:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 3:{\n          switch(to){\n              case 0:\n                   return true;\n              case 4:\n                   return true;\n              case 6:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 4:{\n         switch(to){\n              case 0:\n                   return true;\n              case 1:\n                   return true;\n              case 2:\n                   return true;\n              case 3:\n                   return true;\n              case 5:\n                   return true;\n              case 6:\n                   return true;\n              case 7:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n             }\n      }\n      case 5:{\n          switch(to){\n              case 2:\n                   return true;\n              case 4:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n     case 6:{\n          switch(to){\n              case 3:\n                   return true;\n              case 4:\n                   return true;\n              case 7:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 7:{\n          switch(to){\n              case 4:\n                   return true;\n              case 6:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 8:{\n          switch(to){\n              case 4:\n                   return true;\n              case 5:\n                   return true;\n              case 7:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      default:\n           return true;\n}\n}"
+                "script": "function(from, to){\nswitch(from){\ncase 9:\ncase 10:\ncase 11:\ncase 12:\ncase 13:\ncase 14:\n    return true;\n}\n\nif(haveMovedAllMenFromStart()===false) return false;\n\nswitch(from){\n     case 0:{\n          switch(to){\n              case 1:\n                   return true;\n              case 3:\n                   return true;\n              case 4:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 1:{\n          switch(to){\n              case 0:\n                   return true;\n              case 2:\n                   return true;\n              case 4:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 2:{\n          switch(to){\n              case 1:\n                   return true;\n              case 4:\n                   return true;\n              case 5:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 3:{\n          switch(to){\n              case 0:\n                   return true;\n              case 4:\n                   return true;\n              case 6:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 4:{\n         switch(to){\n              case 0:\n                   return true;\n              case 1:\n                   return true;\n              case 2:\n                   return true;\n              case 3:\n                   return true;\n              case 5:\n                   return true;\n              case 6:\n                   return true;\n              case 7:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n             }\n      }\n      case 5:{\n          switch(to){\n              case 2:\n                   return true;\n              case 4:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n     case 6:{\n          switch(to){\n              case 3:\n                   return true;\n              case 4:\n                   return true;\n              case 7:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 7:{\n          switch(to){\n              case 4:\n                   return true;\n              case 6:\n                   return true;\n              case 8:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      case 8:{\n          switch(to){\n              case 4:\n                   return true;\n              case 5:\n                   return true;\n              case 7:\n                   return true;\n              default:\n                   return false;\n          }\n      }\n      default:\n           return true;\n}\n}"
             },
             "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
             "meta": {},
@@ -914,6 +915,21 @@
                     }
                 ]
             }
+        },
+        "33943fab-d2a6-8da2-a662-c30bfe676e9b": {
+            "attributes": {
+                "description": "",
+                "name": "haveMovedAllMenFromStart",
+                "script": "function(){\nvar player = game.getActivePlayerId();\nvar count = 0;\n\nif(getOwnerOfCoordinate(0)===player) count++;\nif(getOwnerOfCoordinate(1)===player) count++;\nif(getOwnerOfCoordinate(2)===player) count++;\nif(getOwnerOfCoordinate(3)===player) count++;\nif(getOwnerOfCoordinate(4)===player) count++;\nif(getOwnerOfCoordinate(5)===player) count++;\nif(getOwnerOfCoordinate(6)===player) count++;\nif(getOwnerOfCoordinate(7)===player) count++;\nif(getOwnerOfCoordinate(8)===player) count++;\n\nif(count===3) return true;\nelse return false;\n}"
+            },
+            "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183",
+            "meta": {},
+            "parent": "9292f388-fa0c-16c7-9394-81fdb965f424",
+            "pointers": {
+                "base": "6e5fb3b4-fa42-8108-f141-6f11c9fab183"
+            },
+            "registry": {},
+            "sets": {}
         },
         "392b8725-5e78-6f25-2aad-80858525a3c0": {
             "attributes": {
@@ -1932,6 +1948,7 @@
         "2ae59976-6f36-726a-c1e8-479e6b18f9b7": "5",
         "2d76361a-149e-27ef-d912-bd90cefc74af": "f",
         "30915e7b-29b0-6d84-b0a2-46416bf407c5": "h",
+        "33943fab-d2a6-8da2-a662-c30bfe676e9b": "O",
         "392b8725-5e78-6f25-2aad-80858525a3c0": "I",
         "3b34736b-76b6-0af5-cc84-2c9119c5fa37": "T",
         "4d7abc98-fdce-7ee1-a4b8-eb514b63c13b": "r",
