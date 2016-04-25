@@ -66,7 +66,7 @@ usermanager.main([
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
             './utils/Oware.json',
-            '-p', ‘Oware’,
+            '-p', 'Oware',
             '-b', 'master',
             '-o', 'creator'
         ]);
@@ -90,7 +90,7 @@ usermanager.main([
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
             './utils/ThreeMensMorris.json',
-            '-p', 'ThreeMensMorris’,
+            '-p', 'ThreeMensMorris',
             '-b', 'master',
             '-o', 'creator'
         ]);
