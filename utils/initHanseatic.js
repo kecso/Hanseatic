@@ -65,6 +65,14 @@ usermanager.main([
     })
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
+            './utils/Oware.json',
+            '-p', ‘Oware’,
+            '-b', 'master',
+            '-o', 'creator'
+        ]);
+    })
+    .then(function () {
+        return importer.main(['node', './node_modules/src/bin/import.js',
             './utils/pegSolitare.json',
             '-p', 'pegSolitare',
             '-b', 'master',
@@ -81,8 +89,8 @@ usermanager.main([
     })
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
-            './utils/Oware.json',
-            '-p', 'Oware',
+            './utils/ThreeMensMorris.json',
+            '-p', 'ThreeMensMorris’,
             '-b', 'master',
             '-o', 'creator'
         ]);
