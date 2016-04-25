@@ -8,6 +8,7 @@ import BoardViewComponent from '../components/boardview.jsx';
 import GameStateComponent from '../components/gamestate.jsx';
 import ContextMenuComponent from '../components/contextmenu.jsx';
 import HomeComponent from '../components/homecomponent.jsx';
+import DiceComponent from '../components/dice.jsx';
 
 export default class PlayerView extends React.Component {
     constructor(props) {
@@ -63,8 +64,8 @@ export default class PlayerView extends React.Component {
                 y: 0
             };
 
-        if(this.client.getGameNode().getAttribute('isOver') === true){
-            this.setState({phase:'finished'});
+        if (this.client.getGameNode().getAttribute('isOver') === true) {
+            this.setState({phase: 'finished'});
             return;
         }
 
@@ -93,12 +94,16 @@ export default class PlayerView extends React.Component {
     }
 
     boardClick(event) {
-        if(this.client.getGameNode().getAttribute('isOver') === true){
+        if (this.client.getGameNode().getAttribute('isOver') === true) {
             return;
         }
 
         event.tasks = this.getValidTasks(event.id);
         if (event.tasks.length === 0) {
+            if (this.client.isPiece(event.id)) {
+                event.id = this.client.getNode(event.id).getParentId();
+                this.boardClick(event);
+            }
             return;
         }
 
@@ -142,7 +147,7 @@ export default class PlayerView extends React.Component {
                                             x={this.state.selected.x} y={this.state.selected.y}/>;
         }
 
-        if(this.state.phase === 'finished'){
+        if (this.state.phase === 'finished') {
             endTurnButton = <button className="btn btn-default" disabled>EndTurn</button>;
         } else {
             endTurnButton = <button className="btn btn-default" onClick={this.finishStep}>EndTurn</button>;
@@ -154,7 +159,11 @@ export default class PlayerView extends React.Component {
                                     player={this.client.getNode(this.client.getActivePlayerId()).getAttribute('name')}/>
                 {endTurnButton}
             </div>
-            <BoardViewComponent client={this.client} clickEvent={this.boardClick}/>
+            <svg width="700" height="600">
+                <BoardViewComponent client={this.client} clickEvent={this.boardClick}/>
+                <DiceComponent game={this.client} type="default"
+                               value={this.client.getDiceValue()}/>
+            </svg>
             {context}
         </div>;
     }
