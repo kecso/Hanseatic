@@ -137,11 +137,20 @@ export default class PlayerView extends React.Component {
 
     render() {
         var context = <div/>,
-            endTurnButton;
+            endTurnButton,
+            dice;
 
         if (this.state.phase === 'init') {
             return <div>initiating...</div>;
         }
+
+        if (this.client.getDiceId() !== null) {
+            dice = <DiceComponent game={this.client} type="default"
+                                  value={this.client.getDiceValue()}/>;
+        } else {
+            dice = <div/>;
+        }
+
         if (this.state.selected) {
             context = <ContextMenuComponent items={this.state.selected.tasks} onSelect={this.executeTask}
                                             x={this.state.selected.x} y={this.state.selected.y}/>;
@@ -161,8 +170,7 @@ export default class PlayerView extends React.Component {
             </div>
             <svg width="700" height="600">
                 <BoardViewComponent client={this.client} clickEvent={this.boardClick}/>
-                <DiceComponent game={this.client} type="default"
-                               value={this.client.getDiceValue()}/>
+                {dice}
             </svg>
             {context}
         </div>;
