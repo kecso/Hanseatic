@@ -63,14 +63,7 @@ usermanager.main([
             'guest',
             'archiver']);
     })
-    .then(function () {
-        return importer.main(['node', './node_modules/src/bin/import.js',
-            './utils/Oware.json',
-            '-p', ‘Oware’,
-            '-b', 'master',
-            '-o', 'creator'
-        ]);
-    })
+
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
             './utils/pegSolitare.json',
@@ -87,14 +80,7 @@ usermanager.main([
             '-o', 'creator'
         ]);
     })
-    .then(function () {
-        return importer.main(['node', './node_modules/src/bin/import.js',
-            './utils/ThreeMensMorris.json',
-            '-p', 'ThreeMensMorris’,
-            '-b', 'master',
-            '-o', 'creator'
-        ]);
-    })
+ 
     .then(function () {
         return importer.main(['node', './node_modules/src/bin/import.js',
             './utils/Ludo.json',
