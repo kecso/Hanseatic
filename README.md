@@ -24,3 +24,6 @@ The aim of the project is to implement a system that can allow users the followi
 We list here those features that would be nice to have in the long run, to make hanseatic even mora appealing to everybody!
 * If the HanseaticGame language evolves it could be possible to define AI for every game, so it would be possible to play against bots.
 * The language can expand in a way that it will be able to describe not only board based games, but more 'complicated' ones as well.
+
+##contact information
+If you have questions or would like to contribute, send an e-mail to tamas.kecskes@vanderbilt.edu or create an issue.
